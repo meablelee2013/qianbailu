@@ -6,4 +6,5 @@
     <string name="fzlt_cu_hei">FZLTHC_GBK.ttf</string>
     <string name="nav_tab_normal_ttf">@string/fzlt_zhun_hei</string>
     <string name="nav_tab_focus_ttf">@string/fzlt_cu_hei</string>
+    <string name="qianbailu_all_desp">所有类列表 </string>
 </resources>
