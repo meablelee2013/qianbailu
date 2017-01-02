@@ -25,7 +25,23 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
-
+ 
+        <!-- m主页面 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMIndicatorActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_indicator_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+      <!--   webview-->
+        <activity
+            android:name="com.open.qianbailu.activity.QianBaiLuWebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_webview_desp"  
+			>
+        </activity>
+        
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

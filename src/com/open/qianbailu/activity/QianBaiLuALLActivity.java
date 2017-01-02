@@ -87,7 +87,7 @@ public class QianBaiLuALLActivity extends CommonFragmentActivity implements OnIt
 			list.clear();
 			AllBean allBean;
 			for (ActivityInfo info : activities) {
-				if (QianBaiLuALLActivity.class.getName().equals(info.name)) {
+				if (!QianBaiLuALLActivity.class.getName().equals(info.name)) {
 					allBean = new AllBean(info.name, getResources().getString(info.descriptionRes));
 					list.add(allBean);
 				}
@@ -139,7 +139,7 @@ public class QianBaiLuALLActivity extends CommonFragmentActivity implements OnIt
 		// TODO Auto-generated method stub
 		Log.i(TAG, "listView item" + view.getId() + ";postion=" + (int) id + " ========onItemClick ");
 		AllBean bean = list.get((int) id);
-		if (bean != null && QianBaiLuALLActivity.class.getName().equals(bean.getClassName())) {
+		if (bean != null && !QianBaiLuALLActivity.class.getName().equals(bean.getClassName())) {
 			Intent intent = new Intent();
 			intent.setClassName(getPackageName(), bean.getClassName());
 			startActivity(intent);

@@ -41,7 +41,7 @@ import com.open.qianbailu.utils.UrlUtils;
 public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 	private static final String TAG = QianBaiLuWebViewActivity.class.getSimpleName();
 	private WebView webview;
-	private String url = UrlUtils.UMEI;
+	private String url = UrlUtils.QIAN_BAI_LU_M;
 
 	/*
 	 * (non-Javadoc)
