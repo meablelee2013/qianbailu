@@ -13,6 +13,7 @@ import com.open.qianbailu.activity.CommonFragmentActivity;
 import com.open.qianbailu.adapter.CommonFragmentPagerAdapter;
 import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.fragment.CommonV4Fragment;
+import com.open.qianbailu.fragment.m.QianBaiLuNavMExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
 import com.open.qianbailu.utils.UrlUtils;
@@ -80,10 +81,15 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 		list.clear();
 		list.addAll(result.getList());
 		titleList.clear();
+		
+		Fragment fragment;
 		for (NavMBean bean : result.getList()) {
 			titleList.add(bean.getTitle());
-//			Fragment fragment = UmeiMNavGridHeadFootFragment.newInstance(bean.getHref(),false);
-			Fragment fragment = CommonV4Fragment.newInstance();
+			if(bean.getTitle().equals("首页")){
+				fragment = QianBaiLuNavMExpandableListFragment.newInstance(url, true);
+			}else{
+				fragment = CommonV4Fragment.newInstance();
+			}
 			listRankFragment.add(fragment);
 		}
 		mRankPagerAdapter.notifyDataSetChanged();

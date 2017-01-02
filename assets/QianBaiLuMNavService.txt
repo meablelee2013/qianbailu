@@ -1,0 +1,216 @@
+01-02 13:43:14.967: I/CommonFragmentActivity(17177): listView item-1;postion=0 ========onItemClick 
+01-02 13:43:14.967: I/Timeline(17177): Timeline: Activity_launch_request time:67262986
+01-02 13:43:15.010: I/QianBaiLuMNavService(17177): url = http://m.100av.us/?
+01-02 13:43:15.013: I/DpmTcmClient(17177): RegisterTcmMonitor from: com.android.okhttp.TcmIdleTimerMonitor
+01-02 13:43:15.597: I/QianBaiLuMNavService(17177): i==0;hrefa==vlist.php;titlea==电影
+01-02 13:43:15.597: I/QianBaiLuMNavService(17177): i==1;hrefa==blist.php?bclassid=11;titlea==图库
+01-02 13:43:15.597: I/QianBaiLuMNavService(17177): i==2;hrefa==blist.php?bclassid=1;titlea==小说
+01-02 13:43:15.666: W/FragmentManager(17177): moveToState: Fragment state for CommonV4Fragment{3127c3f #0 id=0x7f060014 android:switcher:2131099668:1} not updated inline; expected state 3 found 2
+01-02 13:43:15.671: I/art(17177): Background sticky concurrent mark sweep GC freed 30546(1930KB) AllocSpace objects, 12(456KB) LOS objects, 18% free, 14MB/17MB, paused 5.737ms total 30.579ms
+01-02 13:43:15.854: I/QianBaiLuMNavService(17177): url = http://m.100av.us/?
+01-02 13:43:16.233: I/System.out(17177): <!DOCTYPE html>
+01-02 13:43:16.233: I/System.out(17177): <html>
+01-02 13:43:16.233: I/System.out(17177):  <head> 
+01-02 13:43:16.233: I/System.out(17177):   <script src="//i.443.org/m/js/muaredirect.js?201601223" type="text/javascript"></script> 
+01-02 13:43:16.233: I/System.out(17177):   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+01-02 13:43:16.233: I/System.out(17177):   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"> 
+01-02 13:43:16.233: I/System.out(17177):   <meta name="applicable-device" content="mobile"> 
+01-02 13:43:16.233: I/System.out(17177):   <title>千百撸</title> 
+01-02 13:43:16.233: I/System.out(17177):   <meta name="keywords" content="千百撸,狠狠撸,加多撸,狠狠撸最新网址"> 
+01-02 13:43:16.233: I/System.out(17177):   <meta name="description" content="千百撸手机版"> 
+01-02 13:43:16.233: I/System.out(17177):   <link rel="apple-touch-icon" href="favicon.ico"> 
+01-02 13:43:16.233: I/System.out(17177):   <link rel="stylesheet" type="text/css" href="//i.443.org/m/css/style.css"> 
+01-02 13:43:16.233: I/System.out(17177):   <script src="//apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script> 
+01-02 13:43:16.233: I/System.out(17177):  </head> 
+01-02 13:43:16.234: I/System.out(17177):  <body> 
+01-02 13:43:16.234: I/System.out(17177):   <div class="cont"> 
+01-02 13:43:16.234: I/System.out(17177):    <div class="top"> 
+01-02 13:43:16.234: I/System.out(17177):     <a name="toTop"></a> 
+01-02 13:43:16.234: I/System.out(17177):     <a href="wap.php"> 
+01-02 13:43:16.234: I/System.out(17177):      <div class="logo">
+01-02 13:43:16.234: I/System.out(17177):       <img src="//i.443.org/m/images/logo.gif" height="44px">
+01-02 13:43:16.234: I/System.out(17177):      </div> </a> 
+01-02 13:43:16.234: I/System.out(17177):     <div class="channelName">
+01-02 13:43:16.234: I/System.out(17177):      首页
+01-02 13:43:16.234: I/System.out(17177):     </div> 
+01-02 13:43:16.234: I/System.out(17177):     <a href="search.php" class="search"></a> 
+01-02 13:43:16.234: I/System.out(17177):    </div> 
+01-02 13:43:16.234: I/System.out(17177):    <div class="nav float" style="height:auto"> 
+01-02 13:43:16.234: I/System.out(17177):     <ul class="nav_ul">
+01-02 13:43:16.234: I/System.out(17177):      <li><a href="vlist.php">电影</a></li>
+01-02 13:43:16.234: I/System.out(17177):      <li><a href="blist.php?bclassid=11">图库</a></li>
+01-02 13:43:16.234: I/System.out(17177):      <li><a href="blist.php?bclassid=1">小说</a></li>
+01-02 13:43:16.234: I/System.out(17177):     </ul> 
+01-02 13:43:16.234: I/System.out(17177):    </div> 
+01-02 13:43:16.234: I/System.out(17177):    <div class="ad screem640"> 
+01-02 13:43:16.234: I/System.out(17177):     <span> 
+01-02 13:43:16.234: I/System.out(17177):      <!-- 广告位：m横幅1 --> <script type="text/javascript" src="/js/m1.js" charset="utf-8"></script> </span> 
+01-02 13:43:16.234: I/System.out(17177):    </div> 
+01-02 13:43:16.234: I/System.out(17177):    <div class="float" style="margin-top:10px"> 
+01-02 13:43:16.234: I/System.out(17177):     <div class="moduleTitle"> 
+01-02 13:43:16.234: I/System.out(17177):      <a href="vlist.php"> 
+01-02 13:43:16.234: I/System.out(17177):       <div class="titleLeft">
+01-02 13:43:16.234: I/System.out(17177):        <div class="blue"></div>电影
+01-02 13:43:16.234: I/System.out(17177):       </div></a> 
+01-02 13:43:16.234: I/System.out(17177):      <div class="link"> 
+01-02 13:43:16.234: I/System.out(17177):       <a href="vlist.php">更多</a>
+01-02 13:43:16.234: I/System.out(17177):      </div> 
+01-02 13:43:16.234: I/System.out(17177):     </div> 
+01-02 13:43:16.235: I/System.out(17177):     <div class="screem640"> 
+01-02 13:43:16.235: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.235: I/System.out(17177):       <div class="picNews"> 
+01-02 13:43:16.235: I/System.out(17177):        <div class="picKuL"> 
+01-02 13:43:16.235: I/System.out(17177):         <div class="picKuFilm"> 
+01-02 13:43:16.235: I/System.out(17177):          <a href="vshow.php?id=10241"> <img src="//mi3.1100lu.xyz/m/vod/2016-09-02/57c85f28a92e8.jpg"> </a> 
+01-02 13:43:16.235: I/System.out(17177):         </div> 
+01-02 13:43:16.235: I/System.out(17177):         <a href="vshow.php?id=10241" class="picTitle">最新加勒比 083116-244 ルナ玩交友游戏</a> 
+01-02 13:43:16.235: I/System.out(17177):        </div> 
+01-02 13:43:16.235: I/System.out(17177):        <div class="picKuR"> 
+01-02 13:43:16.235: I/System.out(17177):         <div class="picKuFilm"> 
+01-02 13:43:16.235: I/System.out(17177):          <a href="vshow.php?id=10238"> <img src="//mi3.1100lu.xyz/m/vod/2016-09-02/57c85efa2004b.jpg"> </a> 
+01-02 13:43:16.235: I/System.out(17177):         </div> 
+01-02 13:43:16.235: I/System.out(17177):         <a href="vshow.php?id=10238" class="picTitle">最新一本道 083116_373-001 吃饭男子的</a> 
+01-02 13:43:16.235: I/System.out(17177):        </div> 
+01-02 13:43:16.235: I/System.out(17177):       </div> 
+01-02 13:43:16.235: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.235: I/System.out(17177):        <a href="vshow.php?id=11137">最新pacopacomama 122816_232 露出温泉</a>
+01-02 13:43:16.235: I/System.out(17177):        <a href="vshow.php?id=11136">最新HEYZO 1362 性欲爆発-[成宫はるあ]</a>
+01-02 13:43:16.235: I/System.out(17177):        <a href="vshow.php?id=11135">最新 H0930 ori1446 [须田山 阳子 Yoko</a> 
+01-02 13:43:16.235: I/System.out(17177):       </div> 
+01-02 13:43:16.235: I/System.out(17177):      </div> 
+01-02 13:43:16.235: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.235: I/System.out(17177):       <div class="picNewsDisplay"> 
+01-02 13:43:16.235: I/System.out(17177):        <div class="picKuL"> 
+01-02 13:43:16.235: I/System.out(17177):         <div class="picKuFilm"> 
+01-02 13:43:16.235: I/System.out(17177):          <a href="vshow.php?id=7117"> <img src="//mi3.1100lu.xyz/m/vod/2016-03-13/56e58583c2905.jpg"> </a> 
+01-02 13:43:16.235: I/System.out(17177):         </div> 
+01-02 13:43:16.235: I/System.out(17177):         <a href="vshow.php?id=7117" class="picTitle">最新heyzo0889大空美绪【おおぞらみお</a> 
+01-02 13:43:16.235: I/System.out(17177):        </div> 
+01-02 13:43:16.235: I/System.out(17177):        <div class="picKuR"> 
+01-02 13:43:16.235: I/System.out(17177):         <div class="picKuFilm"> 
+01-02 13:43:16.235: I/System.out(17177):          <a href="vshow.php?id=7091"> <img src="//mi3.1100lu.xyz/m/vod/2016-03-13/56e5857b9016a.jpg"> </a> 
+01-02 13:43:16.235: I/System.out(17177):         </div> 
+01-02 13:43:16.235: I/System.out(17177):         <a href="vshow.php?id=7091" class="picTitle">最新一本道:音羽レオン Sky Angel 187 </a> 
+01-02 13:43:16.235: I/System.out(17177):        </div> 
+01-02 13:43:16.236: I/System.out(17177):       </div> 
+01-02 13:43:16.236: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="vshow.php?id=11134">最新gachin娘!gachi1083 熟成生11~[ナ</a>
+01-02 13:43:16.236: I/System.out(17177):        <a href="vshow.php?id=11133">最新加勒比 122816-335 かり美びあんず</a>
+01-02 13:43:16.236: I/System.out(17177):        <a href="vshow.php?id=11132">最新 C0930 hitozuma1196 [须田山 阳子</a> 
+01-02 13:43:16.236: I/System.out(17177):       </div> 
+01-02 13:43:16.236: I/System.out(17177):      </div> 
+01-02 13:43:16.236: I/System.out(17177):     </div> 
+01-02 13:43:16.236: I/System.out(17177):    </div> 
+01-02 13:43:16.236: I/System.out(17177):    <div class="ad screem640"> 
+01-02 13:43:16.236: I/System.out(17177):     <span> 
+01-02 13:43:16.236: I/System.out(17177):      <!-- 广告位：m横幅2 --> <script type="text/javascript" src="/js/m2.js" charset="utf-8"></script> </span> 
+01-02 13:43:16.236: I/System.out(17177):    </div> 
+01-02 13:43:16.236: I/System.out(17177):    <div class="float"> 
+01-02 13:43:16.236: I/System.out(17177):     <div class="moduleTitle"> 
+01-02 13:43:16.236: I/System.out(17177):      <a href="blist.php?bclassid=11"> 
+01-02 13:43:16.236: I/System.out(17177):       <div class="titleLeft">
+01-02 13:43:16.236: I/System.out(17177):        <div class="blue"></div>图库
+01-02 13:43:16.236: I/System.out(17177):       </div> </a> 
+01-02 13:43:16.236: I/System.out(17177):      <div class="link"> 
+01-02 13:43:16.236: I/System.out(17177):       <a href="blist.php?bclassid=11">更多</a> 
+01-02 13:43:16.236: I/System.out(17177):      </div> 
+01-02 13:43:16.236: I/System.out(17177):     </div> 
+01-02 13:43:16.236: I/System.out(17177):     <div class="screem640"> 
+01-02 13:43:16.236: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.236: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392984">金瓶梅 第一部第一回[30P]</a> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392983">赤月~奴隷兎1[40P]</a> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392982">二次黒猫のエロ画像が欲しいです</a> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392981">美女的忧郁-3[17P]</a> 
+01-02 13:43:16.236: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392980">娜美与罗宾的争夺 奇迹[26P]</a> 
+01-02 13:43:16.236: I/System.out(17177):       </div> 
+01-02 13:43:16.236: I/System.out(17177):      </div> 
+01-02 13:43:16.236: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.237: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392979">各种大奶妹妹的激情爱爱1[40]</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392978">穿越时空的公主1[40P]</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392977">二次黒猫のエロ画像が欲しいです</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392976">赤月~奴隷兎2[30P]</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=18&amp;id=392975">各种大奶妹妹的激情爱爱2[34P]</a> 
+01-02 13:43:16.237: I/System.out(17177):       </div> 
+01-02 13:43:16.237: I/System.out(17177):      </div> 
+01-02 13:43:16.237: I/System.out(17177):     </div> 
+01-02 13:43:16.237: I/System.out(17177):    </div> 
+01-02 13:43:16.237: I/System.out(17177):    <div class="ad screem640"> 
+01-02 13:43:16.237: I/System.out(17177):     <span> 
+01-02 13:43:16.237: I/System.out(17177):      <!-- 广告位：m横幅3 --> <script type="text/javascript" src="/js/m3.js" charset="utf-8"></script> </span> 
+01-02 13:43:16.237: I/System.out(17177):    </div> 
+01-02 13:43:16.237: I/System.out(17177):    <div class="float"> 
+01-02 13:43:16.237: I/System.out(17177):     <div class="moduleTitle"> 
+01-02 13:43:16.237: I/System.out(17177):      <a href="blist.php?bclassid=1"> 
+01-02 13:43:16.237: I/System.out(17177):       <div class="titleLeft">
+01-02 13:43:16.237: I/System.out(17177):        <div class="blue"></div>小说
+01-02 13:43:16.237: I/System.out(17177):       </div> </a> 
+01-02 13:43:16.237: I/System.out(17177):      <div class="link"> 
+01-02 13:43:16.237: I/System.out(17177):       <a href="blist.php?bclassid=1">更多</a> 
+01-02 13:43:16.237: I/System.out(17177):      </div> 
+01-02 13:43:16.237: I/System.out(17177):     </div> 
+01-02 13:43:16.237: I/System.out(17177):     <div class="screem640"> 
+01-02 13:43:16.237: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.237: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392910">猎美玉龙完作者∶寂灭天唐</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392909">魔性之女——婉仪的成魔之路</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392908">我和我的后姨母还有我的表姐妹们</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392907">被姐姐抓去一起洗澡~ 然后是色色</a> 
+01-02 13:43:16.237: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392906">我和姐姐疯狂的性，甜蜜的爱</a> 
+01-02 13:43:16.237: I/System.out(17177):       </div> 
+01-02 13:43:16.237: I/System.out(17177):      </div> 
+01-02 13:43:16.237: I/System.out(17177):      <div class="moduleCont"> 
+01-02 13:43:16.238: I/System.out(17177):       <div class="list"> 
+01-02 13:43:16.238: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392905">我和大姨姐的幸福生活</a> 
+01-02 13:43:16.238: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392904">我无意中发现了母亲手机里的偷情</a> 
+01-02 13:43:16.238: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392903">和场子妈咪恋爱，她竟然让我去试钟</a> 
+01-02 13:43:16.238: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392902">大学女生宿舍的春情（大学里的五朵</a> 
+01-02 13:43:16.238: I/System.out(17177):        <a href="show.php?classid=3&amp;id=392901">撞见女儿在自慰，我用肉棒把她喂</a> 
+01-02 13:43:16.238: I/System.out(17177):       </div> 
+01-02 13:43:16.238: I/System.out(17177):      </div> 
+01-02 13:43:16.238: I/System.out(17177):     </div> 
+01-02 13:43:16.238: I/System.out(17177):    </div> 
+01-02 13:43:16.238: I/System.out(17177):    <div class="bottom"> 
+01-02 13:43:16.238: I/System.out(17177):     <div class="bottomBox float"> 
+01-02 13:43:16.238: I/System.out(17177):      <a href="http://www.1111av.co/mindex.html">返回电脑版</a> 
+01-02 13:43:16.238: I/System.out(17177):      <a href="#toTop" style="border-left:solid 1px #3c88bc">返回顶部</a> 
+01-02 13:43:16.238: I/System.out(17177):     </div> 
+01-02 13:43:16.238: I/System.out(17177):    </div> 
+01-02 13:43:16.238: I/System.out(17177):    <div class="Right">
+01-02 13:43:16.238: I/System.out(17177):     千百撸移动版 http://m.100av.us
+01-02 13:43:16.238: I/System.out(17177):    </div> 
+01-02 13:43:16.238: I/System.out(17177):    <div style="display:none">
+01-02 13:43:16.238: I/System.out(17177):     <script src="//i.443.org/js/tongji.js"></script>
+01-02 13:43:16.238: I/System.out(17177):    </div> 
+01-02 13:43:16.238: I/System.out(17177):   </div>   
+01-02 13:43:16.238: I/System.out(17177):  </body>
+01-02 13:43:16.238: I/System.out(17177): </html>
+01-02 13:43:16.242: I/QianBaiLuMNavService(17177): i==0;titlea==电影
+01-02 13:43:16.242: I/QianBaiLuMNavService(17177): i==0;hrefa==vlist.php
+01-02 13:43:16.243: I/QianBaiLuMNavService(17177): i==0;y==0;src==//mi3.1100lu.xyz/m/vod/2016-09-02/57c85f28a92e8.jpg
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==0;picTitle==最新加勒比 083116-244 ルナ玩交友游戏;ahref==vshow.php?id=10241
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==1;src==//mi3.1100lu.xyz/m/vod/2016-09-02/57c85efa2004b.jpg
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==1;picTitle==最新一本道 083116_373-001 吃饭男子的;ahref==vshow.php?id=10238
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==2;src==//mi3.1100lu.xyz/m/vod/2016-03-13/56e58583c2905.jpg
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==2;picTitle==最新heyzo0889大空美绪【おおぞらみお;ahref==vshow.php?id=7117
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==3;src==//mi3.1100lu.xyz/m/vod/2016-03-13/56e5857b9016a.jpg
+01-02 13:43:16.244: I/QianBaiLuMNavService(17177): i==0;y==3;picTitle==最新一本道:音羽レオン Sky Angel 187;ahref==vshow.php?id=7091
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==0;y==0;aTitle==最新pacopacomama 122816_232 露出温泉;ahref==vshow.php?id=11137
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==0;y==1;aTitle==最新HEYZO 1362 性欲爆発-[成宫はるあ];ahref==vshow.php?id=11136
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==0;y==2;aTitle==最新 H0930 ori1446 [须田山 阳子 Yoko;ahref==vshow.php?id=11135
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==1;titlea==图库
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==1;hrefa==blist.php?bclassid=11
+01-02 13:43:16.245: I/QianBaiLuMNavService(17177): i==1;y==0;aTitle==金瓶梅 第一部第一回[30P];ahref==show.php?classid=18&id=392984
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==1;y==1;aTitle==赤月~奴隷兎1[40P];ahref==show.php?classid=18&id=392983
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==1;y==2;aTitle==二次黒猫のエロ画像が欲しいです;ahref==show.php?classid=18&id=392982
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==1;y==3;aTitle==美女的忧郁-3[17P];ahref==show.php?classid=18&id=392981
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==1;y==4;aTitle==娜美与罗宾的争夺 奇迹[26P];ahref==show.php?classid=18&id=392980
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;titlea==小说
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;hrefa==blist.php?bclassid=1
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;y==0;aTitle==猎美玉龙完作者∶寂灭天唐;ahref==show.php?classid=3&id=392910
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;y==1;aTitle==魔性之女——婉仪的成魔之路;ahref==show.php?classid=3&id=392909
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;y==2;aTitle==我和我的后姨母还有我的表姐妹们;ahref==show.php?classid=3&id=392908
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;y==3;aTitle==被姐姐抓去一起洗澡~ 然后是色色;ahref==show.php?classid=3&id=392907
+01-02 13:43:16.246: I/QianBaiLuMNavService(17177): i==2;y==4;aTitle==我和姐姐疯狂的性，甜蜜的爱;ahref==show.php?classid=3&id=392906
+01-02 13:43:16.302: E/libEGL(17177): call to OpenGL ES API with no current context (logged once per thread)
