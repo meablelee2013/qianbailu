@@ -103,7 +103,7 @@ public class QianBaiLuMIndicatorFragment extends BaseV4Fragment<NavMJson, QianBa
 			if(bean.getTitle().equals("首页")){
 				fragment = QianBaiLuNavMIndicatorExpandableListFragment.newInstance(url, true);
 			}else{
-				fragment = CommonV4Fragment.newInstance(bean.getHref(), true);
+				fragment = QianBaiLuMMovieListFragment.newInstance(bean.getHref(), false);
 			}
 			listRankFragment.add(fragment);
 		}

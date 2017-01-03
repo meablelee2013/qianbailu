@@ -100,7 +100,7 @@ public class QianBaiLuMNavService extends CommonService {
 			// .userAgent(UrlUtils.qianbailuAgent)
 					.timeout(10000).get();
 //			Log.i(TAG, doc.toString());
-			System.out.println(doc.toString());
+//			System.out.println(doc.toString());
 			try {
 				Elements moduleElements = doc.select("div.moduleTitle");
 				if (moduleElements != null && moduleElements.size() > 0) {

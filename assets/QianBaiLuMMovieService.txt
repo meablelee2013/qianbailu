@@ -1,0 +1,254 @@
+01-03 10:44:08.875: W/FragmentManager(15800): moveToState: Fragment state for CommonV4Fragment{e9f7839 #2 id=0x7f080015 android:switcher:2131230741:2} not updated inline; expected state 3 found 2
+01-03 10:44:09.124: I/CommonService(15800): url = http://m.100av.us/vlist.php?classid=1
+01-03 10:44:09.595: I/System.out(15800): <!DOCTYPE html>
+01-03 10:44:09.595: I/System.out(15800): <html>
+01-03 10:44:09.595: I/System.out(15800):  <head> 
+01-03 10:44:09.595: I/System.out(15800):   <script src="//i.443.org/m/js/muaredirect.js?201601223" type="text/javascript"></script> 
+01-03 10:44:09.595: I/System.out(15800):   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+01-03 10:44:09.595: I/System.out(15800):   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"> 
+01-03 10:44:09.596: I/System.out(15800):   <meta name="applicable-device" content="mobile"> 
+01-03 10:44:09.596: I/System.out(15800):   <title>亚洲</title> 
+01-03 10:44:09.596: I/System.out(15800):   <meta name="keywords" content="千百撸,狠狠撸,加多撸,狠狠撸最新网址"> 
+01-03 10:44:09.596: I/System.out(15800):   <meta name="description" content="千百撸手机版"> 
+01-03 10:44:09.596: I/System.out(15800):   <link rel="apple-touch-icon" href="favicon.ico"> 
+01-03 10:44:09.596: I/System.out(15800):   <link rel="stylesheet" type="text/css" href="//i.443.org/m/css/style.css"> 
+01-03 10:44:09.596: I/System.out(15800):   <script src="//apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script> 
+01-03 10:44:09.596: I/System.out(15800):   <link rel="stylesheet" type="text/css" href="//i.443.org/m/css/movie.css"> 
+01-03 10:44:09.596: I/System.out(15800):   <script src="//i.443.org/m/js/filmlist.js"></script> 
+01-03 10:44:09.596: I/System.out(15800):  </head> 
+01-03 10:44:09.596: I/System.out(15800):  <body> 
+01-03 10:44:09.596: I/System.out(15800):   <div class="cont"> 
+01-03 10:44:09.596: I/System.out(15800):    <div class="top"> 
+01-03 10:44:09.596: I/System.out(15800):     <a href="wap.php" name="toTop">
+01-03 10:44:09.596: I/System.out(15800):      <div class="logo">
+01-03 10:44:09.596: I/System.out(15800):       <img src="//i.443.org/m/images/logo.gif" height="44px">
+01-03 10:44:09.596: I/System.out(15800):      </div></a> 
+01-03 10:44:09.596: I/System.out(15800):     <div class="channelName">
+01-03 10:44:09.596: I/System.out(15800):      亚洲
+01-03 10:44:09.596: I/System.out(15800):     </div> 
+01-03 10:44:09.596: I/System.out(15800):     <a href="search.php" class="search"></a> 
+01-03 10:44:09.596: I/System.out(15800):    </div> 
+01-03 10:44:09.596: I/System.out(15800):    <div class="nav float" style="height:auto"> 
+01-03 10:44:09.596: I/System.out(15800):     <ul class="listnav_ul"> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="wap.php">首页</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=1" class="navActived" style="border:solid 1px #054674;">亚洲</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=2">制服</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=3">欧美</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=4">自拍</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=5">三级</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=6">虐待</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=7">变态</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=8">动漫</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=9">亚洲在线</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=10">制服在线</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=11">欧美在线</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=12">自拍在线</a></li> 
+01-03 10:44:09.596: I/System.out(15800):      <li><a href="vlist.php?classid=13">动漫在线</a></li> 
+01-03 10:44:09.596: I/System.out(15800):     </ul> 
+01-03 10:44:09.596: I/System.out(15800):    </div> 
+01-03 10:44:09.596: I/System.out(15800):    <div class="ad screem640"> 
+01-03 10:44:09.596: I/System.out(15800):     <span> 
+01-03 10:44:09.596: I/System.out(15800):      <!-- 广告位：m横幅1 --> <script type="text/javascript" src="/js/m1.js" charset="utf-8"></script> 
+01-03 10:44:09.596: I/System.out(15800):      <!-- 广告位：m横幅2 --> <script type="text/javascript" src="/js/m2.js" charset="utf-8"></script> </span> 
+01-03 10:44:09.596: I/System.out(15800):    </div> 
+01-03 10:44:09.596: I/System.out(15800):    <div class="float screem640">
+01-03 10:44:09.596: I/System.out(15800):     <ul class="pages">
+01-03 10:44:09.597: I/System.out(15800):      <li><a href="/vlist.php?page=1&amp;classid=1" style="clolr:blue;" class="yes">下一页</a></li>&nbsp;
+01-03 10:44:09.597: I/System.out(15800):      <li><a href="/vlist.php?page=623&amp;classid=1" style="clolr:blue;" class="yes">尾页</a></li>&nbsp;
+01-03 10:44:09.597: I/System.out(15800):     </ul>
+01-03 10:44:09.597: I/System.out(15800):    </div> 
+01-03 10:44:09.597: I/System.out(15800):    <div class="float movieListScreem" id="content"> 
+01-03 10:44:09.597: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.597: I/System.out(15800):       <a href="vshow.php?id=11137"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697fc8645a.jpg"></a> 
+01-03 10:44:09.597: I/System.out(15800):      </div> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.597: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.597: I/System.out(15800):        <a href="vshow.php?id=11137">最新pacopacomama 122816_232 露</a>
+01-03 10:44:09.597: I/System.out(15800):       </div> 
+01-03 10:44:09.597: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11137">详 情</a> 
+01-03 10:44:09.597: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.597: I/System.out(15800):        <br> 
+01-03 10:44:09.597: I/System.out(15800):        <br> 
+01-03 10:44:09.597: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.597: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.597: I/System.out(15800):       </div> 
+01-03 10:44:09.597: I/System.out(15800):      </div> 
+01-03 10:44:09.597: I/System.out(15800):     </div> 
+01-03 10:44:09.597: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.597: I/System.out(15800):       <a href="vshow.php?id=11136"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697fa5e66f.jpg"></a> 
+01-03 10:44:09.597: I/System.out(15800):      </div> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.597: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.597: I/System.out(15800):        <a href="vshow.php?id=11136">最新HEYZO 1362 性欲爆発-[成宫</a>
+01-03 10:44:09.597: I/System.out(15800):       </div> 
+01-03 10:44:09.597: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11136">详 情</a> 
+01-03 10:44:09.597: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.597: I/System.out(15800):        <br> 
+01-03 10:44:09.597: I/System.out(15800):        <br> 
+01-03 10:44:09.597: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.597: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.597: I/System.out(15800):       </div> 
+01-03 10:44:09.597: I/System.out(15800):      </div> 
+01-03 10:44:09.597: I/System.out(15800):     </div> 
+01-03 10:44:09.597: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.597: I/System.out(15800):       <a href="vshow.php?id=11135"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697df2f902.jpg"></a> 
+01-03 10:44:09.597: I/System.out(15800):      </div> 
+01-03 10:44:09.597: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.597: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.597: I/System.out(15800):        <a href="vshow.php?id=11135">最新 H0930 ori1446 [须田山 阳</a>
+01-03 10:44:09.597: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11135">详 情</a> 
+01-03 10:44:09.598: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.598: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.598: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):     </div> 
+01-03 10:44:09.598: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.598: I/System.out(15800):       <a href="vshow.php?id=11134"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697c2e593a.jpg"></a> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.598: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.598: I/System.out(15800):        <a href="vshow.php?id=11134">最新gachin娘!gachi1083 熟成生1</a>
+01-03 10:44:09.598: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11134">详 情</a> 
+01-03 10:44:09.598: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.598: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.598: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):     </div> 
+01-03 10:44:09.598: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.598: I/System.out(15800):       <a href="vshow.php?id=11133"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697ad3da85.jpg"></a> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.598: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.598: I/System.out(15800):        <a href="vshow.php?id=11133">最新加勒比 122816-335 かり美び</a>
+01-03 10:44:09.598: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11133">详 情</a> 
+01-03 10:44:09.598: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <br> 
+01-03 10:44:09.598: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.598: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.598: I/System.out(15800):       </div> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):     </div> 
+01-03 10:44:09.598: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.598: I/System.out(15800):       <a href="vshow.php?id=11132"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866978f9663c.jpg"></a> 
+01-03 10:44:09.598: I/System.out(15800):      </div> 
+01-03 10:44:09.598: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.599: I/System.out(15800):        <a href="vshow.php?id=11132">最新 C0930 hitozuma1196 [须田</a>
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11132">详 情</a> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.599: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):      </div> 
+01-03 10:44:09.599: I/System.out(15800):     </div> 
+01-03 10:44:09.599: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.599: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.599: I/System.out(15800):       <a href="vshow.php?id=11131"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866977877aa5.jpg"></a> 
+01-03 10:44:09.599: I/System.out(15800):      </div> 
+01-03 10:44:09.599: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.599: I/System.out(15800):        <a href="vshow.php?id=11131">最新东京热 Tokyo Hot n1211 初</a>
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11131">详 情</a> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.599: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):      </div> 
+01-03 10:44:09.599: I/System.out(15800):     </div> 
+01-03 10:44:09.599: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.599: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.599: I/System.out(15800):       <a href="vshow.php?id=11130"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866975a880ac.jpg"></a> 
+01-03 10:44:09.599: I/System.out(15800):      </div> 
+01-03 10:44:09.599: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.599: I/System.out(15800):        <a href="vshow.php?id=11130">最新一本道 122816_453 モデルコ</a>
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11130">详 情</a> 
+01-03 10:44:09.599: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <br> 
+01-03 10:44:09.599: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.599: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.599: I/System.out(15800):       </div> 
+01-03 10:44:09.599: I/System.out(15800):      </div> 
+01-03 10:44:09.599: I/System.out(15800):     </div> 
+01-03 10:44:09.599: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.599: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.600: I/System.out(15800):       <a href="vshow.php?id=11129"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/58669750913f8.jpg"></a> 
+01-03 10:44:09.600: I/System.out(15800):      </div> 
+01-03 10:44:09.600: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.600: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.600: I/System.out(15800):        <a href="vshow.php?id=11129">最新东京热 Tokyo Hot k1413 饵</a>
+01-03 10:44:09.600: I/System.out(15800):       </div> 
+01-03 10:44:09.600: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11129">详 情</a> 
+01-03 10:44:09.600: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.600: I/System.out(15800):        <br> 
+01-03 10:44:09.600: I/System.out(15800):        <br> 
+01-03 10:44:09.600: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.600: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.600: I/System.out(15800):       </div> 
+01-03 10:44:09.600: I/System.out(15800):      </div> 
+01-03 10:44:09.600: I/System.out(15800):     </div> 
+01-03 10:44:09.600: I/System.out(15800):     <div class="movieBlock"> 
+01-03 10:44:09.600: I/System.out(15800):      <div class="movieList"> 
+01-03 10:44:09.600: I/System.out(15800):       <a href="vshow.php?id=11128"><img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866974c70556.jpg"></a> 
+01-03 10:44:09.600: I/System.out(15800):      </div> 
+01-03 10:44:09.600: I/System.out(15800):      <div class="movieDetail float"> 
+01-03 10:44:09.600: I/System.out(15800):       <div class="movieTitle">
+01-03 10:44:09.600: I/System.out(15800):        <a href="vshow.php?id=11128">最新东京热 Tokyo Hot k1412 饵</a>
+01-03 10:44:09.600: I/System.out(15800):       </div> 
+01-03 10:44:09.600: I/System.out(15800):       <a class="movieListPlay" href="vshow.php?id=11128">详 情</a> 
+01-03 10:44:09.600: I/System.out(15800):       <div class="movieDetails"> 
+01-03 10:44:09.600: I/System.out(15800):        <br> 
+01-03 10:44:09.600: I/System.out(15800):        <br> 
+01-03 10:44:09.600: I/System.out(15800):        <p>类型：<span>亚洲</span></p> 
+01-03 10:44:09.600: I/System.out(15800):        <p>时间：<span>12-31</span></p> 
+01-03 10:44:09.600: I/System.out(15800):       </div> 
+01-03 10:44:09.600: I/System.out(15800):      </div> 
+01-03 10:44:09.600: I/System.out(15800):     </div> 
+01-03 10:44:09.600: I/System.out(15800):    </div> 
+01-03 10:44:09.600: I/System.out(15800):    <div id="page" style="display:none">
+01-03 10:44:09.600: I/System.out(15800):     0
+01-03 10:44:09.600: I/System.out(15800):    </div> 
+01-03 10:44:09.600: I/System.out(15800):    <a class="moreCont" id="more" onclick="getNews('1');">加载更多</a> 
+01-03 10:44:09.600: I/System.out(15800):   </div> 
+01-03 10:44:09.600: I/System.out(15800):   <div class="ad screem640"> 
+01-03 10:44:09.600: I/System.out(15800):    <span> 
+01-03 10:44:09.600: I/System.out(15800):     <!-- 广告位：m横幅3 --> <script type="text/javascript" src="/js/m3.js" charset="utf-8"></script> </span> 
+01-03 10:44:09.600: I/System.out(15800):   </div> 
+01-03 10:44:09.600: I/System.out(15800):   <div class="bottom"> 
+01-03 10:44:09.600: I/System.out(15800):    <div class="bottomBox float"> 
+01-03 10:44:09.600: I/System.out(15800):     <a href="http://www.1111av.co/mindex.html">返回电脑版</a> 
+01-03 10:44:09.600: I/System.out(15800):     <a href="#toTop" style="border-left:solid 1px #3c88bc">返回顶部</a> 
+01-03 10:44:09.600: I/System.out(15800):    </div> 
+01-03 10:44:09.600: I/System.out(15800):   </div> 
+01-03 10:44:09.601: I/System.out(15800):   <div class="Right">
+01-03 10:44:09.601: I/System.out(15800):    千百撸移动版 http://m.100av.us
+01-03 10:44:09.601: I/System.out(15800):   </div> 
+01-03 10:44:09.601: I/System.out(15800):   <div style="display:none">
+01-03 10:44:09.601: I/System.out(15800):    <script src="//i.443.org/js/tongji.js"></script>
+01-03 10:44:09.601: I/System.out(15800):   </div>    
+01-03 10:44:09.601: I/System.out(15800):  </body>
+01-03 10:44:09.601: I/System.out(15800): </html>

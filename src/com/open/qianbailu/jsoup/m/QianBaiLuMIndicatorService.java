@@ -32,7 +32,7 @@ public class QianBaiLuMIndicatorService extends CommonService {
 			Document doc = Jsoup.connect(href)
 			// .userAgent(UrlUtils.qianbailuAgent)
 					.timeout(10000).get();
-			System.out.println(doc.toString());
+//			System.out.println(doc.toString());
 			try {
 				/**
 				 */
@@ -84,7 +84,7 @@ public class QianBaiLuMIndicatorService extends CommonService {
 			// .userAgent(UrlUtils.qianbailuAgent)
 					.timeout(10000).get();
 //			Log.i(TAG, doc.toString());
-			System.out.println(doc.toString());
+//			System.out.println(doc.toString());
 			try {
 				Elements moduleElements = doc.select("div.moduleTitle");
 				if (moduleElements != null && moduleElements.size() > 0) {

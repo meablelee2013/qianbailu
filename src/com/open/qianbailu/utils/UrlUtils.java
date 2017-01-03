@@ -28,6 +28,7 @@ public class UrlUtils {
 	public static final String QIAN_BAI_LU = "http://1111av.co/";
 	public static final String QIAN_BAI_LU_M = "http://m.100av.us/";
 	public static final String QIAN_BAI_LU_M_VLIST = "http://m.100av.us/vlist.php";
+	public static final String QIAN_BAI_LU_M_VLIST_CLASSID = "http://m.100av.us/vlist.php?classid=1";
 	
 	public static final String QIAN_BAI_LU_HTTP = "http:";
 	
