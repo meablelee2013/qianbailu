@@ -1,0 +1,388 @@
+01-03 10:18:03.350: I/CommonFragmentActivity(11697): listView item-1;postion=1 ========onItemClick 
+01-03 10:18:03.353: I/Timeline(11697): Timeline: Activity_launch_request time:14651299
+01-03 10:18:03.663: I/QianBaiLuMIndicatorService(11697): url = http://m.100av.us/vlist.php?
+01-03 10:18:05.735: I/System.out(11697): <!DOCTYPE html>
+01-03 10:18:05.735: I/System.out(11697): <html>
+01-03 10:18:05.735: I/System.out(11697):  <head> 
+01-03 10:18:05.735: I/System.out(11697):   <script src="//i.443.org/m/js/muaredirect.js?201601223" type="text/javascript"></script> 
+01-03 10:18:05.735: I/System.out(11697):   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+01-03 10:18:05.735: I/System.out(11697):   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"> 
+01-03 10:18:05.735: I/System.out(11697):   <meta name="applicable-device" content="mobile"> 
+01-03 10:18:05.735: I/System.out(11697):   <title>电影</title> 
+01-03 10:18:05.735: I/System.out(11697):   <meta name="keywords" content="千百撸,狠狠撸,加多撸,狠狠撸最新网址"> 
+01-03 10:18:05.735: I/System.out(11697):   <meta name="description" content="千百撸手机版"> 
+01-03 10:18:05.735: I/System.out(11697):   <link rel="apple-touch-icon" href="favicon.ico"> 
+01-03 10:18:05.735: I/System.out(11697):   <link rel="stylesheet" type="text/css" href="//i.443.org/m/css/style.css"> 
+01-03 10:18:05.735: I/System.out(11697):   <script src="//apps.bdimg.com/libs/jquery/1.9.0/jquery.min.js"></script> 
+01-03 10:18:05.735: I/System.out(11697):   <link rel="stylesheet" type="text/css" href="//i.443.org/m/css/movie.css"> 
+01-03 10:18:05.735: I/System.out(11697):  </head> 
+01-03 10:18:05.735: I/System.out(11697):  <body> 
+01-03 10:18:05.735: I/System.out(11697):   <div class="cont"> 
+01-03 10:18:05.735: I/System.out(11697):    <div class="top"> 
+01-03 10:18:05.735: I/System.out(11697):     <a href="wap.php" name="toTop">
+01-03 10:18:05.735: I/System.out(11697):      <div class="logo">
+01-03 10:18:05.735: I/System.out(11697):       <img src="//i.443.org/m/images/logo.gif" height="44px">
+01-03 10:18:05.735: I/System.out(11697):      </div></a> 
+01-03 10:18:05.735: I/System.out(11697):     <div class="channelName">
+01-03 10:18:05.735: I/System.out(11697):      电影
+01-03 10:18:05.735: I/System.out(11697):     </div> 
+01-03 10:18:05.735: I/System.out(11697):     <a href="search.php" class="search"></a> 
+01-03 10:18:05.735: I/System.out(11697):    </div> 
+01-03 10:18:05.735: I/System.out(11697):    <div class="nav float" style="height:auto"> 
+01-03 10:18:05.735: I/System.out(11697):     <ul class="listnav_ul"> 
+01-03 10:18:05.735: I/System.out(11697):      <li><a href="wap.php">首页</a></li> 
+01-03 10:18:05.735: I/System.out(11697):      <li><a href="vlist.php?classid=1">亚洲</a></li> 
+01-03 10:18:05.735: I/System.out(11697):      <li><a href="vlist.php?classid=2">制服</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=3">欧美</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=4">自拍</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=5">三级</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=6">虐待</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=7">变态</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=8">动漫</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=9">亚洲在线</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=10">制服在线</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=11">欧美在线</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=12">自拍在线</a></li> 
+01-03 10:18:05.736: I/System.out(11697):      <li><a href="vlist.php?classid=13">动漫在线</a></li> 
+01-03 10:18:05.736: I/System.out(11697):     </ul> 
+01-03 10:18:05.736: I/System.out(11697):    </div> 
+01-03 10:18:05.736: I/System.out(11697):    <div class="ad screem640"> 
+01-03 10:18:05.736: I/System.out(11697):     <span> 
+01-03 10:18:05.736: I/System.out(11697):      <!-- 广告位：m横幅1 --> <script type="text/javascript" src="/js/m1.js" charset="utf-8"></script> 
+01-03 10:18:05.736: I/System.out(11697):      <!-- 广告位：m横幅2 --> <script type="text/javascript" src="/js/m2.js" charset="utf-8"></script> </span> 
+01-03 10:18:05.736: I/System.out(11697):    </div> 
+01-03 10:18:05.736: I/System.out(11697):    <div class="float"> 
+01-03 10:18:05.736: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.736: I/System.out(11697):      <a href="vlist.php?classid=1">
+01-03 10:18:05.736: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.736: I/System.out(11697):        亚洲
+01-03 10:18:05.736: I/System.out(11697):       </div></a> 
+01-03 10:18:05.736: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.736: I/System.out(11697):       <a href="vlist.php?classid=1">更多</a> 
+01-03 10:18:05.736: I/System.out(11697):      </div> 
+01-03 10:18:05.736: I/System.out(11697):     </div> 
+01-03 10:18:05.736: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.736: I/System.out(11697):      <a href="vshow.php?id=11137"> 
+01-03 10:18:05.736: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.736: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697fc8645a.jpg"> 
+01-03 10:18:05.736: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.736: I/System.out(11697):         最新pacopacomama 122816_232 露
+01-03 10:18:05.736: I/System.out(11697):        </div> 
+01-03 10:18:05.736: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.736: I/System.out(11697):      <a href="vshow.php?id=11136"> 
+01-03 10:18:05.736: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.736: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697fa5e66f.jpg"> 
+01-03 10:18:05.736: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.736: I/System.out(11697):         最新HEYZO 1362 性欲爆発-[成宫
+01-03 10:18:05.736: I/System.out(11697):        </div> 
+01-03 10:18:05.736: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.736: I/System.out(11697):      <a href="vshow.php?id=11135"> 
+01-03 10:18:05.736: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.736: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697df2f902.jpg"> 
+01-03 10:18:05.736: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.736: I/System.out(11697):         最新 H0930 ori1446 [须田山 阳
+01-03 10:18:05.737: I/System.out(11697):        </div> 
+01-03 10:18:05.737: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.737: I/System.out(11697):     </div> 
+01-03 10:18:05.737: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vshow.php?id=11134"> 
+01-03 10:18:05.737: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.737: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697c2e593a.jpg"> 
+01-03 10:18:05.737: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.737: I/System.out(11697):         最新gachin娘!gachi1083 熟成生1
+01-03 10:18:05.737: I/System.out(11697):        </div> 
+01-03 10:18:05.737: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vshow.php?id=11133"> 
+01-03 10:18:05.737: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.737: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586697ad3da85.jpg"> 
+01-03 10:18:05.737: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.737: I/System.out(11697):         最新加勒比 122816-335 かり美び
+01-03 10:18:05.737: I/System.out(11697):        </div> 
+01-03 10:18:05.737: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vshow.php?id=11132"> 
+01-03 10:18:05.737: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.737: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866978f9663c.jpg"> 
+01-03 10:18:05.737: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.737: I/System.out(11697):         最新 C0930 hitozuma1196 [须田
+01-03 10:18:05.737: I/System.out(11697):        </div> 
+01-03 10:18:05.737: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.737: I/System.out(11697):     </div> 
+01-03 10:18:05.737: I/System.out(11697):    </div> 
+01-03 10:18:05.737: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.737: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vlist.php?classid=2">
+01-03 10:18:05.737: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.737: I/System.out(11697):        制服
+01-03 10:18:05.737: I/System.out(11697):       </div></a> 
+01-03 10:18:05.737: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.737: I/System.out(11697):       <a href="vlist.php?classid=2">更多</a> 
+01-03 10:18:05.737: I/System.out(11697):      </div> 
+01-03 10:18:05.737: I/System.out(11697):     </div> 
+01-03 10:18:05.737: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vshow.php?id=11121"> 
+01-03 10:18:05.737: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.737: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/58669702813b9.jpg"> 
+01-03 10:18:05.737: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.737: I/System.out(11697):         最新加勒比 122616-333 美人家政
+01-03 10:18:05.737: I/System.out(11697):        </div> 
+01-03 10:18:05.737: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.737: I/System.out(11697):      <a href="vshow.php?id=11107"> 
+01-03 10:18:05.737: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.737: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/586160c6c98c6.jpg"> 
+01-03 10:18:05.738: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.738: I/System.out(11697):         最新HEYZO 1355 放课后美少女文
+01-03 10:18:05.738: I/System.out(11697):        </div> 
+01-03 10:18:05.738: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.738: I/System.out(11697):      <a href="vshow.php?id=11106"> 
+01-03 10:18:05.738: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.738: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/586160ba81b2e.jpg"> 
+01-03 10:18:05.738: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.738: I/System.out(11697):         最新pacopacomama 122416_228 丈
+01-03 10:18:05.738: I/System.out(11697):        </div> 
+01-03 10:18:05.738: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.738: I/System.out(11697):     </div> 
+01-03 10:18:05.738: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.738: I/System.out(11697):      <a href="vshow.php?id=11103"> 
+01-03 10:18:05.738: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.738: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/5861609c98833.jpg"> 
+01-03 10:18:05.738: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.738: I/System.out(11697):         最新天然素人 122316_01 泥酔い
+01-03 10:18:05.738: I/System.out(11697):        </div> 
+01-03 10:18:05.738: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.738: I/System.out(11697):      <a href="vshow.php?id=11100"> 
+01-03 10:18:05.738: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.738: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58616083b5640.jpg"> 
+01-03 10:18:05.738: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.738: I/System.out(11697):         最新加勒比 122216-329 中出圣诞
+01-03 10:18:05.738: I/System.out(11697):        </div> 
+01-03 10:18:05.738: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.738: I/System.out(11697):      <a href="vshow.php?id=11099"> 
+01-03 10:18:05.738: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.738: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58616078a6815.jpg"> 
+01-03 10:18:05.738: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.738: I/System.out(11697):         最新东京热Tokyo Hot n1210 美人
+01-03 10:18:05.738: I/System.out(11697):        </div> 
+01-03 10:18:05.738: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.738: I/System.out(11697):     </div> 
+01-03 10:18:05.738: I/System.out(11697):    </div> 
+01-03 10:18:05.738: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.738: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.738: I/System.out(11697):      <a href="vlist.php?classid=3">
+01-03 10:18:05.738: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.738: I/System.out(11697):        欧美
+01-03 10:18:05.738: I/System.out(11697):       </div></a> 
+01-03 10:18:05.738: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.738: I/System.out(11697):       <a href="vlist.php?classid=3">更多</a> 
+01-03 10:18:05.738: I/System.out(11697):      </div> 
+01-03 10:18:05.739: I/System.out(11697):     </div> 
+01-03 10:18:05.739: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11126"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866970c75398.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         EuroSexParties - Angelica Hear
+01-03 10:18:05.739: I/System.out(11697):        </div> 
+01-03 10:18:05.739: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11123"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/5866970a21674.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         Blacked - Lena Paul, Angela Wh
+01-03 10:18:05.739: I/System.out(11697):        </div> 
+01-03 10:18:05.739: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11119"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586696f53062a.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         ZZSeries - Jillian Janson, Len
+01-03 10:18:05.739: I/System.out(11697):        </div> 
+01-03 10:18:05.739: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.739: I/System.out(11697):     </div> 
+01-03 10:18:05.739: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11117"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586696e91773f.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         RealWifeStories - Elsa Jean, O
+01-03 10:18:05.739: I/System.out(11697):        </div> 
+01-03 10:18:05.739: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11082"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58615fd966b33.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         RoundAndBrown - Kendall Woods 
+01-03 10:18:05.739: I/System.out(11697):        </div> 
+01-03 10:18:05.739: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.739: I/System.out(11697):      <a href="vshow.php?id=11081"> 
+01-03 10:18:05.739: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.739: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58615fd74a515.jpg"> 
+01-03 10:18:05.739: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.739: I/System.out(11697):         StreetLatinas - Annika Eve - C
+01-03 10:18:05.740: I/System.out(11697):        </div> 
+01-03 10:18:05.740: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.740: I/System.out(11697):     </div> 
+01-03 10:18:05.740: I/System.out(11697):    </div> 
+01-03 10:18:05.740: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.740: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vlist.php?classid=4">
+01-03 10:18:05.740: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.740: I/System.out(11697):        自拍
+01-03 10:18:05.740: I/System.out(11697):       </div></a> 
+01-03 10:18:05.740: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.740: I/System.out(11697):       <a href="vlist.php?classid=4">更多</a> 
+01-03 10:18:05.740: I/System.out(11697):      </div> 
+01-03 10:18:05.740: I/System.out(11697):     </div> 
+01-03 10:18:05.740: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vshow.php?id=11122"> 
+01-03 10:18:05.740: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.740: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586696fd24315.jpg"> 
+01-03 10:18:05.740: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.740: I/System.out(11697):         约到一个高颜值性感女模特身材非
+01-03 10:18:05.740: I/System.out(11697):        </div> 
+01-03 10:18:05.740: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vshow.php?id=11118"> 
+01-03 10:18:05.740: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.740: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-31/586696f0f33d6.jpg"> 
+01-03 10:18:05.740: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.740: I/System.out(11697):         黑丝富婆找了个小伙子使劲操她
+01-03 10:18:05.740: I/System.out(11697):        </div> 
+01-03 10:18:05.740: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vshow.php?id=11089"> 
+01-03 10:18:05.740: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.740: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58615ffc780cb.jpg"> 
+01-03 10:18:05.740: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.740: I/System.out(11697):         情趣酒店内约上4S店的主管玩道具
+01-03 10:18:05.740: I/System.out(11697):        </div> 
+01-03 10:18:05.740: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.740: I/System.out(11697):     </div> 
+01-03 10:18:05.740: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vshow.php?id=11088"> 
+01-03 10:18:05.740: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.740: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58615ff5e1a5e.jpg"> 
+01-03 10:18:05.740: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.740: I/System.out(11697):         女神在浴缸内被我捆绑随意玩弄
+01-03 10:18:05.740: I/System.out(11697):        </div> 
+01-03 10:18:05.740: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.740: I/System.out(11697):      <a href="vshow.php?id=11085"> 
+01-03 10:18:05.740: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.740: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/58615feba5058.jpg"> 
+01-03 10:18:05.741: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.741: I/System.out(11697):         小骚货穿着粉红学生装在沙发上撅
+01-03 10:18:05.741: I/System.out(11697):        </div> 
+01-03 10:18:05.741: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.741: I/System.out(11697):      <a href="vshow.php?id=11064"> 
+01-03 10:18:05.741: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.741: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-23/585c0a1eccc92.jpg"> 
+01-03 10:18:05.741: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.741: I/System.out(11697):         身材非常曼妙的90后梦幻情人让我
+01-03 10:18:05.741: I/System.out(11697):        </div> 
+01-03 10:18:05.741: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.741: I/System.out(11697):     </div> 
+01-03 10:18:05.741: I/System.out(11697):    </div> 
+01-03 10:18:05.741: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.741: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.741: I/System.out(11697):      <a href="vlist.php?classid=5">
+01-03 10:18:05.741: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.741: I/System.out(11697):        三级
+01-03 10:18:05.741: I/System.out(11697):       </div></a> 
+01-03 10:18:05.741: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.741: I/System.out(11697):       <a href="vlist.php?classid=5">更多</a> 
+01-03 10:18:05.741: I/System.out(11697):      </div> 
+01-03 10:18:05.741: I/System.out(11697):     </div> 
+01-03 10:18:05.741: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.741: I/System.out(11697):      <a href="vshow.php?id=11096"> 
+01-03 10:18:05.741: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.741: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/5861605c94475.jpg"> 
+01-03 10:18:05.741: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.741: I/System.out(11697):         [意大利三级][情人,别为我哭泣]
+01-03 10:18:05.741: I/System.out(11697):        </div> 
+01-03 10:18:05.741: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.741: I/System.out(11697):      <a href="vshow.php?id=11094"> 
+01-03 10:18:05.741: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.741: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/5861603d5e6c9.jpg"> 
+01-03 10:18:05.741: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.741: I/System.out(11697):         [新加坡三级] 无限春光
+01-03 10:18:05.741: I/System.out(11697):        </div> 
+01-03 10:18:05.741: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.741: I/System.out(11697):      <a href="vshow.php?id=11092"> 
+01-03 10:18:05.741: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.741: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-27/5861601ea04e0.jpg"> 
+01-03 10:18:05.741: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.741: I/System.out(11697):         [意大利四级]九十九个妓女99
+01-03 10:18:05.741: I/System.out(11697):        </div> 
+01-03 10:18:05.741: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.741: I/System.out(11697):     </div> 
+01-03 10:18:05.742: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vshow.php?id=11069"> 
+01-03 10:18:05.742: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.742: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-23/585c0a6927dfb.jpg"> 
+01-03 10:18:05.742: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.742: I/System.out(11697):         [韩国三级]左邻右里.邻居的妻子
+01-03 10:18:05.742: I/System.out(11697):        </div> 
+01-03 10:18:05.742: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vshow.php?id=11066"> 
+01-03 10:18:05.742: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.742: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-23/585c0a5f18206.jpg"> 
+01-03 10:18:05.742: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.742: I/System.out(11697):         [韩国三级]切漫画The Cartoon
+01-03 10:18:05.742: I/System.out(11697):        </div> 
+01-03 10:18:05.742: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vshow.php?id=11039"> 
+01-03 10:18:05.742: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.742: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-21/585961957b2cf.jpg"> 
+01-03 10:18:05.742: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.742: I/System.out(11697):         [韩国三级] 小姨子的性梦
+01-03 10:18:05.742: I/System.out(11697):        </div> 
+01-03 10:18:05.742: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.742: I/System.out(11697):     </div> 
+01-03 10:18:05.742: I/System.out(11697):    </div> 
+01-03 10:18:05.742: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.742: I/System.out(11697):     <div class="moduleTitle"> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vlist.php?classid=6">
+01-03 10:18:05.742: I/System.out(11697):       <div class="titleLeft">
+01-03 10:18:05.742: I/System.out(11697):        虐待
+01-03 10:18:05.742: I/System.out(11697):       </div></a> 
+01-03 10:18:05.742: I/System.out(11697):      <div class="link"> 
+01-03 10:18:05.742: I/System.out(11697):       <a href="vlist.php?classid=6">更多</a> 
+01-03 10:18:05.742: I/System.out(11697):      </div> 
+01-03 10:18:05.742: I/System.out(11697):     </div> 
+01-03 10:18:05.742: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vshow.php?id=10940"> 
+01-03 10:18:05.742: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.742: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-10/584adc0324729.jpg"> 
+01-03 10:18:05.742: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.742: I/System.out(11697):         最新加勒比 120716-319 性欲処理
+01-03 10:18:05.742: I/System.out(11697):        </div> 
+01-03 10:18:05.742: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.742: I/System.out(11697):      <a href="vshow.php?id=10910"> 
+01-03 10:18:05.742: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.742: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-04/5843d00c62907.jpg"> 
+01-03 10:18:05.742: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.742: I/System.out(11697):         最新东京热 Tokyo Hot n1204 W姦
+01-03 10:18:05.742: I/System.out(11697):        </div> 
+01-03 10:18:05.742: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.743: I/System.out(11697):      <a href="vshow.php?id=10907"> 
+01-03 10:18:05.743: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.743: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-04/5843d0026cbb9.jpg"> 
+01-03 10:18:05.743: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.743: I/System.out(11697):         最新gachin娘!gachi1071 Ｍ女志愿1
+01-03 10:18:05.743: I/System.out(11697):        </div> 
+01-03 10:18:05.743: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.743: I/System.out(11697):     </div> 
+01-03 10:18:05.743: I/System.out(11697):     <div class="movieScreem"> 
+01-03 10:18:05.743: I/System.out(11697):      <a href="vshow.php?id=10889"> 
+01-03 10:18:05.743: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.743: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-12-02/584050fb28b9a.jpg"> 
+01-03 10:18:05.743: I/System.out(11697):        <div class="movieCover">
+01-03 10:18:05.743: I/System.out(11697):         最新加勒比 113016-314 紧缚研究
+01-03 10:18:05.743: I/System.out(11697):        </div> 
+01-03 10:18:05.743: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.748: I/System.out(11697):        </div> 
+01-03 10:18:05.749: I/System.out(11697):       </div> </a> 
+01-03 10:18:05.749: I/System.out(11697):     </div> 
+01-03 10:18:05.749: I/System.out(11697):        <img src="//mi3.1100lu.xyz/m/vod/2016-03-13/56e585853c9ba.jpg"> 
+01-03 10:18:05.751: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.752: I/System.out(11697):    <div class="float" style="margin-top:10px"> 
+01-03 10:18:05.752: I/System.out(11697):       <div class="movieHome"> 
+01-03 10:18:05.754: I/System.out(11697):         Young Lady Goes Horny While Wa
+01-03 10:18:05.754: I/System.out(11697):       </div> </a> 

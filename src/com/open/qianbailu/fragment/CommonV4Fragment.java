@@ -1,12 +1,14 @@
 package com.open.qianbailu.fragment;
 
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.open.qianbailu.R;
+import com.open.qianbailu.jsoup.CommonService;
 
 /**
  * ****************************************************************************************************************************************************************************
@@ -19,9 +21,13 @@ import com.open.qianbailu.R;
  * @description: ****************************************************************************************************************************************************************************
  */
 public class CommonV4Fragment extends BaseV4Fragment {
-
-    public static CommonV4Fragment newInstance() {
+	String url;
+	boolean isVisibleToUser;
+    public static CommonV4Fragment newInstance(String url,boolean isVisibleToUser) {
         CommonV4Fragment fragment = new CommonV4Fragment();
+        fragment.setFragment(fragment);
+        fragment.url  = url;
+        fragment.isVisibleToUser = isVisibleToUser;
         return fragment;
     }
 
@@ -41,8 +47,50 @@ public class CommonV4Fragment extends BaseV4Fragment {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 //		volleyJson("http://video.coral.qq.com/user/0/msg/v2?msgtype=reply&callback=messages3&msgid=&pageflag=1&reqnum=10&type=3&_=1481509025355");
+		
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.open.tencenttv.BaseV4Fragment#handlerMessage(android.os.Message)
+	 */
+	@Override
+	public void handlerMessage(Message msg) {
+		// TODO Auto-generated method stub
+		super.handlerMessage(msg);
+		switch (msg.what) {
+		case MESSAGE_HANDLER:
+			doAsync(this, this, this);
+			break;
+		default:
+			break;
+		}
+	}
+
+	/* (non-Javadoc)
+	 * @see com.open.qianbailu.fragment.BaseV4Fragment#call()
+	 */
+	@Override
+	public Object call() throws Exception {
+		// TODO Auto-generated method stub
+		if(isVisibleToUser){
+			CommonService.parse(url);
+		}
+		return super.call();
+	}
+
+	/* (non-Javadoc)
+	 * @see com.open.qianbailu.fragment.BaseV4Fragment#onCallback(java.lang.Object)
+	 */
+	@Override
+	public void onCallback(Object result) {
+		// TODO Auto-generated method stub
+		super.onCallback(result);
+	}
+	
+	
+	
 //	@Override
 //	public void volleyJson(final String href) {
 //		System.out.println("href=" + href);

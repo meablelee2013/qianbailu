@@ -86,9 +86,9 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 		for (NavMBean bean : result.getList()) {
 			titleList.add(bean.getTitle());
 			if(bean.getTitle().equals("首页")){
-				fragment = QianBaiLuNavMExpandableListFragment.newInstance(url, true);
+				fragment = QianBaiLuNavMExpandableListFragment.newInstance(bean.getHref(), true);
 			}else{
-				fragment = CommonV4Fragment.newInstance();
+				fragment = CommonV4Fragment.newInstance(bean.getHref(), false);
 			}
 			listRankFragment.add(fragment);
 		}

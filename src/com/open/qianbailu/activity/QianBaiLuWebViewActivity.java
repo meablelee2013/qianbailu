@@ -99,6 +99,7 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			// TODO Auto-generated method stub
+			Log.i("WebViewClientBase", "url==" + url);
 			return super.shouldOverrideUrlLoading(view, url);
 		}
 
