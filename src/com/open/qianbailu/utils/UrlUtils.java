@@ -35,6 +35,8 @@ public class UrlUtils {
 	/***图库**/
 	public static final String QIAN_BAI_LU_M_VLIST_B = "http://m.100av.us/blist.php?bclassid=11";
 	
+	public static final String QIAN_BAI_LU_M_VLIST_S = "http://m.100av.us/blist.php?bclassid=1";
+	
 	public static final String QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://m.100av.us/list.php?classid=12&style=0&bclassid=11";
 	/***图片地址**/
 	public static final String QIAN_BAI_LU_HTTP = "http:";

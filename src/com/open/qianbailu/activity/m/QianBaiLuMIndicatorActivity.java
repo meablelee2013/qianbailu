@@ -15,6 +15,7 @@ import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.fragment.CommonV4Fragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMBIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMIndicatorFragment;
+import com.open.qianbailu.fragment.m.QianBaiLuMSIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuNavMExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
@@ -94,7 +95,7 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 			}else if(bean.getTitle().equals("图库")){
 				fragment = QianBaiLuMBIndicatorFragment.newInstance(bean.getHref(), false);
 			}else{
-				fragment = CommonV4Fragment.newInstance(bean.getHref(), false);
+				fragment = QianBaiLuMSIndicatorFragment.newInstance(bean.getHref(), false);
 			}
 			listRankFragment.add(fragment);
 		}
