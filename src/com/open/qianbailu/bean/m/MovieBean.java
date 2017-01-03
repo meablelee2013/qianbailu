@@ -48,59 +48,66 @@ import com.open.qianbailu.bean.CommonBean;
  ***************************************************************************************************************************************************************************** 
  */
 public class MovieBean extends CommonBean {
-	private String href;
-	private String src;
-	private String movieTitle;
-	private String movieListPlay;
-	private String type;
-	private String time;
+	// [{"id":"11127","title":"\\u6700\\u65b0HEYZO 1357 \\u7d9a\\u751f\\u4e2d~\\u53f6\\u5b50\\u66f4\\u7a81~[\\u6625\\u65e5","linkurl":"vshow.php?id=11127","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-31\\/5866972f8e0fb.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-31"},{"id":"11125","title":"\\u6700\\u65b0\\u5929\\u7136\\u7d20\\u4eba 122716_01 \\u4f60\\u9ad8\\u4ef7\\u5356\\u51fa\\u5cb8","linkurl":"vshow.php?id=11125","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-31\\/5866971752e8f.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-31"},{"id":"11124","title":"\\u6700\\u65b0\\u4e00\\u672c\\u9053 122716_452 \\u75f4\\u719f\\u5973\\u8fc7\\u6fc0\\u6e29\\u6cc9","linkurl":"vshow.php?id=11124","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-31\\/5866970c26fcc.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-31"},{"id":"11120","title":"\\u6700\\u65b0\\u52a0\\u52d2\\u6bd4 122716-334 \\u4f24\\u5fc3\\u65c5\\u884c\\u5728\\u505a\\u7231","linkurl":"vshow.php?id=11120","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-31\\/58669700e6284.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-31"},{"id":"11112","title":"\\u6700\\u65b0\\u52a0\\u52d2\\u6bd4 122416-331 \\u604b\\u5999\\u8bed~\\u5373\\u52b9\\u534a","linkurl":"vshow.php?id=11112","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/58616113d4a38.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"},{"id":"11111","title":"\\u6700\\u65b0pacopacomama 122316_227 \\u4e3b\\u5987\\u3069\\u3063","linkurl":"vshow.php?id=11111","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/5861610d18bda.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"},{"id":"11110","title":"\\u6700\\u65b0\\u4e00\\u672c\\u9053 122416_451 \\u540d\\u6a21\\u7cfb\\u5217 [\\u82b1\\u57ce","linkurl":"vshow.php?id=11110","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/58616106827c2.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"},{"id":"11109","title":"\\u6700\\u65b0HEYZO 1354\\u9752\\u6885\\u7af9\\u9a6c\\u957f\\u6210\\u8bb0- [\\u771f\\u9505","linkurl":"vshow.php?id=11109","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/586160f0c8be8.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"},{"id":"11108","title":"\\u6700\\u65b0H4610 ki161223 [\\u9152\\u4e95 \\u6075\\u7f8e Emi Sa","linkurl":"vshow.php?id=11108","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/586160d22c2f8.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"},{"id":"11105","title":"\\u6700\\u65b0H4610 ori1600 [\\u4e95\\u6298 \\u7eaa\\u5b50 Noriko ","linkurl":"vshow.php?id=11105","thumb":"\\/\\/mi3.1100lu.xyz\\/m\\/vod\\/2016-12-27\\/586160b9a4310.jpg","vmtype":"\\u4e9a\\u6d32","produceyear":"12-27"}]
+	// private String href;
+	// private String src;
+	// private String movieTitle;
+	// private String movieListPlay;
+	// private String type;
+	// private String time;
+	private String id;// 11124",
+	private String title;// 最新一本道 122716_452 痴熟女过激温泉",
+	private String linkurl;// vshow.php?id=11124",
+	private String thumb;// //mi3.1100lu.xyz/m/vod/2016-12-31/5866970c26fcc.jpg",
+	private String vmtype;// 亚洲",
+	private String produceyear;// 12-31"
 
-	public String getHref() {
-		return href;
+	public String getId() {
+		return id;
 	}
 
-	public void setHref(String href) {
-		this.href = href;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public String getSrc() {
-		return src;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setSrc(String src) {
-		this.src = src;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getMovieTitle() {
-		return movieTitle;
+	public String getLinkurl() {
+		return linkurl;
 	}
 
-	public void setMovieTitle(String movieTitle) {
-		this.movieTitle = movieTitle;
+	public void setLinkurl(String linkurl) {
+		this.linkurl = linkurl;
 	}
 
-	public String getMovieListPlay() {
-		return movieListPlay;
+	public String getThumb() {
+		return thumb;
 	}
 
-	public void setMovieListPlay(String movieListPlay) {
-		this.movieListPlay = movieListPlay;
+	public void setThumb(String thumb) {
+		this.thumb = thumb;
 	}
 
-	public String getType() {
-		return type;
+	public String getVmtype() {
+		return vmtype;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setVmtype(String vmtype) {
+		this.vmtype = vmtype;
 	}
 
-	public String getTime() {
-		return time;
+	public String getProduceyear() {
+		return produceyear;
 	}
 
-	public void setTime(String time) {
-		this.time = time;
+	public void setProduceyear(String produceyear) {
+		this.produceyear = produceyear;
 	}
 
 }

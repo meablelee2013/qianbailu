@@ -35,7 +35,7 @@ public class QianBaiLuMMovieService extends CommonService {
 			// .userAgent(UrlUtils.qianbailuAgent)
 					.timeout(10000).get();
 			// Log.i(TAG, doc.toString());
-			System.out.println(doc.toString());
+//			System.out.println(doc.toString());
 
 			/**
 			 * <div class="movieBlock"> 01-03 10:44:09.597: I/System.out(15800):
@@ -77,7 +77,7 @@ public class QianBaiLuMMovieService extends CommonService {
 								try {
 									String hrefa = movieElement.select("a").first().attr("href");
 									Log.i(TAG, "i==" + i + ";hrefa==" + hrefa);
-									movieBean.setHref(UrlUtils.QIAN_BAI_LU_M+hrefa);
+									movieBean.setLinkurl(UrlUtils.QIAN_BAI_LU_M+hrefa);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -85,7 +85,7 @@ public class QianBaiLuMMovieService extends CommonService {
 								try {
 									String src = movieElement.select("img").first().attr("src");
 									Log.i(TAG, "i==" + i + ";src==" + src);
-									movieBean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP+src);
+									movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP+src);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -100,7 +100,7 @@ public class QianBaiLuMMovieService extends CommonService {
 								try {
 									String movieTitle = movieTitleElement.select("a").first().text(); 
 									Log.i(TAG, "i==" + i + ";movieTitle==" + movieTitle);
-									movieBean.setMovieTitle(movieTitle);
+									movieBean.setTitle(movieTitle);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -120,7 +120,7 @@ public class QianBaiLuMMovieService extends CommonService {
 									 */
 									String type = movieDetailsElement.select("p").first().text().replace("<span>", "").replace("</span>", ""); 
 									Log.i(TAG, "i==" + i + ";type==" + type);
-									movieBean.setType(type);
+									movieBean.setVmtype(type);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
@@ -132,7 +132,7 @@ public class QianBaiLuMMovieService extends CommonService {
 									 */
 									String time = movieDetailsElement.select("p").get(1).text().replace("<span>", "").replace("</span>", ""); 
 									Log.i(TAG, "i==" + i + ";time==" + time);
-									movieBean.setTime(time);
+									movieBean.setProduceyear(time);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}

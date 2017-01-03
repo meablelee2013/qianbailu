@@ -62,14 +62,14 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 		}
 		final MovieBean bean = (MovieBean) getItem(position);
 		if (bean != null) {
-			viewHolder.text_movieTitle.setText(bean.getMovieTitle());
-			viewHolder.text_type.setText(bean.getType());
-			viewHolder.text_time.setText(bean.getTime());
+			viewHolder.text_movieTitle.setText(bean.getTitle());
+			viewHolder.text_type.setText(bean.getVmtype());
+			viewHolder.text_time.setText(bean.getProduceyear());
 
-			if (bean.getSrc() != null && bean.getSrc().length() > 0) {
+			if (bean.getThumb() != null && bean.getThumb().length() > 0) {
 				DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
 						.cacheInMemory().cacheOnDisc().build();
-				ImageLoader.getInstance().displayImage(bean.getSrc(), viewHolder.imageview, options, getImageLoadingListener());
+				ImageLoader.getInstance().displayImage(bean.getThumb(), viewHolder.imageview, options, getImageLoadingListener());
 			}
 		}
 		convertView.setOnClickListener(new OnClickListener() {

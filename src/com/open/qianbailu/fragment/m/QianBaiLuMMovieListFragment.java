@@ -14,6 +14,8 @@ package com.open.qianbailu.fragment.m;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
+
 import android.os.Bundle;
 import android.os.Message;
 import android.text.format.DateUtils;
@@ -25,6 +27,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -131,6 +140,7 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 		//http://m.100av.us/vlist.php?classid=1&page=1
 		//http://m.100av.us/jsonvlist.php?classid=1&page=1
 		mMovieJson.setList(QianBaiLuMMovieService.parseMovie(url, pageNo));
+//		volleyJson("http://m.100av.us/jsonvlist.php?classid=1&page=1");
 		return mMovieJson;
 	}
 
@@ -178,4 +188,36 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 			break;
 		}
 	}
+ 
+
+	/* (non-Javadoc)
+	 * @see com.open.qianbailu.fragment.BaseV4Fragment#onErrorResponse(com.android.volley.VolleyError)
+	 */
+	@Override
+	public void onErrorResponse(VolleyError error) {
+		// TODO Auto-generated method stub
+		super.onErrorResponse(error);
+	}
+	
+	@Override
+	public void volleyJson(final String href) {
+		RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+		StringRequest jsonObjectRequest = new StringRequest(Request.Method.GET, href, new Response.Listener<String>() {
+			@Override
+			public void onResponse(String response) {
+				System.out.println("href=" + href);
+				System.out.println("response=" + response);
+//				Gson gson = new Gson();
+//				
+//				String result = "{\"list\":"+response.toString()+"}";
+//				MovieJson mMovieJson= gson.fromJson(result, MovieJson.class);
+//				if (mMovieJson.getList() != null && mMovieJson.getList().size() > 0) {
+//					list.addAll(mMovieJson.getList());
+//				}
+//				mQianBaiLuMMovieListAdapter.notifyDataSetChanged();
+			}
+		}, QianBaiLuMMovieListFragment.this);
+		requestQueue.add(jsonObjectRequest);
+	}
+	
 }
