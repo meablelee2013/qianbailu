@@ -46,12 +46,12 @@ import com.open.qianbailu.utils.UrlUtils;
  */
 public class QianBaiLuMIndicatorFragment extends BaseV4Fragment<NavMJson, QianBaiLuMIndicatorFragment> {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST;
-	ArrayList<NavMBean> list = new ArrayList<NavMBean>();
-	ViewPager viewpager;
-	TabPageIndicator indicator;
-	List<String> titleList = new ArrayList<String>();
-	private List<Fragment> listRankFragment = new ArrayList<Fragment>();// view数组
-	CommonFragmentPagerAdapter mRankPagerAdapter;
+	public ArrayList<NavMBean> list = new ArrayList<NavMBean>();
+	public ViewPager viewpager;
+	public TabPageIndicator indicator;
+	public List<String> titleList = new ArrayList<String>();
+	public List<Fragment> listRankFragment = new ArrayList<Fragment>();// view数组
+	public CommonFragmentPagerAdapter mRankPagerAdapter;
 	
 	public static QianBaiLuMIndicatorFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMIndicatorFragment fragment = new QianBaiLuMIndicatorFragment();

@@ -13,6 +13,7 @@ import com.open.qianbailu.activity.CommonFragmentActivity;
 import com.open.qianbailu.adapter.CommonFragmentPagerAdapter;
 import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.fragment.CommonV4Fragment;
+import com.open.qianbailu.fragment.m.QianBaiLuMBIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuNavMExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
@@ -90,6 +91,8 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 				fragment = QianBaiLuNavMExpandableListFragment.newInstance(bean.getHref(), true);
 			}else if(bean.getTitle().equals("电影")){
 				fragment = QianBaiLuMIndicatorFragment.newInstance(bean.getHref(), false);
+			}else if(bean.getTitle().equals("图库")){
+				fragment = QianBaiLuMBIndicatorFragment.newInstance(bean.getHref(), false);
 			}else{
 				fragment = CommonV4Fragment.newInstance(bean.getHref(), false);
 			}

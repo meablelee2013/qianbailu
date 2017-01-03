@@ -10,4 +10,5 @@
     <string name="qianbailu_webview_desp">webview </string>
     <string name="qianbailu_m_indicator_desp">m主页面</string>
     <string name="qianbailu_m_indicator_f_desp">fragment电影</string>
+    <string name="qianbailu_m_b_indicator_f_desp">fragment图库</string>
 </resources>

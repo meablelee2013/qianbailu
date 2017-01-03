@@ -43,6 +43,14 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+         <!-- m fragment图库 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMBIndicatorFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_b_indicator_f_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
       <!--   webview-->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuWebViewActivity"
