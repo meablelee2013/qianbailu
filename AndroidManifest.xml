@@ -25,7 +25,22 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
- 
+       <!-- 主tab页面 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.MainTabActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+             android:description="@string/qianbailu_m_tab_desp" 
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" >
+        </activity>
+        <!--  fragment主页面 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMMainFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_main_desp" 
+			>
+        </activity>
         <!-- m主页面 -->
         <activity
             android:name="com.open.qianbailu.activity.m.QianBaiLuMIndicatorActivity"

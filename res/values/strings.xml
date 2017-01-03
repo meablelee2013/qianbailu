@@ -8,8 +8,15 @@
     <string name="nav_tab_focus_ttf">@string/fzlt_cu_hei</string>
     <string name="qianbailu_all_desp">所有类列表 </string>
     <string name="qianbailu_webview_desp">webview </string>
+    <string name="qianbailu_m_tab_desp">tab主页面</string>
     <string name="qianbailu_m_indicator_desp">m主页面</string>
+    <string name="qianbailu_m_main_desp">fragment主页面</string>
     <string name="qianbailu_m_indicator_f_desp">fragment电影</string>
     <string name="qianbailu_m_b_indicator_f_desp">fragment图库</string>
     <string name="qianbailu_m_s_indicator_f_desp">fragment小说</string>
+    
+     <string name="tab_main1">首页</string>
+	<string name="tab_main2">电影</string>
+	<string name="tab_main3">图库</string>
+	<string name="tab_main4">小说</string>
 </resources>
