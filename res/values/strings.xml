@@ -14,6 +14,7 @@
     <string name="qianbailu_m_indicator_f_desp">fragment电影</string>
     <string name="qianbailu_m_b_indicator_f_desp">fragment图库</string>
     <string name="qianbailu_m_s_indicator_f_desp">fragment小说</string>
+     <string name="qianbailu_m_show_image_list_desp">看图list</string>
     
      <string name="tab_main1">首页</string>
 	<string name="tab_main2">电影</string>

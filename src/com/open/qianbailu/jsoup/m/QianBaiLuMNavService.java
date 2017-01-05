@@ -219,4 +219,83 @@ public class QianBaiLuMNavService extends CommonService {
 		}
 		return list;
 	}
+	
+	public static List<NavMBean> parseMShowFoot(String href) {
+		List<NavMBean> list = new ArrayList<NavMBean>();
+		try {
+			href = makeURL(href, new HashMap<String, Object>() {
+				{
+				}
+			});
+			Log.i(TAG, "url = " + href);
+			Document doc = Jsoup.connect(href)
+			// .userAgent(UrlUtils.qianbailuAgent)
+					.timeout(10000).get();
+//			Log.i(TAG, doc.toString());
+//			System.out.println(doc.toString());
+			try {
+				Elements moduleElements = doc.select("div.moduleTitle");
+				if (moduleElements != null && moduleElements.size() > 0) {
+					for (int i = 0; i < moduleElements.size(); i++) {
+						NavMBean navbean = new NavMBean();
+						try {
+							Element titleLeftElement = moduleElements.get(i).select("div.titleLeft")
+								.first();
+							if (titleLeftElement != null) {
+								String titlea = titleLeftElement.text();
+								Log.i(TAG, "i==" + i    
+										+ ";titlea==" + titlea);
+								navbean.setTitle(titlea);
+							}
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
+						/**
+						 * <div class="list"> 
+01-02 12:02:37.130: I/QianBaiLuMNavService(32655):        <a href="vshow.php?id=11134">最新gachin娘!gachi1083 熟成生11~[ナ</a>
+01-02 12:02:37.130: I/QianBaiLuMNavService(32655):        <a href="vshow.php?id=11133">最新加勒比 122816-335 かり美びあんず</a>
+01-02 12:02:37.130: I/QianBaiLuMNavService(32655):        <a href="vshow.php?id=11132">最新 C0930 hitozuma1196 [须田山 阳子</a> 
+01-02 12:02:37.130: I/QianBaiLuMNavService(32655):       </div> 
+						 */
+						try {
+							Elements listElements = moduleElements.get(i).nextElementSibling().select("div.list");
+							List<NavMChildBean> clist = new ArrayList<NavMChildBean>();
+							for(int j=0;j<listElements.size();j++){
+								Elements aElements = listElements.get(j).select("a"); 
+									if(aElements!=null && aElements.size()>0){
+										NavMChildBean cbean;
+										for(int y=0;y<aElements.size();y++){
+											cbean = new NavMChildBean();
+											try {
+												Element aElement = aElements.get(y).select("a").first();
+												String aTitle = aElement.text();
+												String ahref = aElement.attr("href");
+												cbean.setTitle(aTitle);
+												cbean.setHref(UrlUtils.QIAN_BAI_LU_M+ahref);
+												Log.i(TAG, "i=="+i+";y=="+y+";aTitle=="+aTitle+";ahref=="+ahref);
+											
+											} catch (Exception e) {
+												e.printStackTrace();
+											}
+											clist.add(cbean);
+										}
+										navbean.setList(clist);
+									}
+								}
+							} catch (Exception e) {
+							e.printStackTrace();
+						}
+						list.add(navbean);
+					}
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

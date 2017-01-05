@@ -81,9 +81,9 @@ Response.Listener<JSONObject>, Response.ErrorListener {
 	 * @see android.support.v4.app.FragmentActivity#onCreate(android.os.Bundle)
 	 */
 	@Override
-	protected void onCreate(@Nullable Bundle arg0) {
+	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		super.onCreate(arg0);
+		super.onCreate(savedInstanceState);
 		mSharedPreferences =  getSharedPreferences(SHARE_NAME, Context.MODE_PRIVATE);
 	}
 

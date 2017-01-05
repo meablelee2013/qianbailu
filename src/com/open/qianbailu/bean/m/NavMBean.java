@@ -11,6 +11,8 @@ public class NavMBean extends CommonBean {
 	private List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
 	private List<NavMChildBean> list = new ArrayList<NavMChildBean>();
 
+	
+	
 	public String getTitle() {
 		return title;
 	}

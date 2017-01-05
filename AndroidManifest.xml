@@ -82,6 +82,15 @@
 			>
         </activity>
         
+         <!-- m 看图list -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_show_image_list_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+        
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
