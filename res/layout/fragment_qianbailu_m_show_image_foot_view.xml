@@ -7,8 +7,7 @@
         android:id="@+id/txt_moduleTitle"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" 
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
+        android:padding ="10dp"
         />
 
     <com.open.qianbailu.view.ExpendListView

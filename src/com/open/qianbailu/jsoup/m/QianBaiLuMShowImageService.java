@@ -12,13 +12,15 @@ import org.jsoup.select.Elements;
 import android.util.Log;
 
 import com.open.qianbailu.bean.m.ShowBean;
+import com.open.qianbailu.json.m.ShowJson;
 import com.open.qianbailu.jsoup.CommonService;
 import com.open.qianbailu.utils.UrlUtils;
 
 public class QianBaiLuMShowImageService extends CommonService {
 	public static final String TAG = QianBaiLuMShowImageService.class.getSimpleName();
 
-	public static List<ShowBean> parsePicture(String href) {
+	public static ShowJson parsePicture(String href) {
+		ShowJson mShowJson = new ShowJson();
 		List<ShowBean> list = new ArrayList<ShowBean>();
 		try {
 			href = makeURL(href, new HashMap<String, Object>() {
@@ -34,7 +36,40 @@ public class QianBaiLuMShowImageService extends CommonService {
 			// System.out.println(doc.toString());
 
 			/**
+			 * <div class="ljTitle">上一篇:<a href='show.php?id=388506&classid=13' style='color:#6f6f6f;'>割り切りバイト ささの遥[22P]</a></div>
+			<div class="ljTitle">下一篇:很抱歉已经没有了</div>
 			 */
+			try {
+				Element ljTitleElement = doc.select("div.ljTitle").first();
+				if(ljTitleElement!=null){
+					Element aElement  = ljTitleElement.select("a").first();
+					if(aElement!=null){
+						mShowJson.setPreHref(UrlUtils.QIAN_BAI_LU_M+aElement.attr("href"));
+						mShowJson.setPreTitle("上一篇:"+aElement.text());
+					}else{
+						mShowJson.setPreTitle(ljTitleElement.text());
+					}
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			try {
+				Element ljTitleElement = doc.select("div.ljTitle").get(1);
+				if(ljTitleElement!=null){
+					Element aElement  = ljTitleElement.select("a").first();
+					if(aElement!=null){
+						mShowJson.setNextHref(UrlUtils.QIAN_BAI_LU_M+aElement.attr("href"));
+						mShowJson.setNextTitle("上一篇:"+aElement.text());
+					}else{
+						mShowJson.setNextTitle(ljTitleElement.text());
+					}
+					
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 			Element divElement = doc.select("div.detailText").first();
 			if (divElement != null) {
 				Elements imgElements = divElement.select("img");
@@ -71,6 +106,7 @@ public class QianBaiLuMShowImageService extends CommonService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		mShowJson.setList(list);
+		return mShowJson;
 	}
 }
