@@ -132,8 +132,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 	@Override
 	public ShowJson call() throws Exception {
 		// TODO Auto-generated method stub
-		ShowJson mShowJson = new ShowJson();
-		mShowJson.setList(QianBaiLuMShowImageService.parsePicture(url));
+		ShowJson mShowJson = QianBaiLuMShowImageService.parsePicture(url);
 		return mShowJson;
 	}
 
@@ -155,6 +154,9 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 		mQianBaiLuMShowAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullRefreshListView.onRefreshComplete();
+		
+		text_pretitle.setText(result.getPreTitle());
+		text_nexttitle.setText(result.getNextTitle());
 	}
 
 	/*
