@@ -14,6 +14,8 @@ package com.open.qianbailu.fragment.m;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,6 +31,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView.OnTagClickListener;
 
@@ -162,9 +165,25 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
  thunder://QUFlZDJrOi8vfGZpbGV8cGFjby0wMTAzMTdfMDAxLm1wNHwxOTUzMjY0OTQ5fDc1OThDMkZBNEZBODk0M0RCNjExMkMzRDg4RjY3NTlDfGg9MkxFM0ZEVElDUzNMUFVRMk5LUDRSRjRLNjdHUk1XTEx8L1pa;title==迅雷下载
  xfplay://dna=BdydmZD2BdIcD0H2DGx3DxDWAHfcA0AfDZudm0e2AejgBdxWmZe3mD|dx=1953264949|mz=paco-010317_001.mp4|zx=nhE0pdOVlZe0mv41Ac4XBdDUmGH0BwxWBdaVrgMSnJ5R|zx=nhE0pdOVlZe0mv41Ac4XBdDUmGH0BwxWBdaVrgMSnJ5R;title==影音先锋第1集
 				 */
-				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(listd.get(position).getHref()));
-				intent.addCategory("android.intent.category.DEFAULT");
-				startActivity(intent);
+				
+				//打开百度云 com.baidu.netdisk
+				try{
+					//com.baidu.netdisk.ui.UrlLinkActivity
+//					Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage("com.baidu.netdisk");
+//					startActivity(intent);
+					ClipboardManager copy = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);  
+			                 copy.setText(listd.get(position).getHref()); 
+//					Intent intent = new Intent();
+//					intent.setClassName("com.baidu.netdisk", "com.baidu.netdisk.ui.MainActivity");
+//					intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//					startActivity(intent);
+			                 
+	                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(listd.get(position).getHref()));
+	 				intent.addCategory("android.intent.category.DEFAULT");
+	 				startActivity(intent);
+				}catch(Exception e){
+					e.printStackTrace();
+				}
 			}
 		});
 	}

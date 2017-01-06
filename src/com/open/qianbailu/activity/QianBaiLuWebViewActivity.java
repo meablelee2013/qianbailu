@@ -11,6 +11,7 @@
  */
 package com.open.qianbailu.activity;
 
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -102,6 +103,8 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 			// TODO Auto-generated method stub
 			Log.i("WebViewClientBase", "url==" + url);
 			if(url.contains("ed2k://|file") ||url.contains("thunder://") ||url.contains("thunder://")||url.contains("xfplay://")){
+				ClipboardManager copy = (ClipboardManager)  getSystemService(Context.CLIPBOARD_SERVICE);  
+                copy.setText(url); 
 				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
 				intent.addCategory("android.intent.category.DEFAULT");
 				startActivity(intent);
