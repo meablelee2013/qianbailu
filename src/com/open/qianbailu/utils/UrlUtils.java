@@ -53,6 +53,7 @@ public class UrlUtils {
 	
 	public static final String QIAN_BAI_LU_SEARCH = "http://m.100av.us/search.php";
 	public static final String QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/wap.php?q=东京热";
+	public static final String QIAN_BAI_LU_SEARCH_WAB = "https://1100.so/wap.php";
 	
 	public static String getCookie(){
 		return COOKIE;

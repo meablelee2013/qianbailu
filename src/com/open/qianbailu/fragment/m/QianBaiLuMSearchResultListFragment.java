@@ -56,7 +56,7 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 	public PullToRefreshListView mPullRefreshListView;
 	public QianBaiLuMSearchResultAdapter mQianBaiLuMSearchResultAdapter;
 	public List<SearchBean> list = new ArrayList<SearchBean>();
-	public int pageNo = 0;
+	public int pageNo = 1;
 	public int type = 1;
 
 	public static QianBaiLuMSearchResultListFragment newInstance(String url, boolean isVisibleToUser, int type) {
@@ -143,7 +143,7 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 	@Override
 	public SearchJson call() throws Exception {
 		SearchJson mSearchJson = new SearchJson();
-		mSearchJson.setResultlist(QianBaiLuMSearchService.parseSearchResult(url));
+		mSearchJson.setResultlist(QianBaiLuMSearchService.parseSearchResult(url,pageNo));
 		return mSearchJson;
 	}
 
@@ -162,7 +162,7 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
 			list.clear();
 			list.addAll(result.getResultlist());
-			pageNo = 0;
+			pageNo = 1;
 		} else {
 			if (result.getResultlist() != null && result.getResultlist().size() > 0) {
 				list.addAll(result.getResultlist());

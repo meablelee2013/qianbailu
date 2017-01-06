@@ -137,7 +137,11 @@ public class QianBaiLuMSearchResultActivity extends CommonFragmentActivity<Searc
 		for (SearchBean bean : result.getTypelist()) {
 			titleList.add(bean.getTitle());
 			String url2 = url+"&type="+bean.getType();
-			fragment = QianBaiLuMSearchResultListFragment.newInstance(url2, true,bean.getType());
+			if(bean.getType()==1){
+				fragment = QianBaiLuMSearchResultListFragment.newInstance(url2, true,bean.getType());
+			}else{
+				fragment = QianBaiLuMSearchResultListFragment.newInstance(url2, false,bean.getType());
+			}
 			listRankFragment.add(fragment);
 		}
 		 

@@ -74,9 +74,12 @@ public class QianBaiLuMSearchService extends CommonService {
 		return list;
 	}
 	
-	public static ArrayList<SearchBean> parseSearchResult(String href ) {
+	public static ArrayList<SearchBean> parseSearchResult(String href ,int pagerno) {
 		ArrayList<SearchBean> list = new ArrayList<SearchBean>();
 		try {
+			if(pagerno>1){
+				href = href  +"&p="+pagerno;
+			}
 			href = makeURL(href, new HashMap<String, Object>() {
 				{
 				}

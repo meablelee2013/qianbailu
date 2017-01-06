@@ -132,7 +132,7 @@ public class QianBaiLuMSearchActivity extends CommonFragmentActivity<SearchJson>
 				String search = edit_search.getText().toString();
 				String url2 = "";
 				try {
-					url2 = url+"?q="+URLEncoder.encode(search, "UTF-8");
+					url2 = UrlUtils.QIAN_BAI_LU_SEARCH_WAB+"?q="+URLEncoder.encode(search, "UTF-8");
 				} catch (UnsupportedEncodingException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
