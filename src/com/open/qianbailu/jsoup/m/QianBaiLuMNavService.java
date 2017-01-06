@@ -354,7 +354,7 @@ public class QianBaiLuMNavService extends CommonService {
 								}
 								
 								try {
-									Element aElement = picKuFilmElements.get(y).nextElementSibling().select("div.movieCover").first();
+									Element aElement = picKuFilmElements.get(y).select("div.movieCover").first();
 									String picTitle = aElement.text();
 									filmbean.setTitle(picTitle);
 									Log.i(TAG, "i=="+i+";y=="+y+";picTitle==" );
@@ -363,7 +363,7 @@ public class QianBaiLuMNavService extends CommonService {
 								}
 								
 								try {
-									Element aElement = picKuFilmElements.get(y).nextElementSibling().select("a").first();
+									Element aElement = picKuFilmElements.get(y).select("a").first();
 									String ahref = aElement.attr("href");
 									filmbean.setHref(UrlUtils.QIAN_BAI_LU_M+ahref);
 									Log.i(TAG, "i=="+i+";y=="+y+ ";ahref=="+ahref);

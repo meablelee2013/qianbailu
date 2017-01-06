@@ -19,9 +19,12 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
 
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuNavMPicGridViewAdapter;
 import com.open.qianbailu.bean.m.PicKuFilmBean;
 import com.open.qianbailu.fragment.BaseV4Fragment;
@@ -75,6 +78,21 @@ public class QianBaiLuMDianYingFootListFragment extends BaseV4Fragment<NavMJson,
 		super.initValues();
 		mQianBaiLuNavMPicGridViewAdapter = new QianBaiLuNavMPicGridViewAdapter(getActivity(), picKuL);
 		gridView.setAdapter(mQianBaiLuNavMPicGridViewAdapter);
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.open.qianbailu.fragment.BaseV4Fragment#bindEvent()
+	 */
+	@Override
+	public void bindEvent() {
+		// TODO Auto-generated method stub
+		super.bindEvent();
+//		gridView.setOnItemClickListener(new OnItemClickListener() {
+//			@Override
+//			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//				QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(getActivity(), picKuL.get((int)id).getHref());
+//			}
+//		});
 	}
 
 	/*
