@@ -11,10 +11,6 @@
  */
 package com.open.qianbailu.json.m;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.open.qianbailu.bean.m.ShowBean;
 import com.open.qianbailu.json.CommonJson;
 
 /**
@@ -28,23 +24,16 @@ import com.open.qianbailu.json.CommonJson;
  * @description:
  *****************************************************************************************************************************************************************************
  */
-public class ShowJson extends CommonJson {
-	private List<ShowBean> list = new ArrayList<ShowBean>();
+public class XiaoShuoJson extends CommonJson {
 	private String nextTitle;
 	private String preTitle;
 	private String nextHref;
 	private String preHref;
 	private String newsTitle;
 	private String neswTime;
+	private String detailText;
 	
-	public List<ShowBean> getList() {
-		return list;
-	}
-
-	public void setList(List<ShowBean> list) {
-		this.list = list;
-	}
-
+ 
 	public String getNextTitle() {
 		return nextTitle;
 	}
@@ -91,6 +80,14 @@ public class ShowJson extends CommonJson {
 
 	public void setNeswTime(String neswTime) {
 		this.neswTime = neswTime;
+	}
+
+	public String getDetailText() {
+		return detailText;
+	}
+
+	public void setDetailText(String detailText) {
+		this.detailText = detailText;
 	}
 
 	

@@ -72,6 +72,23 @@ public class QianBaiLuMShowImageService extends CommonService {
 			
 			Element divElement = doc.select("div.detailText").first();
 			if (divElement != null) {
+				
+				/**
+				 * <div class="detail">
+            <div class="newsTitle">発情-密著接吻極上痴女-1[40P]</div>
+            <p class="neswTime">更新时间:2016-09-23</p>
+                    </div>
+
+				 */
+				try {
+					Element detailElement = divElement.previousElementSibling();
+					mShowJson.setNewsTitle(detailElement.select("div.newsTitle").first().text());
+					mShowJson.setNeswTime(detailElement.select("p.neswTime").first().text());
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				
 				Elements imgElements = divElement.select("img");
 				if (imgElements != null && imgElements.size() > 0) {
 					ShowBean movieBean;

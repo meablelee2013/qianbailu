@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefresh.library.PullToRefreshScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pull_refresh_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/text_newstitle"
+    android:footerDividersEnabled="false"
+    android:headerDividersEnabled="false"
+    android:scrollbars="vertical"
+    android:smoothScrollbar="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/text_newstitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+        
+        <TextView
+            android:id="@+id/text_detailText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+        
+        <include layout="@layout/layout_qianbailu_m_show_image_foot" 
+            />
+    </LinearLayout>
+</com.handmark.pulltorefresh.library.PullToRefreshScrollView>

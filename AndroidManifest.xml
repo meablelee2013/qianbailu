@@ -91,6 +91,15 @@
 			>
         </activity>
         
+        <!-- m 小说 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_xiao_shuo_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+        
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

@@ -57,11 +57,6 @@ public class QianBaiLuMPictureListAdapter extends CommonAdapter<MovieBean> {
 			viewHolder.text_movieTitle.setText(bean.getTitle());
 
 		}
-		convertView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-			}
-		});
 		return convertView;
 	}
 

@@ -36,6 +36,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMPictureListAdapter;
 import com.open.qianbailu.bean.m.MovieBean;
 import com.open.qianbailu.fragment.BaseV4Fragment;
@@ -121,6 +122,7 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
 	}
