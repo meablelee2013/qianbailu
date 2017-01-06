@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/text_moduleTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1f92d1"
+        android:padding="10dp"
+        android:text="最新pacopacomama 010" />
+
+    <ImageView
+        android:id="@+id/img_movieDetaiImg"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/text_moduleTitle"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/common_v4" />
+
+    <TextView
+        android:id="@+id/text_movie_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_moduleTitle"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/img_movieDetaiImg"
+        android:text="片名： 最新pacopacomama 010317_235 新年女体盛~巫女多次疯狂被中出~[大咲萌]" />
+
+    <TextView
+        android:id="@+id/text_movie_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_movie_name"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/img_movieDetaiImg"
+        android:text="类型： 亚洲" />
+
+    <TextView
+        android:id="@+id/text_movie_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_movie_type"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/img_movieDetaiImg"
+        android:text="时间： 2017-01-05 02:59:17" />
+
+    <TextView
+        android:id="@+id/text_moduleTitlep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_movieDetaiImg"
+        android:background="#1f92d1"
+        android:padding="10dp"
+        android:text="播放和下载(下载请先安装迅雷)" />
+
+    <co.lujun.androidtagview.TagContainerLayout
+        android:id="@+id/tagcontainerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_moduleTitlep"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        app:container_enable_drag="false"
+        app:container_gravity="center"
+        app:horizontal_interval="10dp"
+        app:tag_clickable="true"
+        app:tag_ripple_alpha="47"
+        app:tag_ripple_color="#000000"
+        app:tag_ripple_duration="2000"
+        app:tag_theme="pure_teal"
+        app:vertical_interval="10dp" />
+
+    <TextView
+        android:id="@+id/text_sec_info_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tagcontainerLayout"
+        android:background="#1f92d1"
+        android:padding="10dp"
+        android:text="影片介绍" />
+
+</RelativeLayout>

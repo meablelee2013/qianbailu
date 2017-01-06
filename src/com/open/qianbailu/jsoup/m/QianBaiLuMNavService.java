@@ -298,4 +298,98 @@ public class QianBaiLuMNavService extends CommonService {
 		}
 		return list;
 	}
+	
+	public static List<NavMBean> parseMDianyingFoot(String href) {
+		List<NavMBean> list = new ArrayList<NavMBean>();
+		try {
+			href = makeURL(href, new HashMap<String, Object>() {
+				{
+				}
+			});
+			Log.i(TAG, "url = " + href);
+			Document doc = Jsoup.connect(href)
+			// .userAgent(UrlUtils.qianbailuAgent)
+					.timeout(10000).get();
+//			Log.i(TAG, doc.toString());
+//			System.out.println(doc.toString());
+			try {
+				Elements moduleElements = doc.select("div.moduleTitle");
+				if (moduleElements != null && moduleElements.size() > 0) {
+					for (int i = 0; i < moduleElements.size(); i++) {
+						NavMBean navbean = new NavMBean();
+						try {
+							Element titleLeftElement = moduleElements.get(i).select("div.titleLeft")
+								.first();
+							if (titleLeftElement != null) {
+								String titlea = titleLeftElement.text();
+								Log.i(TAG, "i==" + i    
+										+ ";titlea==" + titlea);
+								navbean.setTitle(titlea);
+							}
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
+						//picKuFilm
+						Elements picKuFilmElements = moduleElements.get(i).nextElementSibling().select("div.movieHome");
+						if(picKuFilmElements!=null && picKuFilmElements.size()>0){
+							List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
+							PicKuFilmBean filmbean;
+							for(int y=0;y<picKuFilmElements.size();y++){
+								filmbean = new PicKuFilmBean();
+								try {
+									/**
+								<div class="movieHome">
+						         	<a href='vshow.php?id=10241'>
+						             <img src="//mi3.1100lu.xyz/m/vod/2016-09-02/57c85f28a92e8.jpg" /></a>
+						             <div class="movieCover">最新加勒比 083116-244 ルナ玩交友游戏</div>
+						         </div>
+									 */
+									Element imgElement = picKuFilmElements.get(y).select("img").first();
+									String src = imgElement.attr("src");
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP+src);
+									Log.i(TAG, "i=="+i+";y=="+y+";src=="+src);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								
+								try {
+									Element aElement = picKuFilmElements.get(y).nextElementSibling().select("div.movieCover").first();
+									String picTitle = aElement.text();
+									filmbean.setTitle(picTitle);
+									Log.i(TAG, "i=="+i+";y=="+y+";picTitle==" );
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								
+								try {
+									Element aElement = picKuFilmElements.get(y).nextElementSibling().select("a").first();
+									String ahref = aElement.attr("href");
+									filmbean.setHref(UrlUtils.QIAN_BAI_LU_M+ahref);
+									Log.i(TAG, "i=="+i+";y=="+y+ ";ahref=="+ahref);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								picKuL.add(filmbean);
+							}
+							navbean.setPicKuL(picKuL);
+						}
+						
+						if(navbean.getTitle().equals("热门推荐")){
+							list.add(navbean);
+						}
+						
+					}
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

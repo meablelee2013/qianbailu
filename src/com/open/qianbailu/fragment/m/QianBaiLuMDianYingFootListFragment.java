@@ -22,13 +22,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.open.qianbailu.R;
-import com.open.qianbailu.adapter.m.QianBaiLuMListAdapter;
-import com.open.qianbailu.bean.m.NavMChildBean;
+import com.open.qianbailu.adapter.m.QianBaiLuNavMPicGridViewAdapter;
+import com.open.qianbailu.bean.m.PicKuFilmBean;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
 import com.open.qianbailu.utils.UrlUtils;
-import com.open.qianbailu.view.ExpendListView;
+import com.open.qianbailu.view.ExpendGridView;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -41,15 +41,15 @@ import com.open.qianbailu.view.ExpendListView;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, QianBaiLuMShowFootListFragment> {
-	public String url = UrlUtils.QIAN_BAI_LU_SHOW;
-	public ExpendListView listview;
-	public QianBaiLuMListAdapter mQianBaiLuMListAdapter;
-	public List<NavMChildBean> list = new ArrayList<NavMChildBean>();
+public class QianBaiLuMDianYingFootListFragment extends BaseV4Fragment<NavMJson, QianBaiLuMDianYingFootListFragment> {
+	public String url = UrlUtils.QIAN_BAI_LU_MOVIE;
+	public ExpendGridView gridView;
+	public QianBaiLuNavMPicGridViewAdapter mQianBaiLuNavMPicGridViewAdapter;
+	public List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
 	private TextView txt_moduleTitle;
 
-	public static QianBaiLuMShowFootListFragment newInstance(String url, boolean isVisibleToUser) {
-		QianBaiLuMShowFootListFragment fragment = new QianBaiLuMShowFootListFragment();
+	public static QianBaiLuMDianYingFootListFragment newInstance(String url, boolean isVisibleToUser) {
+		QianBaiLuMDianYingFootListFragment fragment = new QianBaiLuMDianYingFootListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
@@ -58,8 +58,8 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_qianbailu_m_show_image_foot_view, container, false);
-		listview = (ExpendListView) view.findViewById(R.id.listview);
+		View view = inflater.inflate(R.layout.fragment_qianbailu_m_dianying_foot_view, container, false);
+		gridView = (ExpendGridView) view.findViewById(R.id.gridView);
 		txt_moduleTitle = (TextView) view.findViewById(R.id.txt_moduleTitle);
 		return view;
 	}
@@ -73,8 +73,8 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public void initValues() {
 		// TODO Auto-generated method stub
 		super.initValues();
-		mQianBaiLuMListAdapter = new QianBaiLuMListAdapter(getActivity(), list);
-		listview.setAdapter(mQianBaiLuMListAdapter);
+		mQianBaiLuNavMPicGridViewAdapter = new QianBaiLuNavMPicGridViewAdapter(getActivity(), picKuL);
+		gridView.setAdapter(mQianBaiLuNavMPicGridViewAdapter);
 	}
 
 	/*
@@ -86,7 +86,7 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuMNavService.parseMShowFoot(url));
+		mNavMJson.setList(QianBaiLuMNavService.parseMDianyingFoot(url));
 		return mNavMJson;
 	}
 
@@ -99,14 +99,12 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
-		list.clear();
+		picKuL.clear();
 		if(result.getList()!=null && result.getList().size()>0){
-			list.addAll(result.getList().get(0).getList());
-			mQianBaiLuMListAdapter.notifyDataSetChanged();
-			
+			picKuL.addAll(result.getList().get(0).getPicKuL());
+			mQianBaiLuNavMPicGridViewAdapter.notifyDataSetChanged();
 			txt_moduleTitle.setText(result.getList().get(0).getTitle());
 		}
-		
 	}
 
 	/*

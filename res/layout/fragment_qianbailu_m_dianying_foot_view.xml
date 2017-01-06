@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/txt_moduleTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" 
+        android:padding ="10dp"
+        android:background="#1f92d1"
+        />
+
+   <com.open.qianbailu.view.ExpendGridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clipChildren="false"
+        android:layout_below="@+id/txt_moduleTitle"
+        android:gravity="center_vertical"
+        android:horizontalSpacing="5dp"
+        android:numColumns="2"
+        android:scrollbars="none"
+        android:verticalSpacing="5dp" />
+
+</RelativeLayout>
