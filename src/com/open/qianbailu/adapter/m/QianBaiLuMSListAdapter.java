@@ -58,12 +58,6 @@ public class QianBaiLuMSListAdapter extends CommonAdapter<MovieBean> {
 			viewHolder.text_movieTitle.setText(bean.getTitle());
 
 		}
-		convertView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getLinkurl());
-			}
-		});
 		return convertView;
 	}
 

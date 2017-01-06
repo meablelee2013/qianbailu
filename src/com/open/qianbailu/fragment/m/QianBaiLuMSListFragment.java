@@ -11,9 +11,18 @@
  */
 package com.open.qianbailu.fragment.m;
 
+import android.text.format.DateUtils;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMSListAdapter;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMPictureService;
@@ -21,7 +30,7 @@ import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
- * 
+ * 小说列表
  * @author :fengguangjing
  * @createTime:2017-1-3上午11:00:44
  * @version:4.2.4
@@ -55,6 +64,40 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 		mPullRefreshListView.setMode(Mode.BOTH);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.open.umei.fragment.BaseV4Fragment#bindEvent()
+	 */
+	@Override
+	public void bindEvent() {
+		// TODO Auto-generated method stub
+		// Set a listener to be invoked when the list should be refreshed.
+		mPullRefreshListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				String label = DateUtils.formatDateTime(getActivity(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
+				// Update the LastUpdatedLabel
+				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
+				// Do work to refresh the list here.
+				if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
+					pageNo = 0;
+					weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+				} else if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_END) {
+					pageNo++;
+					weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+				}
+			}
+		});
+		mPullRefreshListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
+			}
+		});
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 * 

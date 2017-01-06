@@ -35,7 +35,7 @@ import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
- * 
+ * 小说
  * @author :fengguangjing
  * @createTime:2017-1-5下午5:05:17
  * @version:4.2.4
@@ -159,6 +159,8 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		text_newstitle.setText(result.getNewsTitle() + result.getNeswTime());
 		
 		text_detailText.setText(result.getDetailText());
+		
+		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 200);
 	}
 
 	/*
@@ -174,6 +176,9 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		switch (msg.what) {
 		case MESSAGE_HANDLER:
 			doAsync(this, this, this);
+			break;
+		case MESSAGE_DEFAULT_POSITION:
+			mPullToRefreshScrollView.getRefreshableView().scrollTo(0, 0);
 			break;
 		default:
 			break;
