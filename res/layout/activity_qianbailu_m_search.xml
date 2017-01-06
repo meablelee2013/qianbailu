@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1f92d1"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" >
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btn_search"
+            android:layout_toLeftOf="@+id/btn_search"
+            android:text="东京热" />
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="搜索" />
+
+        <co.lujun.androidtagview.TagContainerLayout
+            android:id="@+id/tagcontainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_search"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            app:container_enable_drag="false"
+            app:container_gravity="center"
+            app:horizontal_interval="10dp"
+            app:tag_clickable="true"
+            app:tag_ripple_alpha="47"
+            app:tag_ripple_color="#000000"
+            app:tag_ripple_duration="2000"
+            app:tag_theme="pure_teal"
+            app:vertical_interval="10dp" />
+
+        
+    </RelativeLayout>
+
+</RelativeLayout>

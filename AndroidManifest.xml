@@ -127,6 +127,21 @@
 			>
         </activity>
         
+          <!-- m 搜索 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMSearchActivity"
+            android:description="@string/qianbailu_m_search_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+         <!-- m 搜索结果 -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuMSearchResultActivity"
+            android:description="@string/qianbailu_m_search_result_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+        
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
