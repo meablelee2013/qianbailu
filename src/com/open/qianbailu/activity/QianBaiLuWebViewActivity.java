@@ -14,6 +14,7 @@ package com.open.qianbailu.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Log;
@@ -100,6 +101,12 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			// TODO Auto-generated method stub
 			Log.i("WebViewClientBase", "url==" + url);
+			if(url.contains("ed2k://|file") ||url.contains("thunder://") ||url.contains("thunder://")||url.contains("xfplay://")){
+				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+				intent.addCategory("android.intent.category.DEFAULT");
+				startActivity(intent);
+				return true;
+			}
 			return super.shouldOverrideUrlLoading(view, url);
 		}
 

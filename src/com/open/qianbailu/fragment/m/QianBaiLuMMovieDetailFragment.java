@@ -14,6 +14,8 @@ package com.open.qianbailu.fragment.m;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -155,6 +157,14 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 			}
 			@Override
 			public void onTagClick(int position, String text) {
+				/**
+				 * ed2k://|file|paco-010317_001.mp4|1953264949|7598C2FA4FA8943DB6112C3D88F6759C|h=2LE3FDTICS3LPUQ2NKP4RF4K67GRMWLL|/;title==电驴下载
+ thunder://QUFlZDJrOi8vfGZpbGV8cGFjby0wMTAzMTdfMDAxLm1wNHwxOTUzMjY0OTQ5fDc1OThDMkZBNEZBODk0M0RCNjExMkMzRDg4RjY3NTlDfGg9MkxFM0ZEVElDUzNMUFVRMk5LUDRSRjRLNjdHUk1XTEx8L1pa;title==迅雷下载
+ xfplay://dna=BdydmZD2BdIcD0H2DGx3DxDWAHfcA0AfDZudm0e2AejgBdxWmZe3mD|dx=1953264949|mz=paco-010317_001.mp4|zx=nhE0pdOVlZe0mv41Ac4XBdDUmGH0BwxWBdaVrgMSnJ5R|zx=nhE0pdOVlZe0mv41Ac4XBdDUmGH0BwxWBdaVrgMSnJ5R;title==影音先锋第1集
+				 */
+				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(listd.get(position).getHref()));
+				intent.addCategory("android.intent.category.DEFAULT");
+				startActivity(intent);
 			}
 		});
 	}
