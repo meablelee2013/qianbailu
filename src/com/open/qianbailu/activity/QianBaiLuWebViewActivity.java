@@ -26,6 +26,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import com.open.qianbailu.R;
+import com.open.qianbailu.utils.DownLoadUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -104,10 +105,8 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 			Log.i("WebViewClientBase", "url==" + url);
 			if(url.contains("ed2k://|file") ||url.contains("thunder://") ||url.contains("thunder://")||url.contains("xfplay://")){
 				ClipboardManager copy = (ClipboardManager)  getSystemService(Context.CLIPBOARD_SERVICE);  
-                copy.setText(url); 
-				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
-				intent.addCategory("android.intent.category.DEFAULT");
-				startActivity(intent);
+                copy.setText(url);
+                DownLoadUtils.downLoad(QianBaiLuWebViewActivity.this, url);
 				return true;
 			}
 			return super.shouldOverrideUrlLoading(view, url);
