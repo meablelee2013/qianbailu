@@ -24,9 +24,11 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.open.qianbailu.R;
-import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
+import com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterActivity;
+import com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterFragmentActivity;
 import com.open.qianbailu.adapter.CommonAdapter;
 import com.open.qianbailu.bean.m.ShowBean;
+import com.open.qianbailu.json.m.ShowJson;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -100,7 +102,11 @@ public class QianBaiLuMShowAdapter extends CommonAdapter<ShowBean> {
 		view.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getSrc());
+//				QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getSrc());
+				ShowJson mShowJson = new ShowJson();
+				mShowJson.setList(list);
+//				QianBaiLuShowPagerAdapterActivity.startQianBaiLuShowPagerAdapterActivity(mContext, mShowJson);
+				QianBaiLuShowPagerAdapterFragmentActivity.startQianBaiLuShowPagerAdapterFragmentActivity(mContext, mShowJson);
 			}
 		});
 		return view;

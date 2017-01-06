@@ -27,10 +27,8 @@ import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.CommonFragmentPagerAdapter;
 import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.fragment.BaseV4Fragment;
-import com.open.qianbailu.fragment.CommonV4Fragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**

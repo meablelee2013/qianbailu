@@ -17,8 +17,13 @@
      <string name="qianbailu_m_show_image_list_desp">看图list</string>
      <string name="qianbailu_m_xiao_shuo_desp">小说</string>
     <string name="qianbailu_m_movie_detail_desp">电影详细 </string>
+    <string name="qianbailu_m_show_viewpager_desp">图片viewpager </string>
+    <string name="qianbailu_m_show_viewpager_f_desp">图片fragment viewpager </string>
      <string name="tab_main1">首页</string>
 	<string name="tab_main2">电影</string>
 	<string name="tab_main3">图库</string>
 	<string name="tab_main4">小说</string>
+	<string name="save_picture">保存图片</string>  
+	<string name="save_picture_failed">保存失败</string>  
+	<string name="save_picture_success">图片成功保存至%s目录</string> 
 </resources>

@@ -108,6 +108,25 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+        
+         <!-- m 图片viewpager -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterActivity"
+            android:description="@string/qianbailu_m_show_viewpager_desp" 
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" 
+            android:screenOrientation="sensor"
+			>
+        </activity>
+        
+          <!-- m 图片fragment viewpager -->
+        <activity
+            android:name="com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterFragmentActivity"
+            android:description="@string/qianbailu_m_show_viewpager_f_desp" 
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize" 
+            android:screenOrientation="sensor"
+			>
+        </activity>
+        
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

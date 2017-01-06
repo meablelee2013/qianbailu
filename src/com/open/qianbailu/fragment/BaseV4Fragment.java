@@ -287,6 +287,7 @@ public class BaseV4Fragment<T,F extends BaseV4Fragment> extends Fragment impleme
 	
 	/** 默认位置 */
 	public static final int MESSAGE_DEFAULT_POSITION = 2000;
+	
 
 	/*
 	 * (non-Javadoc)

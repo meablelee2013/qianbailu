@@ -41,7 +41,6 @@ import com.open.qianbailu.adapter.m.QianBaiLuMPictureListAdapter;
 import com.open.qianbailu.bean.m.MovieBean;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.MovieJson;
-import com.open.qianbailu.jsoup.m.QianBaiLuMMovieService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMPictureService;
 import com.open.qianbailu.utils.UrlUtils;
 

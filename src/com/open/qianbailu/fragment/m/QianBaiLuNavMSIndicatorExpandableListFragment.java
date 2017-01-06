@@ -11,23 +11,8 @@
  */
 package com.open.qianbailu.fragment.m;
 
-import android.os.Bundle;
-import android.os.Message;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnGroupClickListener;
-import android.widget.ExpandableListView.OnGroupCollapseListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
-
-import com.open.qianbailu.R;
-import com.open.qianbailu.adapter.m.QianBaiLuNavMExpandableListAdapter;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMBIndicatorService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**

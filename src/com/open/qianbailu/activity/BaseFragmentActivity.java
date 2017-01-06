@@ -75,6 +75,9 @@ Response.Listener<JSONObject>, Response.ErrorListener {
 	/** 默认位置 */
 	public static final int MESSAGE_DEFAULT_POSITION = 6000;
 	
+	/** 设置为横竖屏 */
+	public static final int MESSAGE_SCREEN_ORIENTATION = 7000;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
