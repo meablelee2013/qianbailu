@@ -53,7 +53,7 @@ public class QianBaiLuMSearchResultAdapter extends CommonAdapter<SearchBean> {
 		}
 		final SearchBean bean = (SearchBean) getItem(position);
 		if (bean != null) {
-			viewHolder.text_movieTitle.setText(bean.getTitle());
+			viewHolder.text_movieTitle.setText(bean.getSeq()+" "+bean.getTitle());
 
 		}
 		return convertView;

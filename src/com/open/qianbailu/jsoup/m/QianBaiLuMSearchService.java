@@ -106,6 +106,7 @@ public class QianBaiLuMSearchService extends CommonService {
 									String hrefa = aElement.attr("href");
 									Log.i(TAG, "i==" + i + ";hrefa==" + hrefa);
 									sBean.setHref(hrefa);
+									sBean.setSeq(i);
 									sBean.setTitle(aElement.text().replace("<span style='color:red'>", "").replace("</span>", ""));
 								} catch (Exception e) {
 									e.printStackTrace();

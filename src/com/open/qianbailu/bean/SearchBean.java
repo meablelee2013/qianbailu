@@ -26,6 +26,7 @@ public class SearchBean extends CommonBean{
 	private String href;
 	private String title;
 	private int type;
+	private int seq;
 	public String getHref() {
 		return href;
 	}
@@ -43,6 +44,12 @@ public class SearchBean extends CommonBean{
 	}
 	public void setType(int type) {
 		this.type = type;
+	}
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	
 	
