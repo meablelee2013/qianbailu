@@ -22,6 +22,9 @@ import android.widget.TextView;
 
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.CommonAdapter;
 import com.open.qianbailu.bean.m.NavMChildBean;
 
@@ -53,7 +56,21 @@ public class QianBaiLuMListAdapter extends CommonAdapter<NavMChildBean> {
 		text_title.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getHref());
+				switch (bean.getType()) {
+				case 1:
+					QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(mContext,bean.getHref());
+					break;
+			    case 2:
+			    	QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(mContext,bean.getHref());
+					break;
+			    case 3:
+			    	QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(mContext, bean.getHref());
+				break;
+				default:
+					QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getHref());
+					break;
+				}
+				
 			}
 		});
 

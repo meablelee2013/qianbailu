@@ -192,6 +192,13 @@ public class QianBaiLuMNavService extends CommonService {
 												String ahref = aElement.attr("href");
 												cbean.setTitle(aTitle);
 												cbean.setHref(UrlUtils.QIAN_BAI_LU_M+ahref);
+												if(navbean.getTitle().equals("小说")){
+													cbean.setType(1);
+												}else if(navbean.getTitle().equals("图库")){
+													cbean.setType(2);
+												}else if(navbean.getTitle().equals("电影")){
+													cbean.setType(3);
+												}
 												Log.i(TAG, "i=="+i+";y=="+y+";aTitle=="+aTitle+";ahref=="+ahref);
 											
 											} catch (Exception e) {
@@ -220,7 +227,7 @@ public class QianBaiLuMNavService extends CommonService {
 		return list;
 	}
 	
-	public static List<NavMBean> parseMShowFoot(String href) {
+	public static List<NavMBean> parseMShowFoot(String href,int type) {
 		List<NavMBean> list = new ArrayList<NavMBean>();
 		try {
 			href = makeURL(href, new HashMap<String, Object>() {
@@ -272,6 +279,7 @@ public class QianBaiLuMNavService extends CommonService {
 												String aTitle = aElement.text();
 												String ahref = aElement.attr("href");
 												cbean.setTitle(aTitle);
+												cbean.setType(type);
 												cbean.setHref(UrlUtils.QIAN_BAI_LU_M+ahref);
 												Log.i(TAG, "i=="+i+";y=="+y+";aTitle=="+aTitle+";ahref=="+ahref);
 											

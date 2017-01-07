@@ -50,7 +50,7 @@ public class QianBaiLuNavMExpandableListFragment extends
 	public ExpandableListView expendablelistview;
 	public QianBaiLuNavMExpandableListAdapter mQianBaiLuNavMExpandableListAdapter;
 	public List<NavMBean> list = new ArrayList<NavMBean>();
-
+	public int type;
 	public static QianBaiLuNavMExpandableListFragment newInstance(String url,
 			boolean isVisibleToUser) {
 		QianBaiLuNavMExpandableListFragment fragment = new QianBaiLuNavMExpandableListFragment();

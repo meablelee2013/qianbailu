@@ -29,11 +29,12 @@ import com.open.qianbailu.utils.UrlUtils;
 public class QianBaiLuNavMSIndicatorExpandableListFragment extends QianBaiLuNavMExpandableListFragment {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_S;
 
-	public static QianBaiLuNavMSIndicatorExpandableListFragment newInstance(String url, boolean isVisibleToUser) {
+	public static QianBaiLuNavMSIndicatorExpandableListFragment newInstance(String url, boolean isVisibleToUser,int type) {
 		QianBaiLuNavMSIndicatorExpandableListFragment fragment = new QianBaiLuNavMSIndicatorExpandableListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
   
@@ -46,7 +47,7 @@ public class QianBaiLuNavMSIndicatorExpandableListFragment extends QianBaiLuNavM
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuMBIndicatorService.parseMHome(url));
+		mNavMJson.setList(QianBaiLuMBIndicatorService.parseMHome(url,type));
 		return mNavMJson;
 	}
  

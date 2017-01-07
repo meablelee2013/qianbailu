@@ -47,12 +47,14 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public QianBaiLuMListAdapter mQianBaiLuMListAdapter;
 	public List<NavMChildBean> list = new ArrayList<NavMChildBean>();
 	private TextView txt_moduleTitle;
+	private int type;
 
-	public static QianBaiLuMShowFootListFragment newInstance(String url, boolean isVisibleToUser) {
+	public static QianBaiLuMShowFootListFragment newInstance(String url, boolean isVisibleToUser,int type) {
 		QianBaiLuMShowFootListFragment fragment = new QianBaiLuMShowFootListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 
@@ -86,7 +88,7 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuMNavService.parseMShowFoot(url));
+		mNavMJson.setList(QianBaiLuMNavService.parseMShowFoot(url,type));
 		return mNavMJson;
 	}
 

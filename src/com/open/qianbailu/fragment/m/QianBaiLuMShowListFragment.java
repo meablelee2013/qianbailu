@@ -92,7 +92,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 		super.initValues();
 		ListView listview = mPullRefreshListView.getRefreshableView();
 		listview.addFooterView(footview);
-		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true);
+		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true,2);
 		getChildFragmentManager().beginTransaction().replace(R.id.layout_foot, fragment).commit();
 
 		mQianBaiLuMShowAdapter = new QianBaiLuMShowAdapter(getActivity(), list);

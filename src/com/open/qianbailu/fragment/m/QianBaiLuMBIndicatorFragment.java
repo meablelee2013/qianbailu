@@ -58,7 +58,7 @@ public class QianBaiLuMBIndicatorFragment extends QianBaiLuMIndicatorFragment {
 		for (NavMBean bean : result.getList()) {
 			titleList.add(bean.getTitle());
 			if(bean.getTitle().equals("首页")){
-				fragment = QianBaiLuNavMBIndicatorExpandableListFragment.newInstance(url, true);
+				fragment = QianBaiLuNavMBIndicatorExpandableListFragment.newInstance(url, true,2);
 			}else{
 				fragment = QianBaiLuMPictureListFragment.newInstance(bean.getHref(), false);
 //				fragment = CommonV4Fragment.newInstance(bean.getHref(), false);

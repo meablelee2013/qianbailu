@@ -79,7 +79,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		// TODO Auto-generated method stub
 		super.initValues();
 		 
-		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true);
+		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true,1);
 		getChildFragmentManager().beginTransaction().replace(R.id.layout_foot, fragment).commit();
 		mPullToRefreshScrollView.setMode(Mode.PULL_FROM_START);
 	}

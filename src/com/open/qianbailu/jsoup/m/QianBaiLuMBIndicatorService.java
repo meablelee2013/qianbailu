@@ -21,7 +21,7 @@ public class QianBaiLuMBIndicatorService extends CommonService {
 	public static final String TAG = QianBaiLuMBIndicatorService.class.getSimpleName();
 
 	 
-	public static List<NavMBean> parseMHome(String href) {
+	public static List<NavMBean> parseMHome(String href,int type) {
 		List<NavMBean> list = new ArrayList<NavMBean>();
 		try {
 			href = makeURL(href, new HashMap<String, Object>() {
@@ -93,6 +93,7 @@ public class QianBaiLuMBIndicatorService extends CommonService {
 											String hrefa = aElement.attr("href");
 											String title = aElement.text();
 											childbean.setTitle(title);
+											childbean.setType(type);
 											Log.i(TAG, "i=="+i+";y=="+y+";title=="+title);
 											childbean.setHref(UrlUtils.QIAN_BAI_LU_M+hrefa);
 											Log.i(TAG, "i=="+i+";y=="+y+ ";ahref=="+hrefa);
