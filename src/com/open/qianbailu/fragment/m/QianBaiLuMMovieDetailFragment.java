@@ -206,6 +206,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 		
 		listd.clear();
 		listd.addAll(result.getListd());
+		tagcontainerLayout.removeAllTags();
 		for(NavMChildBean cbean:result.getListd()){
 			tagcontainerLayout.addTag(cbean.getTitle());
 		}

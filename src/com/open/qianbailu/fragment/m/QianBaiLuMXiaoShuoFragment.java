@@ -160,7 +160,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		
 		text_detailText.setText(result.getDetailText());
 		
-		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 200);
+		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
 	}
 
 	/*
