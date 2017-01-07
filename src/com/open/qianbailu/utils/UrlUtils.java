@@ -24,8 +24,7 @@ public class UrlUtils {
 	public static final String tencentAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36 QQBrowser/4.1.4132.400";
 	public static final String qianbailuAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36 QQBrowser/4.1.4132.400";
 	
-	/***pc地址**/
-	public static final String QIAN_BAI_LU = "http://1111av.co/";
+	
 	/***m地址**/
 	public static final String QIAN_BAI_LU_M = "http://m.100av.us/";
 	/***电影首页**/
@@ -34,26 +33,33 @@ public class UrlUtils {
 	public static final String QIAN_BAI_LU_M_VLIST_CLASSID = "http://m.100av.us/vlist.php?classid=1";
 	/***图库**/
 	public static final String QIAN_BAI_LU_M_VLIST_B = "http://m.100av.us/blist.php?bclassid=11";
-	
+	/***小说**/
 	public static final String QIAN_BAI_LU_M_VLIST_S = "http://m.100av.us/blist.php?bclassid=1";
-	
+	/***图库详细**/
 	public static final String QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://m.100av.us/list.php?classid=12&style=0&bclassid=11";
 	/***图片地址**/
 	public static final String QIAN_BAI_LU_HTTP = "http:";
-	
+	/***图库详细**/
 	public static final String QIAN_BAI_LU_SHOW = "http://m.100av.us/show.php?id=388511&classid=13";
-	
+	/***小说详细**/
 	public static final String QIAN_BAI_LU_XIAO_SHUO = "http://m.100av.us/show.php?id=393114&classid=2";
-	
+	/***电影详细**/
 	public static final String QIAN_BAI_LU_MOVIE = "http://m.100av.us/vshow.php?id=11174";
 	
 	public static final String COOKIE = "3g_guest_id=-9045538589999304704; cuid=5032023480; sd_userid=27201462782213238; sd_cookie_crttime=1462782213238; eas_sid=y1i4W655K8T8X9U3N3p7C7U2x7; pac_uid=1_624926379; qq_slist_autoplay=on; tvfe_boss_uuid=e776aacde64effb9; h_uid=H01560819fdc; mobileUV=1_158907f70d3_bbd13; guid=116z231z244z1420123456789qwertyu; ptui_loginuin=624926379@qq.com; pt2gguin=o0624926379; luin=o0624926379; lskey=00010000dc8afe64b0ce27f57820dcefd38a902ab9d67698fc42f999b4d492033045767f379c6947e7546ae8; ptcz=c307e47376dee800ee4a82794866f608297b218323a8b12fd611bbd8f75f86b6; main_login=qq; uid=33415391; uin=o0624926379; ptisp=ctc; pgv_info=ssid=s4759010146; pgv_pvid=6914624368; o_cookie=624926379";
-	
+	/***地址转换器**/
 	public static final String QIAN_BAI_LU_DOWNLOAD = "http://search.cplusplus.me/downconvert.html";
-	
+	/***搜索地址**/
 	public static final String QIAN_BAI_LU_SEARCH = "http://m.100av.us/search.php";
+	/***搜索例子**/
 	public static final String QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/wap.php?q=东京热";
+	/***搜索url拼装**/
 	public static final String QIAN_BAI_LU_SEARCH_WAB = "https://1100.so/wap.php";
+	
+	//网页
+	/***pc地址**/
+	public static final String QIAN_BAI_LU = "http://1111av.co/";
+	
 	
 	public static String getCookie(){
 		return COOKIE;

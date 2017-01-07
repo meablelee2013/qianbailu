@@ -28,4 +28,12 @@
 	<string name="save_picture">保存图片</string>  
 	<string name="save_picture_failed">保存失败</string>  
 	<string name="save_picture_success">图片成功保存至%s目录</string> 
+	
+	 <string name="tab_main_pc1">首页</string>
+	<string name="tab_main_pc2">电影</string>
+	<string name="tab_main_pc3">图库</string>
+	<string name="tab_main_pc4">小说</string>
+	<string name="tab_main_pc5">在线</string>
+	<string name="tab_main_pc6">搜索</string>
+	<string name="qianbailu_m_tab_pc_desp">pc tab主页面</string>
 </resources>
