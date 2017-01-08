@@ -27,47 +27,19 @@
             android:layout_height="match_parent" >
         </FrameLayout>
     </TabHost>
-    
+    <HorizontalScrollView 
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:scrollbars="horizontal"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        >
    <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="#ffffff"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal" >
-
-        <RadioButton
-            android:id="@+id/radio1"
-            style="@style/tab_child"
-            android:checked="true"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="首页"/>
-
-        <RadioButton
-            android:id="@+id/radio2"
-            style="@style/tab_child"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="电影" />
-        <RadioButton
-            android:id="@+id/radio3"
-            style="@style/tab_child"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="图库" />
-        <RadioButton
-            android:id="@+id/radio4"
-            style="@style/tab_child"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="小说" />
-        <RadioButton
-            android:id="@+id/radio5"
-            style="@style/tab_child"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="在线" />
-        <RadioButton
-            android:id="@+id/radio6"
-            style="@style/tab_child"
-            android:drawableTop="@drawable/selector_tab_main2"
-            android:text="搜索" />
        
     </RadioGroup>
+    </HorizontalScrollView>
 </RelativeLayout>
