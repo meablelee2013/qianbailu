@@ -1,6 +1,5 @@
 package com.open.qianbailu.activity.m;
 
-import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
@@ -11,6 +10,8 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.CommonTabActivity;
+import com.open.qianbailu.json.m.NavMJson;
 
 /**
  * 
@@ -25,7 +26,7 @@ import com.open.qianbailu.R;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class MainTabActivity extends TabActivity implements OnCheckedChangeListener {
+public class MainTabActivity extends CommonTabActivity<NavMJson> implements OnCheckedChangeListener {
 	private TabHost mTabHost;
 	RadioGroup mRadioGroup;
 	RadioButton radio1;
@@ -37,12 +38,30 @@ public class MainTabActivity extends TabActivity implements OnCheckedChangeListe
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 		// 透明导航栏
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-
 		setContentView(R.layout.activity_tab_main);
-		mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-		mRadioGroup.setOnCheckedChangeListener(this);
-		mTabHost = getTabHost();
+		init();
+	}
 
+	
+	
+	
+	@Override
+	protected void findView() {
+		// TODO Auto-generated method stub
+		super.findView();
+		mRadioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+		radio1 = (RadioButton) findViewById(R.id.radio1);
+		mTabHost = getTabHost();
+	}
+
+
+
+
+	@Override
+	protected void initValue() {
+		// TODO Auto-generated method stub
+		super.initValue();
+		
 		TabSpec tab_main1 = mTabHost.newTabSpec(getString(R.string.tab_main1));
 		TabSpec tab_main2 = mTabHost.newTabSpec(getString(R.string.tab_main2));
 		TabSpec tab_main3 = mTabHost.newTabSpec(getString(R.string.tab_main3));
@@ -57,11 +76,28 @@ public class MainTabActivity extends TabActivity implements OnCheckedChangeListe
 		mTabHost.addTab(tab_main2);
 		mTabHost.addTab(tab_main3);
 		mTabHost.addTab(tab_main4);
-
-		mRadioGroup.setOnCheckedChangeListener(this);
-		radio1 = (RadioButton) findViewById(R.id.radio1);
 		radio1.setChecked(true);
+	}
 
+
+	@Override
+	protected void bindEvent() {
+		// TODO Auto-generated method stub
+		super.bindEvent();
+		mRadioGroup.setOnCheckedChangeListener(this);
+	}
+
+
+	@Override
+	public NavMJson call() throws Exception {
+		// TODO Auto-generated method stub
+		return super.call();
+	}
+
+	@Override
+	public void onCallback(NavMJson result) {
+		// TODO Auto-generated method stub
+		super.onCallback(result);
 	}
 
 	/*
