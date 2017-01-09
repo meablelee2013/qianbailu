@@ -57,8 +57,8 @@ import com.open.qianbailu.utils.UrlUtils;
 public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianBaiLuMMovieListFragment> {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_CLASSID;
 	public PullToRefreshListView mPullRefreshListView;
-	private QianBaiLuMMovieListAdapter mQianBaiLuMMovieListAdapter;
-	private List<MovieBean> list = new ArrayList<MovieBean>();
+	public QianBaiLuMMovieListAdapter mQianBaiLuMMovieListAdapter;
+	public List<MovieBean> list = new ArrayList<MovieBean>();
 	public int pageNo = 0;
 	
 	public static QianBaiLuMMovieListFragment newInstance(String url, boolean isVisibleToUser) {

@@ -33,12 +33,12 @@
        android:scrollbars="horizontal"
        android:layout_width="fill_parent"
         android:layout_height="50dp"
+        android:background="#ffffff"
        >
    <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:background="#ffffff"
         android:orientation="horizontal" >
     </RadioGroup>
     </HorizontalScrollView>

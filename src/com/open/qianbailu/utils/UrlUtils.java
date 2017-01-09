@@ -57,8 +57,11 @@ public class UrlUtils {
 	
 	//网页
 	/***pc地址**/
-	public static final String QIAN_BAI_LU = "http://www.1111av.co/";
-	
+	public static final String QIAN_BAI_LU = "http://www.1111av.co";
+	/***电影首页**/
+	public static final String PC_QIAN_BAI_LU_VLIST = "http://www.1111av.co/vod/index.html";
+	/***电影1**/
+	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="http://www.1111av.co/list/1.html";
 	
 	public static String getCookie(){
 		return COOKIE;

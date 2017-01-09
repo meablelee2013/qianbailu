@@ -133,7 +133,7 @@ public class DynamicMainTabActivity extends CommonTabActivity<NavMJson> {
 			}else {
 				radio.setChecked(false);
 			}
-			LayoutParams params = new LayoutParams((int)ScreenUtils.getIntToDip(this, 90), LayoutParams.WRAP_CONTENT);
+			LayoutParams params = new LayoutParams((int)ScreenUtils.getIntToDip(this, 95), LayoutParams.WRAP_CONTENT);
 			mRadioGroup.addView(viewRadio,params);
 		}
 	}
