@@ -64,6 +64,10 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="http://www.1111av.co/list/1.html";
 	/***电影详细**/
 	public static final String PC_QIAN_BAI_LU_MOVIE = "http://www.1111av.co/vod/11193.html";
+	/***图库**/
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "http://www.1111av.co/html/tupian/index.html";
+	/***图库详细**/
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://www.1111av.co/html/tupian/toupai/";
 	
 	public static String getCookie(){
 		return COOKIE;

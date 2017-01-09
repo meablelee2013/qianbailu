@@ -181,6 +181,14 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+          <!--pc图库 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuBIndicatorFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_b_indicator_f_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
