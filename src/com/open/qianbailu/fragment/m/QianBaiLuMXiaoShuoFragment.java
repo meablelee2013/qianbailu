@@ -47,8 +47,8 @@ import com.open.qianbailu.utils.UrlUtils;
 public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, QianBaiLuMXiaoShuoFragment> {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_B_CLASSID;
 	public PullToRefreshScrollView mPullToRefreshScrollView;
-	private TextView text_pretitle, text_nexttitle;
-	private TextView text_newstitle,text_detailText;
+	public TextView text_pretitle, text_nexttitle;
+	public TextView text_newstitle,text_detailText;
 
 	public static QianBaiLuMXiaoShuoFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMXiaoShuoFragment fragment = new QianBaiLuMXiaoShuoFragment();
@@ -107,7 +107,11 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 			}
 		});
 		 
-
+		showPreNext();
+		
+	}
+	
+	public void showPreNext(){
 		text_pretitle.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

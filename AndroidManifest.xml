@@ -197,6 +197,22 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+        <!-- pc 小说 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuSIndicatorFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_s_indicator_f_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+        <!-- pc小说 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuXiaoShuoFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_xiao_shuo_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

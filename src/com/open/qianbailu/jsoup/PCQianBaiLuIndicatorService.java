@@ -212,6 +212,7 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 									NavMChildBean cbean;
 									for(int k=0;k<liElements.size();k++){
 										cbean = new NavMChildBean();
+										cbean.setType(6);
 										try {
 											Element aElement = liElements.get(k).select("a").first();
 											String ahref = aElement.attr("href");

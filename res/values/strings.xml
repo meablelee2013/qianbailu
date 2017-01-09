@@ -41,4 +41,6 @@
 	<string name="qianbailu_m_movie_detail_pc_desp">pc电影详细 </string>
 	<string name="qianbailu_m_b_indicator_f_pc_desp">pc图库</string>
 	 <string name="qianbailu_m_show_image_list_pc_desp">pc看图list</string>
+	 <string name="qianbailu_m_s_indicator_f_pc_desp">pc小说</string>
+	 <string name="qianbailu_xiao_shuo_pc_desp">pc小说详细</string>
 </resources>

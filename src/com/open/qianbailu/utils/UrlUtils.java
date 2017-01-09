@@ -70,6 +70,12 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://www.1111av.co/html/tupian/toupai/";
 	/***看图图库详细**/
 	public static final String PC_QIAN_BAI_LU_SHOW = "http://www.1111av.co/html/tupian/yazhou/2016/0923/388511.html";
+	/***小说**/
+	public static final String PC_QIAN_BAI_LU_VLIST_S = "http://www.1111av.co/html/article/index.html";
+	/***小说列表**/
+	public static final String PC_QIAN_BAI_LU_VLIST_J = "http://www.1111av.co/html/article/jiqing/index.html";
+	/***小说详细**/
+	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "http://www.1111av.co/html/article/jiqing/2017/0107/393310.html";
 	
 	public static String getCookie(){
 		return COOKIE;

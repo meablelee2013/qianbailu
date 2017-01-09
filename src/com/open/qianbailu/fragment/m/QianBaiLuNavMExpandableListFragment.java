@@ -50,7 +50,9 @@ public class QianBaiLuNavMExpandableListFragment extends
 	public ExpandableListView expendablelistview;
 	public QianBaiLuNavMExpandableListAdapter mQianBaiLuNavMExpandableListAdapter;
 	public List<NavMBean> list = new ArrayList<NavMBean>();
-	/**type 0web 1:小说 2：图片 3：电影  4:pc小说 5：pc图片 6：pc电影**/
+	/**文字列表 type 0 web 1:小说 2：图片 3：电影  4:pc小说 5：pc图片 6：pc电影
+	 * 图片 type 0 m 1pc
+	 * **/
 	public int type;
 
 	public static QianBaiLuNavMExpandableListFragment newInstance(String url,

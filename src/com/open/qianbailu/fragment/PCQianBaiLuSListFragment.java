@@ -2,14 +2,14 @@
  *****************************************************************************************************************************************************************************
  * 
  * @author :fengguangjing
- * @createTime:2017-1-3上午11:00:44
+ * @createTime:2017-1-9下午3:42:41
  * @version:4.2.4
  * @modifyTime:
  * @modifyAuthor:
  * @description:
  *****************************************************************************************************************************************************************************
  */
-package com.open.qianbailu.fragment.m;
+package com.open.qianbailu.fragment;
 
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -21,48 +21,35 @@ import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.open.qianbailu.activity.PCQianBaiLuXiaoShuoFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
-import com.open.qianbailu.adapter.m.QianBaiLuMSListAdapter;
+import com.open.qianbailu.fragment.m.QianBaiLuMSListFragment;
 import com.open.qianbailu.json.m.MovieJson;
-import com.open.qianbailu.jsoup.m.QianBaiLuMPictureService;
+import com.open.qianbailu.jsoup.PCQianBaiLuPictureService;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
- ***************************************************************************************************************************************************************************** 
- * 小说列表
+ *****************************************************************************************************************************************************************************
+ * 
  * @author :fengguangjing
- * @createTime:2017-1-3上午11:00:44
+ * @createTime:2017-1-9下午3:42:41
  * @version:4.2.4
  * @modifyTime:
  * @modifyAuthor:
  * @description:
- ***************************************************************************************************************************************************************************** 
+ *****************************************************************************************************************************************************************************
  */
-public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
-	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_B_CLASSID;
-	public QianBaiLuMSListAdapter mQianBaiLuMSListAdapter;
+public class PCQianBaiLuSListFragment extends QianBaiLuMSListFragment{
+	public String url = UrlUtils.PC_QIAN_BAI_LU_VLIST_J;
 
-	public static QianBaiLuMSListFragment newInstance(String url, boolean isVisibleToUser) {
-		QianBaiLuMSListFragment fragment = new QianBaiLuMSListFragment();
+	public static PCQianBaiLuSListFragment newInstance(String url, boolean isVisibleToUser) {
+		PCQianBaiLuSListFragment fragment = new PCQianBaiLuSListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
 		return fragment;
 	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see com.open.umei.fragment.BaseV4Fragment#initValues()
-	 */
-	@Override
-	public void initValues() {
-		// TODO Auto-generated method stub
-		mQianBaiLuMSListAdapter = new QianBaiLuMSListAdapter(getActivity(), list);
-		mPullRefreshListView.setAdapter(mQianBaiLuMSListAdapter);
-		mPullRefreshListView.setMode(Mode.BOTH);
-	}
-
+ 
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -70,6 +57,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 	 */
 	@Override
 	public void bindEvent() {
+		pageNo = 1;
 		// TODO Auto-generated method stub
 		// Set a listener to be invoked when the list should be refreshed.
 		mPullRefreshListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
@@ -80,7 +68,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 				// Do work to refresh the list here.
 				if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
-					pageNo = 0;
+					pageNo = 1;
 					weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
 				} else if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_END) {
 					pageNo++;
@@ -92,7 +80,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
+				PCQianBaiLuXiaoShuoFragmentActivity.startPCQianBaiLuXiaoShuoFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
 	}
@@ -107,7 +95,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 		// TODO Auto-generated method stub
 		MovieJson mMovieJson = new MovieJson();
 		// http://m.100av.us/list.php?classid=12&style=0&bclassid=11
-		mMovieJson.setList(QianBaiLuMPictureService.parsePicture(url, pageNo));
+		mMovieJson.setList(PCQianBaiLuPictureService.parsePicture(url, pageNo));
 		return mMovieJson;
 	}
 
@@ -124,7 +112,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
 			list.clear();
 			list.addAll(result.getList());
-			pageNo = 0;
+			pageNo = 1;
 		} else {
 			if (result.getList() != null && result.getList().size() > 0) {
 				list.addAll(result.getList());
