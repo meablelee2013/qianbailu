@@ -107,7 +107,7 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
 				// Do work to refresh the list here.
 				if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
-					pageNo = 0;
+					pageNo = 1;
 					weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
 				} else if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_END) {
 					pageNo++;

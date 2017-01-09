@@ -43,4 +43,7 @@
 	 <string name="qianbailu_m_show_image_list_pc_desp">pc看图list</string>
 	 <string name="qianbailu_m_s_indicator_f_pc_desp">pc小说</string>
 	 <string name="qianbailu_xiao_shuo_pc_desp">pc小说详细</string>
+	 <string name="qianbailu_indicator_f_pc_online_desp">pc在线</string>
+	 <string name="qianbailu_search_pc_desp">pc搜索</string>
+     <string name="qianbailu_search_result_pc_desp">pc搜索结果</string>
 </resources>

@@ -213,6 +213,28 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+        <!-- pc 在线 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuOnLineIndicatorFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_indicator_f_pc_online_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+         <!-- pc搜索 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuSearchActivity"
+            android:description="@string/qianbailu_search_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
+         <!-- pc搜索结果 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuSearchResultActivity"
+            android:description="@string/qianbailu_search_result_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

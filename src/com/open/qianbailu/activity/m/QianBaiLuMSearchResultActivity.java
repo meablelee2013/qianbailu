@@ -43,12 +43,12 @@ import com.open.qianbailu.utils.UrlUtils;
  ***************************************************************************************************************************************************************************** 
  */
 public class QianBaiLuMSearchResultActivity extends CommonFragmentActivity<SearchJson> {
-	private String url = UrlUtils.QIAN_BAI_LU_SEARCH_RESULT;
-	ViewPager viewpager;
-	TabPageIndicator indicator;
-	List<String> titleList = new ArrayList<String>();
-	private List<Fragment> listRankFragment = new ArrayList<Fragment>();// view数组
-	CommonFragmentPagerAdapter mRankPagerAdapter;
+	public String url = UrlUtils.QIAN_BAI_LU_SEARCH_RESULT;
+	public ViewPager viewpager;
+	public TabPageIndicator indicator;
+	public List<String> titleList = new ArrayList<String>();
+	public  List<Fragment> listRankFragment = new ArrayList<Fragment>();// view数组
+	public CommonFragmentPagerAdapter mRankPagerAdapter;
 	 
 	/*
 	 * (non-Javadoc)

@@ -45,11 +45,11 @@ import com.open.qianbailu.utils.UrlUtils;
  ***************************************************************************************************************************************************************************** 
  */
 public class QianBaiLuMSearchActivity extends CommonFragmentActivity<SearchJson> {
-	private String url = UrlUtils.QIAN_BAI_LU_SEARCH;
-	EditText edit_search;
-	Button btn_search;
-	TagContainerLayout tagcontainerLayout;
-	ArrayList<SearchBean> hotlist = new ArrayList<SearchBean>();
+	public String url = UrlUtils.QIAN_BAI_LU_SEARCH;
+	public EditText edit_search;
+	public Button btn_search;
+	public TagContainerLayout tagcontainerLayout;
+	public ArrayList<SearchBean> hotlist = new ArrayList<SearchBean>();
 	/*
 	 * (non-Javadoc)
 	 * 

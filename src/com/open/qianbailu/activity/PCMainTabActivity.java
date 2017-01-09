@@ -106,9 +106,9 @@ public class PCMainTabActivity extends CommonTabActivity<NavMJson>     {
 			}else if(mbean.getTitle().equals("小说")){
 			   tab_main.setContent(new Intent(this, PCQianBaiLuSIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("在线")){
-				tab_main.setContent(new Intent(this, QianBaiLuMSIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
+				tab_main.setContent(new Intent(this, PCQianBaiLuOnLineIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("搜索")){
-				tab_main.setContent(new Intent(this, QianBaiLuMSearchActivity.class)).setIndicator(mbean.getTitle());
+				tab_main.setContent(new Intent(this, PCQianBaiLuSearchActivity.class)).setIndicator(mbean.getTitle());
 			}
 			mTabHost.addTab(tab_main);
 			

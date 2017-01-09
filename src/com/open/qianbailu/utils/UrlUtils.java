@@ -76,6 +76,12 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_VLIST_J = "http://www.1111av.co/html/article/jiqing/index.html";
 	/***小说详细**/
 	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "http://www.1111av.co/html/article/jiqing/2017/0107/393310.html";
+	/***电影在线**/
+	public static final String PC_QIAN_BAI_LU_ONLINE ="http://www.1111av.co/list/14.html";
+	/***pc搜索地址**/
+	public static final String PC_QIAN_BAI_LU_SEARCH = "https://1100.so/";
+	/***pc搜索例子**/
+	public static final String PC_QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/?q=%E4%B8%9C%E4%BA%AC%E7%83%AD";
 	
 	public static String getCookie(){
 		return COOKIE;
