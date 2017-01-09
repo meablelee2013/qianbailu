@@ -62,6 +62,7 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true,4);
 		getChildFragmentManager().beginTransaction().replace(R.id.layout_foot, fragment).commit();
 		mPullToRefreshScrollView.setMode(Mode.BOTH);
+		initTag();
 	}
 	
 	/*
@@ -91,7 +92,7 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 		});
 		 
 		showPreNext();
-		
+		tagEvent();
 	}
 
 	public void showPreNext(){

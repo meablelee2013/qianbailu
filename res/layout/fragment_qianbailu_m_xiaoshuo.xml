@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.handmark.pulltorefresh.library.PullToRefreshScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pull_refresh_scroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,6 +21,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp" />
+        
+        <co.lujun.androidtagview.TagContainerLayout
+            android:id="@+id/tagcontainerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:padding="10dp"
+            app:container_enable_drag="false"
+            app:container_gravity="center"
+            app:horizontal_interval="10dp"
+            app:tag_clickable="true"
+            app:tag_ripple_alpha="47"
+            app:tag_ripple_color="#000000"
+            app:tag_ripple_duration="2000"
+            app:tag_theme="pure_teal"
+            app:vertical_interval="10dp" />
         
         <TextView
             android:id="@+id/text_detailText"

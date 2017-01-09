@@ -11,6 +11,9 @@
  */
 package com.open.qianbailu.fragment.m;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -22,11 +25,16 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import co.lujun.androidtagview.TagContainerLayout;
+import co.lujun.androidtagview.TagView.OnTagClickListener;
+
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.m.QianBaiLuMSearchActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMSearchResultActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.XiaoShuoJson;
@@ -49,7 +57,9 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 	public PullToRefreshScrollView mPullToRefreshScrollView;
 	public TextView text_pretitle, text_nexttitle;
 	public TextView text_newstitle,text_detailText;
-
+	public TagContainerLayout tagcontainerLayout;
+	public List<String> tagList = new ArrayList<String>();
+	
 	public static QianBaiLuMXiaoShuoFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMXiaoShuoFragment fragment = new QianBaiLuMXiaoShuoFragment();
 		fragment.setFragment(fragment);
@@ -66,6 +76,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		text_pretitle = (TextView) view.findViewById(R.id.text_pretitle);
 		text_nexttitle = (TextView) view.findViewById(R.id.text_nexttitle);
 		text_detailText = (TextView) view.findViewById(R.id.text_detailText);
+		tagcontainerLayout = (TagContainerLayout) view.findViewById(R.id.tagcontainerLayout);
 		return view;
 	}
 
@@ -82,6 +93,16 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		Fragment fragment = QianBaiLuMShowFootListFragment.newInstance(url, true,1);
 		getChildFragmentManager().beginTransaction().replace(R.id.layout_foot, fragment).commit();
 		mPullToRefreshScrollView.setMode(Mode.PULL_FROM_START);
+		
+		initTag();
+	}
+	
+	public void initTag(){
+		tagList.clear();
+		tagList.add("字体大");
+		tagList.add("字体中");
+		tagList.add("字体小");
+		tagcontainerLayout.setTags(tagList);
 	}
 
 	/*
@@ -109,6 +130,41 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		 
 		showPreNext();
 		
+		tagEvent();
+		
+	}
+	
+	public void tagEvent(){
+		tagcontainerLayout.setOnTagClickListener(new OnTagClickListener() {
+			@Override
+			public void onTagLongClick(int position, String text) {
+				// TODO Auto-generated method stub
+				
+			}
+			@Override
+			public void onTagCrossClick(int position) {
+				// TODO Auto-generated method stub
+				
+			}
+			@Override
+			public void onTagClick(int position, String text) {
+				float size = 16;
+				switch (position) {
+				case 0:
+					size = 20;
+					break;
+				case 1:
+					size = 16;
+					break;
+				case 2:
+					size = 12;
+					break;
+				default:
+					break;
+				}
+				text_detailText.setTextSize(size);
+			}
+		});
 	}
 	
 	public void showPreNext(){
