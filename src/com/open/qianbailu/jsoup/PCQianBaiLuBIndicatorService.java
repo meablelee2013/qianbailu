@@ -68,7 +68,7 @@ public class PCQianBaiLuBIndicatorService extends CommonService {
 									Element aElement = listElements.get(j).select("a").first();
 									String hrefa = aElement.attr("href");
 									childbean.setType(type);
-									childbean.setHref(UrlUtils.QIAN_BAI_LU_M + hrefa);
+									childbean.setHref(UrlUtils.QIAN_BAI_LU + hrefa);
 									Log.i(TAG, "i==" + i + ";j==" + j + ";ahref==" + hrefa);
 								} catch (Exception e) {
 									e.printStackTrace();

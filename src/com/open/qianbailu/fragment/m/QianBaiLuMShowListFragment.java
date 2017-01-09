@@ -58,7 +58,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 	public QianBaiLuMShowAdapter mQianBaiLuMShowAdapter;
 	public List<ShowBean> list = new ArrayList<ShowBean>();
 	private View footview;
-	private TextView text_pretitle, text_nexttitle;
+	public TextView text_pretitle, text_nexttitle;
 	private TextView text_newstitle;
 
 	public static QianBaiLuMShowListFragment newInstance(String url, boolean isVisibleToUser) {
@@ -128,19 +128,28 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 			}
 		});
 
+		showPreNext();
+	}
+	
+	public void showPreNext(){
 		text_pretitle.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!text_pretitle.getTag().toString().contains("很抱歉已经没有了") && !text_pretitle.getTag().toString().equals(url)) {
-					QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), text_pretitle.getTag().toString());
+				if(text_pretitle.getTag().toString().length()>0){
+					if (!text_pretitle.getTag().toString().contains("很抱歉已经没有了") && !text_pretitle.getTag().toString().equals(url)) {
+						QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), text_pretitle.getTag().toString());
+					}
 				}
+				
 			}
 		});
 		text_nexttitle.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (!text_nexttitle.getTag().toString().contains("很抱歉已经没有了") && !text_nexttitle.getTag().toString().equals(url)) {
-					QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), text_nexttitle.getTag().toString());
+				if(text_nexttitle.getTag().toString().length()>0){
+					if (!text_nexttitle.getTag().toString().contains("很抱歉已经没有了") && !text_nexttitle.getTag().toString().equals(url)) {
+						QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), text_nexttitle.getTag().toString());
+					}
 				}
 			}
 		});

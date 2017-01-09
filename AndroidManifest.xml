@@ -189,6 +189,14 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+          <!-- pc 看图list -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_show_image_list_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

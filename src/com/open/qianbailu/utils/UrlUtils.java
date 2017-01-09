@@ -68,6 +68,8 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "http://www.1111av.co/html/tupian/index.html";
 	/***图库详细**/
 	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://www.1111av.co/html/tupian/toupai/";
+	/***看图图库详细**/
+	public static final String PC_QIAN_BAI_LU_SHOW = "http://www.1111av.co/html/tupian/yazhou/2016/0923/388511.html";
 	
 	public static String getCookie(){
 		return COOKIE;

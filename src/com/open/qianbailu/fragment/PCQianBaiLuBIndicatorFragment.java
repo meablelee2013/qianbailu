@@ -63,7 +63,7 @@ public class PCQianBaiLuBIndicatorFragment extends QianBaiLuMIndicatorFragment {
 		for (NavMBean bean : result.getList()) {
 			titleList.add(bean.getTitle());
 			if(bean.getTitle().equals("图片首页")){
-				fragment = PCQianBaiLuNavBIndicatorExpandableListFragment.newInstance(url, true,2);
+				fragment = PCQianBaiLuNavBIndicatorExpandableListFragment.newInstance(url, true,5);
 			}else if(bean.getTitle().equals("成人动漫")){
 				//http://www.1111av.co/html/tupian/dongman/
 				//http://www.1111av.co/html/tupian/dongman/index.html

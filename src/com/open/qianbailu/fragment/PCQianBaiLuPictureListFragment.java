@@ -21,6 +21,7 @@ import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.fragment.m.QianBaiLuMPictureListFragment;
 import com.open.qianbailu.json.m.MovieJson;
@@ -81,7 +82,7 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
+				PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
 	}

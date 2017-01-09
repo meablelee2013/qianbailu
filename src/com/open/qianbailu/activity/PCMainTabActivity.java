@@ -102,7 +102,7 @@ public class PCMainTabActivity extends CommonTabActivity<NavMJson>     {
 			}else if(mbean.getTitle().equals("电影")){
 			   tab_main.setContent(new Intent(this, PCQianBaiLuIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("图片")){
-			   tab_main.setContent(new Intent(this, QianBaiLuMBIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
+			   tab_main.setContent(new Intent(this, PCQianBaiLuBIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("小说")){
 			   tab_main.setContent(new Intent(this, QianBaiLuMSIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("在线")){

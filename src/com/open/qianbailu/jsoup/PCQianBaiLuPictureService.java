@@ -63,7 +63,7 @@ public class PCQianBaiLuPictureService extends CommonService {
 										try {
 											String hrefa = aElement.attr("href");
 											Log.i(TAG, "i==" + i + ";hrefa==" + hrefa );
-											movieBean.setLinkurl(UrlUtils.QIAN_BAI_LU_M+hrefa);
+											movieBean.setLinkurl(UrlUtils.QIAN_BAI_LU+hrefa);
 										} catch (Exception e) {
 											e.printStackTrace();
 										}

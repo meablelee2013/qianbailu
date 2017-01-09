@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
 import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
@@ -65,6 +66,9 @@ public class QianBaiLuMListAdapter extends CommonAdapter<NavMChildBean> {
 					break;
 			    case 3:
 			    	QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(mContext, bean.getHref());
+				break;
+			    case 5:
+			    	PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(mContext, bean.getHref());
 				break;
 				default:
 					QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getHref());
