@@ -53,6 +53,7 @@
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imageview"
         android:padding="10dp"
+        android:focusable="false"
         android:text="详情" />
 
 </RelativeLayout>

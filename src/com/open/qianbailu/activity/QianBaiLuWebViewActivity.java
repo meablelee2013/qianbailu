@@ -103,7 +103,13 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			// TODO Auto-generated method stub
 			Log.i("WebViewClientBase", "url==" + url);
-			if(url.contains("ed2k://|file") ||url.contains("thunder://") ||url.contains("thunder://")||url.contains("xfplay://")){
+			if(url.contains("ed2k://|file") ||
+					url.contains("thunder://") 
+					||url.contains("thunder://")
+					||url.contains("xfplay://")
+					||url.contains("qqdl://")
+					||url.contains("flashget://")
+					){
 				ClipboardManager copy = (ClipboardManager)  getSystemService(Context.CLIPBOARD_SERVICE);  
                 copy.setText(url);
                 DownLoadUtils.downLoad(QianBaiLuWebViewActivity.this, url);

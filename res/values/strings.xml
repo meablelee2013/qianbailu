@@ -38,4 +38,5 @@
 	<string name="tab_main_pc6">搜索</string>
 	<string name="qianbailu_m_tab_pc_desp">pc tab主页面</string>
 	<string name="qianbailu_m_indicator_f_pc_desp">pc电影</string>
+	<string name="qianbailu_m_movie_detail_pc_desp">pc电影详细 </string>
 </resources>

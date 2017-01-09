@@ -173,6 +173,14 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+         <!-- pc 电影详细 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuMoveDetailFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_movie_detail_pc_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

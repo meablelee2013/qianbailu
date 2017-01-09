@@ -21,6 +21,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.open.qianbailu.activity.PCQianBaiLuMoveDetailFragmentActivity;
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieListFragment;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieService;
@@ -92,6 +93,7 @@ public class PCQianBaiLuMovieListFragment extends QianBaiLuMMovieListFragment{
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				PCQianBaiLuMoveDetailFragmentActivity.startPCQianBaiLuMoveDetailFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
 	}

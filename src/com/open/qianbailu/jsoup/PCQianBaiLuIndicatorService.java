@@ -125,12 +125,15 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 			// Log.i(TAG, doc.toString());
 			// System.out.println(doc.toString());
 			try {
-				Elements moduleElements = doc.select("div.moduleTitle");
+				Elements moduleElements = doc.select("div.box");
 				if (moduleElements != null && moduleElements.size() > 0) {
 					for (int i = 0; i < moduleElements.size(); i++) {
 						NavMBean navbean = new NavMBean();
 						try {
-							Element titleLeftElement = moduleElements.get(i).select("div.titleLeft").first();
+							// <h2><a href="#" target="_self">亚洲情色</a></h2>
+					          //<span><a href="#">共<i>6254</i>部影片>></a></span></div>
+
+							Element titleLeftElement = moduleElements.get(i).select("h2").first();
 							if (titleLeftElement != null) {
 								String titlea = titleLeftElement.text();
 								Log.i(TAG, "i==" + i + ";titlea==" + titlea);
@@ -140,39 +143,24 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 							e.printStackTrace();
 						}
 
-						try {
-							Element linkElement = moduleElements.get(i).select("div.link").first();
-							if (linkElement != null) {
-								String hrefa = linkElement.select("a").first().attr("href");
-								Log.i(TAG, "i==" + i + ";hrefa==" + hrefa);
-								navbean.setHref(UrlUtils.QIAN_BAI_LU_M + hrefa);
-							}
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-
 						// movieHome
-						Elements picKuFilmElements = moduleElements.get(i).parent().select("div.movieHome");
+						Element ulElement=  moduleElements.get(i).select("ul.img-list").first();
+						Elements picKuFilmElements = ulElement.select("li");
 						if (picKuFilmElements != null && picKuFilmElements.size() > 0) {
 							List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
 							PicKuFilmBean filmbean;
 							for (int y = 0; y < picKuFilmElements.size(); y++) {
 								filmbean = new PicKuFilmBean();
+								filmbean.setType(1);
 								try {
 									/**
-									 * <a href="vshow.php?id=11137"> 01-03
-									 * 10:18:05.736: I/System.out(11697): <div
-									 * class="movieHome"> 01-03 10:18:05.736:
-									 * I/System.out(11697): <img src=
-									 * "//mi3.1100lu.xyz/m/vod/2016-12-31/586697fc8645a.jpg"
-									 * > 01-03 10:18:05.736:
-									 * I/System.out(11697): <div
-									 * class="movieCover"> 01-03 10:18:05.736:
-									 * I/System.out(11697): 最新pacopacomama
-									 * 122816_232 露 01-03 10:18:05.736:
-									 * I/System.out(11697): </div> 01-03
-									 * 10:18:05.736: I/System.out(11697): </div>
-									 * </a>
+									<li>
+<a class="play-img" href="/vod/11193.html" title="最新东京热 Tokyo Hot k1417 饵食牝~[萩原果歩]" target="_blank">
+<img src="//i3.1100lu.xyz/vod/2017-01-07/5870ab16ea270.jpg" alt="最新东京热 Tokyo Hot k1417 饵食牝~[萩原果歩]" /><em>
+<font color="red">01-07</font></em></a>
+<b><a href="/vod/11193.html" title="最新东京热 Tokyo Hot k1417 饵食牝~[萩原果歩]" target="_blank">最新东京热 </a></b>
+<p>0撸量</p>
+</li>
 									 */
 									Element imgElement = picKuFilmElements.get(y).select("img").first();
 									String src = imgElement.attr("src");
@@ -183,8 +171,8 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 								}
 
 								try {
-									Element aElement = picKuFilmElements.get(y).select("div.movieCover").first();
-									String picTitle = aElement.text();
+									Element aElement = picKuFilmElements.get(y).select("img").first();
+									String picTitle = aElement.attr("alt");
 									filmbean.setTitle(picTitle);
 									Log.i(TAG, "i==" + i + ";y==" + y + ";picTitle==" + picTitle);
 								} catch (Exception e) {
@@ -192,9 +180,9 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 								}
 
 								try {
-									Element aElement = picKuFilmElements.get(y).parent();
+									Element aElement = picKuFilmElements.get(y).select("a").first();
 									String ahref = aElement.attr("href");
-									filmbean.setHref(UrlUtils.QIAN_BAI_LU_M + ahref);
+									filmbean.setHref(UrlUtils.QIAN_BAI_LU + ahref);
 									Log.i(TAG, "i==" + i + ";y==" + y + ";ahref==" + ahref);
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -204,6 +192,51 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 							navbean.setPicKuL(picKuL);
 						}
 
+						//链接
+						/**
+						 * <div class="shot">
+          <h3><a href="#" target="_blank">制服丝袜推荐榜</a></h3>
+          <ul>
+<li><i>1</i><a href="/vod/11195.html" target="_blank">最新加勒比 010417</a><span><font color="red">01-07</font></span></li>
+<li><i>2</i><a href="/vod/11194.html" target="_blank">最新天然素人 01051</a><span><font color="red">01-07</font></span></li><li><i>3</i><a href="/vod/11186.html" target="_blank">最新一本道 010417</a><span><font color="red">01-07</font></span></li><li><i>4</i><a href="/vod/11183.html" target="_blank">最新天然素人 01041</a><span><font color="red">01-07</font></span></li><li><i>5</i><a href="/vod/11171.html" target="_blank">最新东京热 Tokyo </a><span>01-05</span></li><li><i>6</i><a href="/vod/11168.html" target="_blank">最新HEYZO 1366 拟</a><span>01-05</span></li><li><i>7</i><a href="/vod/11166.html" target="_blank">最新加勒比 010117</a><span>01-05</span></li><li><i>8</i><a href="/vod/11165.html" target="_blank">最新HEYZO 1365 初</a><span>01-05</span></li><li><i>9</i><a href="/vod/11162.html" target="_blank">最新一本道 010117</a><span>01-05</span></li><li><i>10</i><a href="/vod/11158.html" target="_blank">最新HEYZO 1363 先</a><span>01-05</span></li><li><i>11</i><a href="/vod/11157.html" target="_blank">最新pacopacomama</a><span>01-05</span></li><li><i>12</i><a href="/vod/11153.html" target="_blank">最新东京热 Tokyo </a><span>01-05</span></li><li><i>13</i><a href="/vod/11138.html" target="_blank">最新一本道 123016</a><span>01-05</span></li><li><i>14</i><a href="/vod/11121.html" target="_blank">最新加勒比 122616</a><span>12-31</span></li>          </ul>
+        </div>
+        <!--/shot-->
+
+						 */
+						try {
+							Element shotElement = moduleElements.get(i).select("div.shot").first();
+							if(shotElement!=null){
+								Elements liElements = shotElement.select("li");
+								if(liElements!=null && liElements.size()>0){
+									List<NavMChildBean> listc = new ArrayList<NavMChildBean>();
+									NavMChildBean cbean;
+									for(int k=0;k<liElements.size();k++){
+										cbean = new NavMChildBean();
+										try {
+											Element aElement = liElements.get(k).select("a").first();
+											String ahref = aElement.attr("href");
+											cbean.setHref(UrlUtils.QIAN_BAI_LU + ahref);
+											Log.i(TAG, "i==" + i + ";k==" + k + ";ahref==" + ahref);
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+										try {
+											Element aElement = liElements.get(k).select("a").first();
+											String atitle = aElement.text();
+											cbean.setTitle(atitle);
+											Log.i(TAG, "i==" + i + ";k==" + k + ";atitle==" + atitle);
+										} catch (Exception e) {
+											e.printStackTrace();
+										}
+										listc.add(cbean);
+									}
+									navbean.setList(listc);
+								}
+							}
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
 						list.add(navbean);
 					}
 				}

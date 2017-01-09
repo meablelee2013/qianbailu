@@ -6,6 +6,7 @@ public class PicKuFilmBean extends CommonBean {
 	private String title;
 	private String href;
 	private String src;
+	private int type;//0 m 1pc
 
 	public String getTitle() {
 		return title;
@@ -29,6 +30,14 @@ public class PicKuFilmBean extends CommonBean {
 
 	public void setSrc(String src) {
 		this.src = src;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 }

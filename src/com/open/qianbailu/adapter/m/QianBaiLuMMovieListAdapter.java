@@ -27,6 +27,7 @@ import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.adapter.CommonAdapter;
 import com.open.qianbailu.bean.m.MovieBean;
+import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -73,12 +74,6 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 				ImageLoader.getInstance().displayImage(bean.getThumb(), viewHolder.imageview, options, getImageLoadingListener());
 			}
 		}
-		convertView.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(mContext, bean.getLinkurl());
-			}
-		});
 		return convertView;
 	}
 
