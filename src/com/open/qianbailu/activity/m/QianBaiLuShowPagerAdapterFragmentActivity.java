@@ -61,7 +61,7 @@ public class QianBaiLuShowPagerAdapterFragmentActivity extends CommonFragmentAct
 		ShowJson mShowJson = (ShowJson) getIntent().getSerializableExtra("SHOW_JSON");
 		Fragment fragment;
 		if(mShowJson!=null && mShowJson.getList()!=null&& mShowJson.getList().size()>0){
-			fragment = QianBaiLuShowPagerAdapterFragment.newInstance(url, true,weakReferenceHandler,mShowJson.getList());
+			fragment = QianBaiLuShowPagerAdapterFragment.newInstance(url, true,weakReferenceHandler,mShowJson.getList(),mShowJson.getCurrentPosition());
 		}else{
 			fragment = QianBaiLuShowPagerAdapterFragment.newInstance(url, true,weakReferenceHandler);
 		}
@@ -91,6 +91,19 @@ public class QianBaiLuShowPagerAdapterFragmentActivity extends CommonFragmentAct
 			break;
 		default:
 			break;
+		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
+	 */
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE) {
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+		} else{ 
+		 super.onBackPressed();
 		}
 	}
 	 

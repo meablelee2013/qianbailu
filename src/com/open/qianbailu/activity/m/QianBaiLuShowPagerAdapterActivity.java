@@ -47,6 +47,8 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 	public QianBaiLuShowPagerAdapter mQianBaiLuShowPagerAdapter;
 	private List<ShowBean> list = new ArrayList<ShowBean>();
 	private String url = UrlUtils.QIAN_BAI_LU_MOVIE;
+	private int position;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -73,9 +75,14 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 		super.initValue();
 		ShowJson mShowJson = (ShowJson) getIntent().getSerializableExtra("SHOW_JSON");
 		if(mShowJson!=null && mShowJson.getList()!=null&& mShowJson.getList().size()>0){
+			position = mShowJson.getCurrentPosition();
 			list.clear();
 			list.addAll(mShowJson.getList());
 			mQianBaiLuShowPagerAdapter.notifyDataSetChanged();
+			if(position>=0 && position<list.size()){
+				weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 10);
+			}
+			
 		}else{
 			doAsync(this, this, this);
 		}
@@ -85,7 +92,6 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 	protected void bindEvent() {
 		super.bindEvent();
 		// 初始化.
-		viewpager.setCurrentItem(0);
 		viewpager.setOnPageChangeListener(new OnPageChangeListener() {
 
 			@Override
@@ -138,8 +144,24 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 				setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
 			}
 			break;
+		case MESSAGE_DEFAULT_POSITION:
+			viewpager.setCurrentItem(position);
+			break;
 		default:
 			break;
+		}
+	}
+	
+	/* (non-Javadoc)
+	 * @see android.support.v4.app.FragmentActivity#onBackPressed()
+	 */
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE) {
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_PORTRAIT);
+		} else{ 
+		 super.onBackPressed();
 		}
 	}
 	/*

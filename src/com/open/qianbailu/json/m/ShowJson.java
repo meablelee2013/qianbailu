@@ -36,6 +36,7 @@ public class ShowJson extends CommonJson {
 	private String preHref;
 	private String newsTitle;
 	private String neswTime;
+	private int currentPosition;
 	
 	public List<ShowBean> getList() {
 		return list;
@@ -91,6 +92,14 @@ public class ShowJson extends CommonJson {
 
 	public void setNeswTime(String neswTime) {
 		this.neswTime = neswTime;
+	}
+
+	public int getCurrentPosition() {
+		return currentPosition;
+	}
+
+	public void setCurrentPosition(int currentPosition) {
+		this.currentPosition = currentPosition;
 	}
 
 	

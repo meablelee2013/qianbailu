@@ -47,6 +47,8 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 	private List<ShowBean> list = new ArrayList<ShowBean>();
 	private String url = UrlUtils.QIAN_BAI_LU_MOVIE;
 	private WeakActivityReferenceHandler weakActivityReferenceHandler;
+	private int position;
+	
 	public static QianBaiLuShowPagerAdapterFragment newInstance(String url, boolean isVisibleToUser,WeakActivityReferenceHandler weakActivityReferenceHandler) {
 		QianBaiLuShowPagerAdapterFragment fragment = new QianBaiLuShowPagerAdapterFragment();
 		fragment.setUserVisibleHint(isVisibleToUser);
@@ -55,13 +57,14 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 		return fragment;
 	}
 	
-	public static QianBaiLuShowPagerAdapterFragment newInstance(String url, boolean isVisibleToUser,WeakActivityReferenceHandler weakActivityReferenceHandler,List<ShowBean> list) {
+	public static QianBaiLuShowPagerAdapterFragment newInstance(String url, boolean isVisibleToUser,WeakActivityReferenceHandler weakActivityReferenceHandler,List<ShowBean> list,int position) {
 		QianBaiLuShowPagerAdapterFragment fragment = new QianBaiLuShowPagerAdapterFragment();
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
 		fragment.weakActivityReferenceHandler = weakActivityReferenceHandler;
 		if(list!=null && list.size()>0){
 			fragment.list = list;
+			fragment.position = position;
 		}
 		return fragment;
 	}
@@ -84,6 +87,7 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 		viewpager.setAdapter(mQianBaiLuShowPagerAdapter);
 		if(list!=null && list.size()>0){
 			mQianBaiLuShowPagerAdapter.notifyDataSetChanged();
+			viewpager.setCurrentItem(position);
 		}else{
 			doAsync(this, this, this);
 		}

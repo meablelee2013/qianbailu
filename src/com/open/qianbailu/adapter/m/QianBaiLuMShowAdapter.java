@@ -85,7 +85,7 @@ public class QianBaiLuMShowAdapter extends CommonAdapter<ShowBean> {
 	// }
 
 	@Override
-	public View getView(int position, View convertView, ViewGroup parent) {
+	public View getView(final int position, View convertView, ViewGroup parent) {
 		View view = mInflater.inflate(R.layout.adapter_qianbailu_m_show_image, parent, false);
 		TextView text_alt = (TextView) view.findViewById(R.id.text_alt);
 		ImageView imageview = (ImageView) view.findViewById(R.id.imageview);
@@ -105,6 +105,7 @@ public class QianBaiLuMShowAdapter extends CommonAdapter<ShowBean> {
 //				QianBaiLuWebViewActivity.startUmeiWebViewActivity(mContext, bean.getSrc());
 				ShowJson mShowJson = new ShowJson();
 				mShowJson.setList(list);
+				mShowJson.setCurrentPosition(position);
 //				QianBaiLuShowPagerAdapterActivity.startQianBaiLuShowPagerAdapterActivity(mContext, mShowJson);
 				QianBaiLuShowPagerAdapterFragmentActivity.startQianBaiLuShowPagerAdapterFragmentActivity(mContext, mShowJson);
 			}
