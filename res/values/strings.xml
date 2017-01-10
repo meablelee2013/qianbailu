@@ -47,4 +47,7 @@
 	 <string name="qianbailu_search_pc_desp">pc搜索</string>
      <string name="qianbailu_search_result_pc_desp">pc搜索结果</string>
      <string name="qianbailu_main_pc_desp">pc主页面</string>
+     <string name="qianbailu_webview_notice_desp">网站公告</string>
+     <string name="qianbailu_hot_desp">热搜排行</string>
+     <string name="qianbailu_webview_download_desp">下载地址转换</string>
 </resources>

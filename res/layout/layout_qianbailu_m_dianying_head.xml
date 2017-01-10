@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#1f92d1"
         android:padding="10dp"
-        android:text="最新pacopacomama 010" />
+        />
 
     <ImageView
         android:id="@+id/img_movieDetaiImg"

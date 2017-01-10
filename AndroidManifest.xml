@@ -242,6 +242,27 @@
             android:description="@string/qianbailu_main_pc_desp" 
 			>
         </activity>
+        <!--   网站公告-->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuNoticeWebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_webview_notice_desp"  
+			>
+        </activity>
+          <!--  热搜排行 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuHotFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_hot_desp" 
+			>
+        </activity>
+         <!-- 下载地址转换-->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuDownLoadWebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_webview_download_desp"  
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

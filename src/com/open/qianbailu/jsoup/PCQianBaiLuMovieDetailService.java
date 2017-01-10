@@ -49,13 +49,16 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 					mMovieDetailJson.setSec_info_intro(divElement.select("img").first().attr("alt"));
 
 					/**
-					 * <li><span>影片类型：</span><a target="_blank"
+					 * <li>
+					 * <span>影片类型：</span><a target="_blank"
 					 * href="/list/6.html" title="乱伦虐待">乱伦虐待</a></li> <li>
+					 * 
 					 * <span>看片帮助：</span><a target="_blank"
 					 * href="/detail/help.html" rel="nofollow">看片教程</a></li> <li>
 					 * <span>移动端看片：</span><a target="_blank"
-					 * href="、detail/mobile.html" rel="nofollow">看片教程</a></li>
-					 * <li><div class="fl"><span>更新日期：</span>2016-12-10</div><a
+					 * href="/detail/mobile.html" rel="nofollow">看片教程</a></li>
+					 * <li><div class="fl">
+					 * <span>更新日期：</span>2016-12-10</div><a
 					 * class="fr" href="#pl"
 					 * style="text-align:right; margin-right:10px;"><img src=
 					 * "//ww4.sinaimg.cn/large/005Z6lBIjw1eod4d93jasg302i00m3y9.gif"
@@ -78,7 +81,7 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 							try {
 								String span = movieInfoElement.select("li").get(1).select("span").first().text();
 								String aa = movieInfoElement.select("li").get(1).select("a").first().text();
-								mMovieDetailJson.setMovie_time(span + aa);
+								mMovieDetailJson.setMovie_time(span + aa );
 							} catch (Exception e) {
 								e.printStackTrace();
 							}

@@ -42,9 +42,9 @@ import com.open.qianbailu.utils.UrlUtils;
  ***************************************************************************************************************************************************************************** 
  */
 public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
-	private static final String TAG = QianBaiLuWebViewActivity.class.getSimpleName();
-	private WebView webview;
-	private String url = UrlUtils.QIAN_BAI_LU_M;
+	public static final String TAG = QianBaiLuWebViewActivity.class.getSimpleName();
+	public WebView webview;
+	public String url = UrlUtils.QIAN_BAI_LU_M;
 
 	/*
 	 * (non-Javadoc)
@@ -92,12 +92,16 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 			url = getIntent().getStringExtra("URL");
 		}
 		Log.i("WebViewActivity", "url==" + url);
+		loadUrl();
+	}
+	
+	public void loadUrl(){
 		webview.loadUrl(url);
 	}
 
-	private WebViewClientBase mWebViewClientBase = new WebViewClientBase();
+	public WebViewClientBase mWebViewClientBase = new WebViewClientBase();
 
-	private class WebViewClientBase extends WebViewClient {
+	public class WebViewClientBase extends WebViewClient {
 
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -143,7 +147,7 @@ public class QianBaiLuWebViewActivity extends CommonFragmentActivity {
 		}
 	}
 
-	private WebChromeClientBase mWebChromeClientBase = new WebChromeClientBase();
+	public WebChromeClientBase mWebChromeClientBase = new WebChromeClientBase();
 
 	private class WebChromeClientBase extends WebChromeClient {
 		@Override

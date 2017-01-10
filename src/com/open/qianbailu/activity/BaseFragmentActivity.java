@@ -78,6 +78,9 @@ Response.Listener<JSONObject>, Response.ErrorListener {
 	/** 设置为横竖屏 */
 	public static final int MESSAGE_SCREEN_ORIENTATION = 7000;
 	
+	/** js android 回调 */
+	public static final int MESSAGE_JS_ANDROID_CALLBACK = 8000;
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -92,12 +95,18 @@ Response.Listener<JSONObject>, Response.ErrorListener {
 
 	protected void init() {
 		try {
+			initIntent();
 			findView();
 			initValue();
 			bindEvent();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	protected void initIntent() {
+		 
+		
 	}
 
 	/***

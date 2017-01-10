@@ -11,6 +11,7 @@
  */
 package com.open.qianbailu.utils;
 
+import com.open.qianbailu.activity.PCQianBaiLuDownLoadWebViewActivity;
 import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
 
 import android.content.Context;
@@ -32,7 +33,9 @@ public class DownLoadUtils {
 	
 	public static void downLoad(Context context,String url){
 		try {
+			//http://m.4400av.com/play.php?id=2718 云点播
 			if(url.contains("ed2k://|file") ){
+				//电驴
 				//打开百度云 com.baidu.netdisk
 				//com.baidu.netdisk.ui.UrlLinkActivity
 				Intent intent = context.getPackageManager().getLaunchIntentForPackage("com.baidu.netdisk");
@@ -41,14 +44,14 @@ public class DownLoadUtils {
 //				intent.setClassName("com.baidu.netdisk", "com.baidu.netdisk.ui.MainActivity");
 //				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //				startActivity(intent);
-			} else{
+			} else  {
 				Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
 				intent.addCategory("android.intent.category.DEFAULT");
 				context.startActivity(intent);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			QianBaiLuWebViewActivity.startUmeiWebViewActivity(context, UrlUtils.QIAN_BAI_LU_DOWNLOAD);
+			PCQianBaiLuDownLoadWebViewActivity.startPCQianBaiLuDownLoadWebViewActivity(context, null);
 		}
 		
 	}

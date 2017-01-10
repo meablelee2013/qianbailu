@@ -83,6 +83,11 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_SEARCH = "https://1100.so/";
 	/***pc搜索例子**/
 	public static final String PC_QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/?q=%E4%B8%9C%E4%BA%AC%E7%83%AD";
+	/***网站公告**/
+	public static final String PC_QIAN_BAI_LU_NOTICE = "http://www.1111av.co/detail/gg.html";
+	/***热搜排行**/
+	public static final String PC_QIAN_BAI_LU_HOT = "http://www.1111av.co/detail/hot.html";
+	 
 	
 	public static String getCookie(){
 		return COOKIE;

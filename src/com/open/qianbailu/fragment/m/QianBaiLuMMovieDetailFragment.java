@@ -16,8 +16,6 @@ import java.util.List;
 
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -25,13 +23,13 @@ import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView.OnTagClickListener;
 
@@ -42,6 +40,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.open.qianbailu.R;
+import com.open.qianbailu.activity.PCQianBaiLuNoticeWebViewActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMShowAdapter;
 import com.open.qianbailu.bean.m.NavMChildBean;
 import com.open.qianbailu.bean.m.ShowBean;
@@ -76,6 +75,8 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 	private TextView text_movie_type;
 	private TextView text_movie_time;
 	private TagContainerLayout tagcontainerLayout;
+	private TextView text_moduleTitle ;
+	
 	public static QianBaiLuMMovieDetailFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMMovieDetailFragment fragment = new QianBaiLuMMovieDetailFragment();
 		fragment.setFragment(fragment);
@@ -92,6 +93,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 		text_pretitle = (TextView) footview.findViewById(R.id.text_pretitle);
 		
 		headview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_m_dianying_head, null);
+		text_moduleTitle= (TextView) headview.findViewById(R.id.text_moduleTitle);
 		text_movie_name = (TextView) headview.findViewById(R.id.text_movie_name);
 		text_movie_type = (TextView) headview.findViewById(R.id.text_movie_type);
 		text_movie_time = (TextView) headview.findViewById(R.id.text_movie_time);
@@ -175,8 +177,18 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 				}
 			}
 		});
+		
+		text_movie_time.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(text_movie_time.getText().toString().contains("看片帮助")){
+					PCQianBaiLuNoticeWebViewActivity.startPCQianBaiLuNoticeWebViewActivity(getActivity(), null);
+				}
+			}
+		});
 	}
 
+	
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -216,6 +228,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 		mPullRefreshListView.onRefreshComplete();
 		
 		text_pretitle.setText(result.getSec_info_intro());
+		text_moduleTitle.setText(result.getMovie_name());
 		text_movie_name.setText(result.getMovie_name());
 		text_movie_type.setText(result.getMovie_type());
 		text_movie_time.setText(result.getMovie_time());
