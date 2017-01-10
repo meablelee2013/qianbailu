@@ -235,6 +235,13 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+        <!--  pc主页面 -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuMainFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_main_pc_desp" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

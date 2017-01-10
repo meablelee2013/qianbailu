@@ -13,14 +13,10 @@ import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
 import com.open.qianbailu.R;
-import com.open.qianbailu.activity.m.QianBaiLuMBIndicatorFragmentActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMIndicatorFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMMainFragmentActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMSIndicatorFragmentActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMSearchActivity;
 import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.json.m.NavMJson;
-import com.open.qianbailu.jsoup.QianBaiLuNavService;
+import com.open.qianbailu.jsoup.PCQianBaiLuNavService;
 import com.open.qianbailu.utils.ScreenUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
@@ -86,7 +82,7 @@ public class PCMainTabActivity extends CommonTabActivity<NavMJson>     {
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson  mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuNavService.parseMNav(url));
+		mNavMJson.setList(PCQianBaiLuNavService.parseMNav(url));
 		return mNavMJson;
 	}
 	
@@ -98,7 +94,7 @@ public class PCMainTabActivity extends CommonTabActivity<NavMJson>     {
 			NavMBean mbean = result.getList().get(i);
 			TabSpec tab_main = mTabHost.newTabSpec(mbean.getTitle());
 			if(mbean.getTitle().equals("首页")){
-				tab_main.setContent(new Intent(this, QianBaiLuMMainFragmentActivity.class)).setIndicator(mbean.getTitle());
+				tab_main.setContent(new Intent(this, PCQianBaiLuMainFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("电影")){
 			   tab_main.setContent(new Intent(this, PCQianBaiLuIndicatorFragmentActivity.class)).setIndicator(mbean.getTitle());
 			}else if(mbean.getTitle().equals("图片")){
