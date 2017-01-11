@@ -43,15 +43,15 @@ public class PCQianBaiLuMovieDetailFragment extends QianBaiLuMMovieDetailFragmen
 		return fragment;
 	}
 
-	/* (non-Javadoc)
-	 * @see android.support.v4.app.Fragment#onViewCreated(android.view.View, android.os.Bundle)
-	 */
-	@Override
-	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onViewCreated(view, savedInstanceState);
-		url = UrlUtils.PC_QIAN_BAI_LU_MOVIE;
-	}
+//	/* (non-Javadoc)
+//	 * @see android.support.v4.app.Fragment#onViewCreated(android.view.View, android.os.Bundle)
+//	 */
+//	@Override
+//	public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+//		// TODO Auto-generated method stub
+//		super.onViewCreated(view, savedInstanceState);
+//		url = UrlUtils.PC_QIAN_BAI_LU_MOVIE;
+//	}
 
 	/*
 	 * (non-Javadoc)
