@@ -77,7 +77,7 @@ public class PCQianBaiLuXiaoShuoService extends CommonService {
 			}
 			Element artbodylement = doc.select("div.artbody").first();
 			try {
-				mXiaoShuoJson.setDetailText(artbodylement.select("p").first().text());
+				mXiaoShuoJson.setDetailText(artbodylement.select("p").first().toString());
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

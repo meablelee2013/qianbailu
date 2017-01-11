@@ -17,6 +17,7 @@ import java.util.List;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -220,7 +221,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 
 		text_newstitle.setText(result.getNewsTitle() + result.getNeswTime());
 		
-		text_detailText.setText(result.getDetailText());
+		text_detailText.setText(Html.fromHtml(result.getDetailText()));
 		
 		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
 		

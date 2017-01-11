@@ -12,6 +12,7 @@
 package com.open.qianbailu.fragment;
 
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -142,14 +143,16 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 		
 		if (mPullToRefreshScrollView.getCurrentMode() == Mode.PULL_FROM_START) {
 			text_detailText.setText("");
-			text_detailText.setText(result.getDetailText());
+			text_detailText.setText(Html.fromHtml(result.getDetailText()));
 		}else if (mPullToRefreshScrollView.getCurrentMode() == Mode.PULL_FROM_END) {
 			if(result.getDetailText()!=null && result.getDetailText().length()>0){
-				text_detailText.append("\n");
-				text_detailText.append(result.getDetailText());
+				text_detailText.append(Html.fromHtml("<br/><font color='#FF0000'>第"+pagerno+"页</font><br/>"));
+				text_detailText.append(Html.fromHtml(result.getDetailText()));
 			}
 		}
-		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
+		if(pagerno==1){
+			weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
+		}
 		float zoomScale = 1f;// 缩放比例 
 		new ZoomTextView(text_detailText, zoomScale); 
 	}

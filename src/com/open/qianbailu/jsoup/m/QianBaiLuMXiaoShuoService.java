@@ -86,7 +86,7 @@ public class QianBaiLuMXiaoShuoService extends CommonService {
 				}
 				
 				try {
-					mXiaoShuoJson.setDetailText(divElement.text());
+					mXiaoShuoJson.setDetailText(divElement.toString());
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
