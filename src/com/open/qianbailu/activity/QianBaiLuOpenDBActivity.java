@@ -13,25 +13,26 @@ package com.open.qianbailu.activity;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import android.os.Bundle;
 import android.os.Message;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.db.OpenDBListAdapter;
 import com.open.qianbailu.bean.db.OpenDBBean;
-import com.open.qianbailu.db.QianBaiLuDBHelper;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.json.db.OpenDBJson;
 import com.open.qianbailu.weak.WeakActivityReferenceHandler;
@@ -48,17 +49,17 @@ import com.open.qianbailu.weak.WeakActivityReferenceHandler;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> implements OnClickListener,OnItemClickListener {
-	private ListView listview;
+public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> implements OnClickListener, OnItemClickListener {
+	private PullToRefreshListView mPullRefreshListView;
 	private OpenDBListAdapter mOpenDBListAdapter;
 	private List<OpenDBBean> list = new ArrayList<OpenDBBean>();
 
-//	private Button selectBtn;
-//	private Button insertBtn;
-//	private Button updateBtn;
-//	private Button deleteBtn;
-//	private TextView contentTv;
-//	private QianBaiLuDBHelper mQianBaiLuDBHelper;
+	// private Button selectBtn;
+	// private Button insertBtn;
+	// private Button updateBtn;
+	// private Button deleteBtn;
+	// private TextView contentTv;
+	// private QianBaiLuDBHelper mQianBaiLuDBHelper;
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -81,12 +82,12 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	protected void findView() {
 		// TODO Auto-generated method stub
 		super.findView();
-		listview = (ListView) findViewById(R.id.listview);
-//		selectBtn = (Button) findViewById(R.id.btn_selecet);
-//		insertBtn = (Button) findViewById(R.id.btn_insert);
-//		updateBtn = (Button) findViewById(R.id.btn_update);
-//		deleteBtn = (Button) findViewById(R.id.btn_delete);
-//		contentTv = (TextView) findViewById(R.id.txt_content);
+		mPullRefreshListView = (PullToRefreshListView) findViewById(R.id.pull_refresh_list);
+		// selectBtn = (Button) findViewById(R.id.btn_selecet);
+		// insertBtn = (Button) findViewById(R.id.btn_insert);
+		// updateBtn = (Button) findViewById(R.id.btn_update);
+		// deleteBtn = (Button) findViewById(R.id.btn_delete);
+		// contentTv = (TextView) findViewById(R.id.txt_content);
 
 	}
 
@@ -99,11 +100,25 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	protected void bindEvent() {
 		// TODO Auto-generated method stub
 		super.bindEvent();
-		listview.setOnItemClickListener(this);
-//		selectBtn.setOnClickListener(this);
-//		insertBtn.setOnClickListener(this);
-//		updateBtn.setOnClickListener(this);
-//		deleteBtn.setOnClickListener(this);
+		mPullRefreshListView.setOnItemClickListener(this);
+		// selectBtn.setOnClickListener(this);
+		// insertBtn.setOnClickListener(this);
+		// updateBtn.setOnClickListener(this);
+		// deleteBtn.setOnClickListener(this);
+		// Set a listener to be invoked when the list should be refreshed.
+		mPullRefreshListView.setOnRefreshListener(new OnRefreshListener<ListView>() {
+			@Override
+			public void onRefresh(PullToRefreshBase<ListView> refreshView) {
+				String label = DateUtils.formatDateTime(QianBaiLuOpenDBActivity.this, System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
+				// Update the LastUpdatedLabel
+				refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
+				// Do work to refresh the list here.
+				if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
+					weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+				}
+			}
+		});
+		 
 	}
 
 	/*
@@ -115,31 +130,38 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	protected void initValue() {
 		// TODO Auto-generated method stub
 		super.initValue();
-//		mQianBaiLuDBHelper = QianBaiLuDBHelper.getInstance(getApplicationContext());
-		
+		// mQianBaiLuDBHelper =
+		// QianBaiLuDBHelper.getInstance(getApplicationContext());
+		mPullRefreshListView.setMode(Mode.PULL_FROM_START);
 		weakReferenceHandler = new WeakActivityReferenceHandler(this);
-		mOpenDBListAdapter = new OpenDBListAdapter(this, weakReferenceHandler,list);
-		listview.setAdapter(mOpenDBListAdapter);
+		mOpenDBListAdapter = new OpenDBListAdapter(this, weakReferenceHandler, list);
+		mPullRefreshListView.setAdapter(mOpenDBListAdapter);
 
-		doAsync(this, this, this);
+		weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+		
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
-//		case R.id.btn_selecet:
-//			List<Map> list = mQianBaiLuDBHelper.queryListMap("select * from user", null);
-//			contentTv.setText(String.valueOf(list));
-//			break;
-//		case R.id.btn_insert:
-//			mQianBaiLuDBHelper.insert("user", new String[] { "name", "gender", "age" }, new Object[] { "qiangyu", "male", 23 });
-//			break;
-//		case R.id.btn_update:
-//			mQianBaiLuDBHelper.update("user", new String[] { "name", "gender", "age" }, new Object[] { "yangqiangyu", "male", 24 }, new String[] { "name" }, new String[] { "qiangyu" });
-//			break;
-//		case R.id.btn_delete:
-//			mQianBaiLuDBHelper.delete("user", new String[] { "name" }, new String[] { "qiangyu" });
-//			break;
+		// case R.id.btn_selecet:
+		// List<Map> list =
+		// mQianBaiLuDBHelper.queryListMap("select * from user", null);
+		// contentTv.setText(String.valueOf(list));
+		// break;
+		// case R.id.btn_insert:
+		// mQianBaiLuDBHelper.insert("user", new String[] { "name", "gender",
+		// "age" }, new Object[] { "qiangyu", "male", 23 });
+		// break;
+		// case R.id.btn_update:
+		// mQianBaiLuDBHelper.update("user", new String[] { "name", "gender",
+		// "age" }, new Object[] { "yangqiangyu", "male", 24 }, new String[] {
+		// "name" }, new String[] { "qiangyu" });
+		// break;
+		// case R.id.btn_delete:
+		// mQianBaiLuDBHelper.delete("user", new String[] { "name" }, new
+		// String[] { "qiangyu" });
+		// break;
 		}
 	}
 
@@ -170,6 +192,8 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		list.clear();
 		list.addAll(result.getList());
 		mOpenDBListAdapter.notifyDataSetChanged();
+		// Call onRefreshComplete when the list has been refreshed.
+	    mPullRefreshListView.onRefreshComplete();
 	}
 
 	/*
@@ -187,37 +211,44 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		case MESSAGE_ADAPTER_CALL_ONITEM:
 			onItemClick(null, null, msg.arg1, msg.arg1);
 			break;
+		case MESSAGE_HANDLER:
+			doAsync(this, this, this);
+			break;
 		default:
 			break;
 		}
 
 	}
 
-	/* (non-Javadoc)
-	 * @see android.widget.AdapterView.OnItemClickListener#onItemClick(android.widget.AdapterView, android.view.View, int, long)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * android.widget.AdapterView.OnItemClickListener#onItemClick(android.widget
+	 * .AdapterView, android.view.View, int, long)
 	 */
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
-		if((id)!=-1 && list!=null && list.size()>0){
-			OpenDBBean bean = list.get((int)id);
+		if ((id) != -1 && list != null && list.size() > 0) {
+			OpenDBBean bean = list.get((int) id);
 			switch (bean.getType()) {
 			case 1:
-				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(QianBaiLuOpenDBActivity.this,bean.getUrl());
+				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
 				break;
-		    case 2:
-		    	QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(QianBaiLuOpenDBActivity.this,bean.getUrl());
+			case 2:
+				QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
 				break;
-		    case 3:
-		    	QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
-			break;
-		    case 4:
-		    	PCQianBaiLuXiaoShuoFragmentActivity.startPCQianBaiLuXiaoShuoFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
-		    	break;
-		    case 5:
-		    	PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
-			break;
-		    case 6:
+			case 3:
+				QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
+				break;
+			case 4:
+				PCQianBaiLuXiaoShuoFragmentActivity.startPCQianBaiLuXiaoShuoFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
+				break;
+			case 5:
+				PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
+				break;
+			case 6:
 				PCQianBaiLuMoveDetailFragmentActivity.startPCQianBaiLuMoveDetailFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
 				break;
 			default:
@@ -225,7 +256,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				break;
 			}
 		}
-		
+
 	}
 
 }
