@@ -42,7 +42,7 @@ import com.open.qianbailu.view.ZoomTextView;
  *****************************************************************************************************************************************************************************
  */
 public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
-	public String url = UrlUtils.PC_QIAN_BAI_LU_XIAO_SHUO;
+//	public String url = UrlUtils.PC_QIAN_BAI_LU_XIAO_SHUO;
 	private int pagerno =1;
 	
 	public static PCQianBaiLuXiaoShuoFragment newInstance(String url,int type, boolean isVisibleToUser) {
