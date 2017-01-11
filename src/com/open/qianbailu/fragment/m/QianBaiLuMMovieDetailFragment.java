@@ -238,6 +238,9 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 			ImageLoader.getInstance().displayImage(result.getMovieDetaiImg(), img_movieDetaiImg, options, getImageLoadingListener());
 		}
 		
+		if(text_movie_time.getText().toString().contains("看片帮助")){
+			text_movie_time.setTextColor(getActivity().getResources().getColor(android.R.color.holo_red_light));
+		}
 		
 	}
 

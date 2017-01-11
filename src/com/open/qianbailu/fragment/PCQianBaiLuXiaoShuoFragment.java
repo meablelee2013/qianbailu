@@ -27,6 +27,7 @@ import com.open.qianbailu.fragment.m.QianBaiLuMXiaoShuoFragment;
 import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuXiaoShuoService;
 import com.open.qianbailu.utils.UrlUtils;
+import com.open.qianbailu.view.ZoomTextView;
 
 /**
  *****************************************************************************************************************************************************************************
@@ -149,6 +150,8 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 			}
 		}
 		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
+		float zoomScale = 1f;// 缩放比例 
+		new ZoomTextView(text_detailText, zoomScale); 
 	}
  
  

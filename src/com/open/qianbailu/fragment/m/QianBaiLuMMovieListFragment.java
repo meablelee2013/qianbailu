@@ -86,7 +86,7 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 	public void initValues() {
 		// TODO Auto-generated method stub
 		super.initValues();
-		mQianBaiLuMMovieListAdapter = new QianBaiLuMMovieListAdapter(getActivity(), list);
+		mQianBaiLuMMovieListAdapter = new QianBaiLuMMovieListAdapter(getActivity(), weakReferenceHandler,list);
 		mPullRefreshListView.setAdapter(mQianBaiLuMMovieListAdapter);
 		mPullRefreshListView.setMode(Mode.BOTH);
 	}
@@ -182,6 +182,9 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 		switch (msg.what) {
 		case MESSAGE_HANDLER:
 			doAsync(this, this, this);
+			break;
+		case MESSAGE_ADAPTER_CALL_ONITEM:
+			QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(getActivity(), list.get(msg.arg1).getLinkurl());
 			break;
 		default:
 			break;

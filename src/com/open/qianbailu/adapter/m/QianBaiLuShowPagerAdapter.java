@@ -21,7 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -29,6 +29,7 @@ import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.CommonPagerAdapter;
 import com.open.qianbailu.bean.m.ShowBean;
 import com.open.qianbailu.utils.ImageAsyncTask;
+import com.open.qianbailu.view.ZoomImageView;
 import com.open.qianbailu.weak.WeakActivityReferenceHandler;
 
 /**
@@ -53,7 +54,8 @@ public class QianBaiLuShowPagerAdapter extends CommonPagerAdapter<ShowBean>{
 		final ShowBean bean = (ShowBean) getItem(position);
 		final ViewHolder mViewHolder = new ViewHolder();
 		View convertView = LayoutInflater.from(mContext).inflate(R.layout.adapter_qianbailu_m_show_viewpager, null);
-		mViewHolder.imageview = (ImageView) convertView.findViewById(R.id.imageview);
+		mViewHolder.imageview = (ZoomImageView) convertView.findViewById(R.id.imageview);
+		mViewHolder.txt_save = (TextView) convertView.findViewById(R.id.txt_save);
 		if (bean != null) {
 			if (bean.getSrc() != null && bean.getSrc().length() > 0) {
 				DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
@@ -69,9 +71,9 @@ public class QianBaiLuShowPagerAdapter extends CommonPagerAdapter<ShowBean>{
 				weakActivityReferenceHandler.sendEmptyMessage(7000);
 			}
 		});
-		mViewHolder.imageview.setOnLongClickListener(new View.OnLongClickListener() {  
+		mViewHolder.txt_save.setOnClickListener(new View.OnClickListener() {  
 	           @Override  
-	           public boolean onLongClick(View v) {  
+	           public void onClick(View v) {  
 	               AlertDialog.Builder builder = new AlertDialog.Builder(mContext);  
 	               builder.setItems(new String[]{mContext.getResources().getString(R.string.save_picture)}, new DialogInterface.OnClickListener() {  
 	                   @Override  
@@ -84,7 +86,6 @@ public class QianBaiLuShowPagerAdapter extends CommonPagerAdapter<ShowBean>{
 	                   }  
 	               });  
 	               builder.show();  
-	               return true;  
 	           }  
 	       });  
 		container.addView(convertView);
@@ -156,7 +157,8 @@ public class QianBaiLuShowPagerAdapter extends CommonPagerAdapter<ShowBean>{
 	}
 
 	private class ViewHolder {
-		ImageView imageview;
+		ZoomImageView imageview;
+		TextView txt_save;
 	}
 
 }

@@ -40,6 +40,8 @@ import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMXiaoShuoService;
 import com.open.qianbailu.utils.UrlUtils;
+import com.open.qianbailu.view.ZoomTextView;
+import com.open.qianbailu.view.ZoomView;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -221,6 +223,9 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		text_detailText.setText(result.getDetailText());
 		
 		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
+		
+		float zoomScale = 1f;// 缩放比例 
+		new ZoomTextView(text_detailText, zoomScale); 
 	}
 
 	/*

@@ -11,6 +11,7 @@
  */
 package com.open.qianbailu.fragment;
 
+import android.os.Message;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.open.qianbailu.activity.PCQianBaiLuMoveDetailFragmentActivity;
+import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieListFragment;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieService;
@@ -121,5 +123,25 @@ public class PCQianBaiLuMovieListFragment extends QianBaiLuMMovieListFragment{
 		mQianBaiLuMMovieListAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullRefreshListView.onRefreshComplete();
+	}
+		/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.open.umei.fragment.BaseV4Fragment#handlerMessage(android.os.Message)
+	 */
+	@Override
+	public void handlerMessage(Message msg) {
+		// TODO Auto-generated method stub
+		switch (msg.what) {
+		case MESSAGE_HANDLER:
+			doAsync(this, this, this);
+			break;
+		case MESSAGE_ADAPTER_CALL_ONITEM:
+			PCQianBaiLuMoveDetailFragmentActivity.startPCQianBaiLuMoveDetailFragmentActivity(getActivity(), list.get(msg.arg1).getLinkurl());
+			break;
+		default:
+			break;
+		}
 	}
 }
