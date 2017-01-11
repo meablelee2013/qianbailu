@@ -108,6 +108,17 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 				}
 			}
 		});
+		
+		text_nexttitle.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(text_nexttitle.getTag().toString().length()>0){
+					if (!text_nexttitle.getTag().toString().contains("很抱歉已经没有了") && !text_nexttitle.getTag().toString().equals(url)) {
+						PCQianBaiLuXiaoShuoFragmentActivity.startPCQianBaiLuXiaoShuoFragmentActivity(getActivity(), text_nexttitle.getTag().toString());
+					}
+				}
+			}
+		});
 		 
 	}
 

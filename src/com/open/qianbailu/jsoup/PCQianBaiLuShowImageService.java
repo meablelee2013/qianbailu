@@ -50,6 +50,18 @@ public class PCQianBaiLuShowImageService extends CommonService {
 						mShowJson.setPreTitle(ljTitleElement.text());
 					}
 					
+					try {
+						Element aElement1  = ljTitleElement.select("a").get(1);
+						if(aElement1!=null){
+							mShowJson.setNextHref(UrlUtils.QIAN_BAI_LU+aElement1.attr("href"));
+							mShowJson.setNextTitle("按→键进入下一撸："+aElement1.text());
+						}else{
+							mShowJson.setNextTitle(ljTitleElement.text());
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

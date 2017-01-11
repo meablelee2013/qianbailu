@@ -35,10 +35,12 @@ public class PCQianBaiLuXiaoShuoService extends CommonService {
 			// System.out.println(doc.toString());
 
 			/**
-		  <div class="pn_news">
+<div class="pn_news">
 <ul>
-<li><em>按←键进入上一撸：<a id="pre" href="/html/article/jiqing/2017/0107/393309.html">调教美妇之姑侄寻欢</a></em></li></ul>
+<li><em>按←键进入上一撸：<a id="pre" href="/html/article/jiqing/2017/0107/393309.html">调教美妇之姑侄寻欢</a></em></li>
+<li><em>按→键进入下一撸：<a id="next" href="/html/article/jiqing/2017/0110/393425.html">办公室横着走的女人</a></em></li></ul>
   </div>
+
 			 */
 			try {
 				Element ljTitleElement = doc.select("div.pn_news").first();
@@ -49,6 +51,18 @@ public class PCQianBaiLuXiaoShuoService extends CommonService {
 						mXiaoShuoJson.setPreTitle("按←键进入上一撸：" + aElement.text());
 					} else {
 						mXiaoShuoJson.setPreTitle(ljTitleElement.text());
+					}
+					
+					try {
+						Element aElement1 = ljTitleElement.select("a").get(1);
+						if (aElement1 != null) {
+							mXiaoShuoJson.setNextHref(UrlUtils.QIAN_BAI_LU + aElement1.attr("href"));
+							mXiaoShuoJson.setNextTitle("按→键进入下一撸：" + aElement1.text());
+						} else {
+							mXiaoShuoJson.setNextTitle(ljTitleElement.text());
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
 
 				}
