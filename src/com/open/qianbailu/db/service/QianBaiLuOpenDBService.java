@@ -17,6 +17,7 @@ import java.util.Map;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.open.qianbailu.R;
 import com.open.qianbailu.bean.db.OpenDBBean;
@@ -73,10 +74,17 @@ public class QianBaiLuOpenDBService {
 		ojects[4] = openbean.getTypename();
 		ojects[5] = openbean.getUrl();
 		
+		Map map = QianBaiLuDBHelper.getInstance(mContext).queryItemMap(mContext.getResources().getStringArray(R.array.QUERY_ALL_TABLE_SQL_WHERE)[0], 
+				new String[]{openbean.getUrl()});
+		if(map!=null && !map.isEmpty()){
+			Toast.makeText(mContext, "已经下载过", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
 		QianBaiLuDBHelper.getInstance(mContext).insert(mContext.getResources().getStringArray(R.array.CREATE_TABLE_NAME)[0],
 				mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD), 
 				ojects);
-		Log.i(TAG, "insert=="+ojects.toString());
+		Log.i(TAG, "insert=="+openbean.getTime()+openbean.getUrl()+openbean.getType());
 	}
 	
 
