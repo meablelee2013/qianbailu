@@ -172,6 +172,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 			        openbean.setUrl(url);
 			        openbean.setType(type);
 			        openbean.setTitle(text_newstitle.getText().toString());
+			        openbean.setTypename( text_detailText.getText().toString().substring(0, 200));
 			        QianBaiLuOpenDBService.insert(getActivity(), openbean);
 					break;
 				default:
