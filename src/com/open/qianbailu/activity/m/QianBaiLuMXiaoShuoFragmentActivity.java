@@ -60,7 +60,7 @@ public class QianBaiLuMXiaoShuoFragmentActivity extends CommonFragmentActivity{
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = QianBaiLuMXiaoShuoFragment.newInstance(url, true);
+		Fragment fragment = QianBaiLuMXiaoShuoFragment.newInstance(url,1, true);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_xiaoshuo, fragment).commit();
 	}
 

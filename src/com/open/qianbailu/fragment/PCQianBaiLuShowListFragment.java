@@ -36,11 +36,12 @@ import com.open.qianbailu.utils.UrlUtils;
 public class PCQianBaiLuShowListFragment extends QianBaiLuMShowListFragment {
 	public String url = UrlUtils.PC_QIAN_BAI_LU_SHOW;
 
-	public static PCQianBaiLuShowListFragment newInstance(String url, boolean isVisibleToUser) {
+	public static PCQianBaiLuShowListFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		PCQianBaiLuShowListFragment fragment = new PCQianBaiLuShowListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 

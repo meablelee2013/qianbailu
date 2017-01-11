@@ -70,11 +70,17 @@ public class OpenDBListAdapter extends CommonAdapter<OpenDBBean> {
 			viewHolder.text_type.setText(bean.getTypename());
 			viewHolder.text_time.setText(bean.getTime());
 
-			if (bean.getImgsrc() != null && bean.getImgsrc().length() > 0) {
-				DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
-						.cacheInMemory().cacheOnDisc().build();
-				ImageLoader.getInstance().displayImage(bean.getImgsrc(), viewHolder.imageview, options, getImageLoadingListener());
+			if(bean.getType()==1 || bean.getType()==4){
+				viewHolder.imageview.setVisibility(View.GONE);
+			}else{
+				viewHolder.imageview.setVisibility(View.VISIBLE);
+				if (bean.getImgsrc() != null && bean.getImgsrc().length() > 0) {
+					DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
+							.cacheInMemory().cacheOnDisc().build();
+					ImageLoader.getInstance().displayImage(bean.getImgsrc(), viewHolder.imageview, options, getImageLoadingListener());
+				}
 			}
+		
 			viewHolder.btn_detail.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {

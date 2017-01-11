@@ -59,7 +59,7 @@ public class PCQianBaiLuXiaoShuoFragmentActivity extends CommonFragmentActivity{
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = PCQianBaiLuXiaoShuoFragment.newInstance(url, true);
+		Fragment fragment = PCQianBaiLuXiaoShuoFragment.newInstance(url, 4,true);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_xiaoshuo, fragment).commit();
 	}
 

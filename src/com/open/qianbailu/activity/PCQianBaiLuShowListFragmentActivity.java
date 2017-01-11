@@ -58,7 +58,7 @@ public class PCQianBaiLuShowListFragmentActivity extends CommonFragmentActivity{
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = PCQianBaiLuShowListFragment.newInstance(url, true);
+		Fragment fragment = PCQianBaiLuShowListFragment.newInstance(url, 5,true);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_image, fragment).commit();
 	}
 

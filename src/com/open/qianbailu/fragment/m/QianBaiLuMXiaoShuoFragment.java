@@ -37,6 +37,8 @@ import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMSearchActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMSearchResultActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMXiaoShuoService;
@@ -62,12 +64,14 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 	public TextView text_newstitle,text_detailText;
 	public TagContainerLayout tagcontainerLayout;
 	public List<String> tagList = new ArrayList<String>();
+	public int type;
 	
-	public static QianBaiLuMXiaoShuoFragment newInstance(String url, boolean isVisibleToUser) {
+	public static QianBaiLuMXiaoShuoFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		QianBaiLuMXiaoShuoFragment fragment = new QianBaiLuMXiaoShuoFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 
@@ -105,6 +109,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		tagList.add("字体大");
 		tagList.add("字体中");
 		tagList.add("字体小");
+		tagList.add("收藏");
 		tagcontainerLayout.setTags(tagList);
 	}
 
@@ -161,6 +166,13 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 					break;
 				case 2:
 					size = 12;
+					break;
+				case 3:
+				    OpenDBBean openbean = new OpenDBBean();
+			        openbean.setUrl(url);
+			        openbean.setType(type);
+			        openbean.setTitle(text_newstitle.getText().toString());
+			        QianBaiLuOpenDBService.insert(getActivity(), openbean);
 					break;
 				default:
 					break;

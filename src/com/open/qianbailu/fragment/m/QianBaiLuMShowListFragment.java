@@ -35,7 +35,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMShowAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.ShowBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.ShowJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMShowImageService;
@@ -60,12 +62,15 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 	private View footview;
 	public TextView text_pretitle, text_nexttitle;
 	private TextView text_newstitle;
+	public int type;
+	private TextView text_collection;
 
-	public static QianBaiLuMShowListFragment newInstance(String url, boolean isVisibleToUser) {
+	public static QianBaiLuMShowListFragment newInstance(String url, int type,boolean isVisibleToUser) {
 		QianBaiLuMShowListFragment fragment = new QianBaiLuMShowListFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 
@@ -74,6 +79,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 		View view = inflater.inflate(R.layout.fragment_qianbailu_m_show_image_foot_listview, container, false);
 		mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
 		text_newstitle = (TextView) view.findViewById(R.id.text_newstitle);
+		text_collection = (TextView) view.findViewById(R.id.text_collection);
 		
 		footview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_m_show_image_foot, null);
 		text_pretitle = (TextView) footview.findViewById(R.id.text_pretitle);
@@ -128,6 +134,17 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 			}
 		});
 
+		text_collection.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+			    OpenDBBean openbean = new OpenDBBean();
+		        openbean.setUrl(url);
+		        openbean.setType(type);
+		        openbean.setTitle(text_newstitle.getText().toString());
+		        openbean.setImgsrc(list.get(0).getSrc());
+		        QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			}
+		});
 		showPreNext();
 	}
 	

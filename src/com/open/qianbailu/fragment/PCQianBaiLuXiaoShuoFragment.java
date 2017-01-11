@@ -45,11 +45,12 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 	public String url = UrlUtils.PC_QIAN_BAI_LU_XIAO_SHUO;
 	private int pagerno =1;
 	
-	public static PCQianBaiLuXiaoShuoFragment newInstance(String url, boolean isVisibleToUser) {
+	public static PCQianBaiLuXiaoShuoFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		PCQianBaiLuXiaoShuoFragment fragment = new PCQianBaiLuXiaoShuoFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 	

@@ -59,7 +59,7 @@ public class QianBaiLuMShowListFragmentActivity extends CommonFragmentActivity{
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = QianBaiLuMShowListFragment.newInstance(url, true);
+		Fragment fragment = QianBaiLuMShowListFragment.newInstance(url,2, true);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_image, fragment).commit();
 	}
 
