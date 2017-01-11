@@ -34,7 +34,7 @@ import com.open.qianbailu.utils.UrlUtils;
  ***************************************************************************************************************************************************************************** 
  */
 public class PCQianBaiLuShowListFragment extends QianBaiLuMShowListFragment {
-	public String url = UrlUtils.PC_QIAN_BAI_LU_SHOW;
+//	public String url = UrlUtils.PC_QIAN_BAI_LU_SHOW;
 
 	public static PCQianBaiLuShowListFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		PCQianBaiLuShowListFragment fragment = new PCQianBaiLuShowListFragment();
