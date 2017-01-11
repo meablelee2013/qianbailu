@@ -60,7 +60,7 @@ public class QianBaiLuMMoveDetailFragmentActivity extends CommonFragmentActivity
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = QianBaiLuMMovieDetailFragment.newInstance(url, true);
+		Fragment fragment = QianBaiLuMMovieDetailFragment.newInstance(url, true,3);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_movie, fragment).commit();
 	}
 

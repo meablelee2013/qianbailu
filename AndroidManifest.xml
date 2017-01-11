@@ -263,6 +263,12 @@
             android:description="@string/qianbailu_webview_download_desp"  
 			>
         </activity>
+        <!-- 下载收藏 -->
+         <activity
+            android:name="com.open.qianbailu.activity.QianBaiLuOpenDBActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_open_db_desp" >
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

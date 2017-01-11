@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="140dp"
+        android:layout_height="180dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:scaleType="fitXY"
+        android:src="@drawable/common_v4" />
+
+    <TextView
+        android:id="@+id/text_movieTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imageview"
+        android:text="最新pacopacomama 122816_232 露"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_movieTitle"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imageview"
+        android:text="类型： 亚洲"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/text_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_type"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imageview"
+        android:text="时间： 12-31"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_time"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/imageview"
+        android:padding="10dp"
+        android:focusable="false"
+        android:text="详情" />
+
+</RelativeLayout>

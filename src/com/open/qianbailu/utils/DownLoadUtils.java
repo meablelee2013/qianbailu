@@ -13,6 +13,7 @@ package com.open.qianbailu.utils;
 
 import com.open.qianbailu.activity.PCQianBaiLuDownLoadWebViewActivity;
 import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 
 import android.content.Context;
 import android.content.Intent;
@@ -52,7 +53,7 @@ public class DownLoadUtils {
 		} catch (Exception e) {
 			e.printStackTrace();
 			PCQianBaiLuDownLoadWebViewActivity.startPCQianBaiLuDownLoadWebViewActivity(context, null);
-		}
+		} 
 		
 	}
 

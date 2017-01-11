@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:background="#1f92d1"
+    >
+
+    <!--  
+    <Button
+        android:id="@+id/btn_insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INSERT"
+        />
+    
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UPDATE"
+        android:layout_below="@+id/btn_insert"
+        />
+    
+    <Button
+        android:id="@+id/btn_selecet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SELECT"
+        android:layout_below="@+id/btn_update"
+        />
+    
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DELETE"
+        android:layout_below="@+id/btn_selecet"
+        />
+    
+    <TextView 
+        android:id="@+id/txt_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_delete"
+        />-->
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="3dp"
+        android:background="#ffffff"
+        android:focusable="false"
+        android:listSelector="#00000000"
+        android:scrollbars="none" />
+
+</RelativeLayout>

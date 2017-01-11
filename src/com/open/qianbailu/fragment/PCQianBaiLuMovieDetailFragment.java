@@ -30,11 +30,12 @@ import com.open.qianbailu.utils.UrlUtils;
 public class PCQianBaiLuMovieDetailFragment extends QianBaiLuMMovieDetailFragment {
 	public String url = UrlUtils.PC_QIAN_BAI_LU_MOVIE;
 	 
-	public static PCQianBaiLuMovieDetailFragment newInstance(String url, boolean isVisibleToUser) {
+	public static PCQianBaiLuMovieDetailFragment newInstance(String url, boolean isVisibleToUser,int type) {
 		PCQianBaiLuMovieDetailFragment fragment = new PCQianBaiLuMovieDetailFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 

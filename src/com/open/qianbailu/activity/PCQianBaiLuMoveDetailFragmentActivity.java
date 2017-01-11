@@ -57,7 +57,7 @@ public class PCQianBaiLuMoveDetailFragmentActivity extends CommonFragmentActivit
 		if (getIntent().getStringExtra("URL") != null) {
 			url = getIntent().getStringExtra("URL");
 		}
-		Fragment fragment = PCQianBaiLuMovieDetailFragment.newInstance(url, true);
+		Fragment fragment = PCQianBaiLuMovieDetailFragment.newInstance(url, true,6);
 		getSupportFragmentManager().beginTransaction().replace(R.id.layout_movie, fragment).commit();
 	}
 

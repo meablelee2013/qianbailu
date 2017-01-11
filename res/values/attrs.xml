@@ -5,6 +5,38 @@
         <attr name="ttf_name" format="string" />
     </declare-styleable>
     
-     
+      <array name="DATABASE_INFO">
+        <item>qianbailu.db</item>
+        <item>1</item>
+    </array>
+
+    <array name="CREATE_TABLE_SQL">
+        <item>CREATE TABLE collection (id INTEGER PRIMARY KEY AUTOINCREMENT,type INTEGER,imgsrc TEXT,title TEXT,time TEXT,typename TEXT,url TEXT)</item>
+    </array>
+
+    <array name="CREATE_TABLE_NAME">
+        <item>collection</item>
+    </array>
+    
+      <array name="CREATE_TABLE_FIELD">
+        <item>type</item>
+        <item>imgsrc</item>
+        <item>title</item>
+        <item>time</item>
+        <item>typename</item>
+        <item>url</item>
+    </array>
+    
+      <array name="CREATE_TABLE_KEY">
+        <item>id</item>
+    </array>
+    
+    <array name="UPDATE_TABLE_SQL">
+        <item></item>
+    </array>
+    
+     <array name="QUERY_ALL_TABLE_SQL">
+        <item>select * from collection</item>
+    </array>
 
 </resources>

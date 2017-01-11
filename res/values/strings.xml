@@ -50,4 +50,5 @@
      <string name="qianbailu_webview_notice_desp">网站公告</string>
      <string name="qianbailu_hot_desp">热搜排行</string>
      <string name="qianbailu_webview_download_desp">下载地址转换</string>
+     <string name="qianbailu_open_db_desp">下载收藏</string>
 </resources>

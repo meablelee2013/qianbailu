@@ -42,8 +42,10 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.PCQianBaiLuNoticeWebViewActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMShowAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.NavMChildBean;
 import com.open.qianbailu.bean.m.ShowBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.MovieDetailJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMMovieDetailService;
@@ -76,12 +78,14 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 	private TextView text_movie_time;
 	private TagContainerLayout tagcontainerLayout;
 	private TextView text_moduleTitle ;
+	public int type;
 	
-	public static QianBaiLuMMovieDetailFragment newInstance(String url, boolean isVisibleToUser) {
+	public static QianBaiLuMMovieDetailFragment newInstance(String url, boolean isVisibleToUser,int type) {
 		QianBaiLuMMovieDetailFragment fragment = new QianBaiLuMMovieDetailFragment();
 		fragment.setFragment(fragment);
 		fragment.setUserVisibleHint(isVisibleToUser);
 		fragment.url = url;
+		fragment.type = type;
 		return fragment;
 	}
 
@@ -172,6 +176,14 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 					ClipboardManager copy = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);  
 			                 copy.setText(listd.get(position).getHref()); 
 			        DownLoadUtils.downLoad(getActivity(), listd.get(position).getHref());
+			        OpenDBBean openbean = new OpenDBBean();
+			        openbean.setUrl(url);
+			        openbean.setType(type);
+			        openbean.setImgsrc(img_movieDetaiImg.getContentDescription().toString());
+			        openbean.setTitle(text_moduleTitle.getText().toString());
+			        openbean.setTypename(text_movie_type.getText().toString());
+			        openbean.setTime(text_movie_time.getText().toString());
+			        QianBaiLuOpenDBService.insert(getActivity(), openbean);
 				}catch(Exception e){
 					e.printStackTrace();
 				}
@@ -236,6 +248,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 			DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
 					.cacheInMemory().cacheOnDisc().build();
 			ImageLoader.getInstance().displayImage(result.getMovieDetaiImg(), img_movieDetaiImg, options, getImageLoadingListener());
+			img_movieDetaiImg.setContentDescription(result.getMovieDetaiImg());
 		}
 		
 		if(text_movie_time.getText().toString().contains("看片帮助")){
