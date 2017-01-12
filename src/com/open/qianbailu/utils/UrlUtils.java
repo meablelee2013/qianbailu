@@ -87,7 +87,8 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_NOTICE = "http://www.1111av.co/detail/gg.html";
 	/***热搜排行**/
 	public static final String PC_QIAN_BAI_LU_HOT = "http://www.1111av.co/detail/hot.html";
-	 
+	/***看片留言**/
+	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "http://www.1111av.co/detail/guestbook.html";
 	
 	public static String getCookie(){
 		return COOKIE;

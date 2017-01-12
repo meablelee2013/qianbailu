@@ -51,4 +51,6 @@
      <string name="qianbailu_hot_desp">热搜排行</string>
      <string name="qianbailu_webview_download_desp">下载地址转换</string>
      <string name="qianbailu_open_db_desp">下载收藏</string>
+     <string name="qianbailu_webview_guest_book_desp">webview看片留言</string>
+     <string name="qianbailu_guest_book_desp">看片留言</string>
 </resources>

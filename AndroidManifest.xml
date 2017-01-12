@@ -269,6 +269,20 @@
             android:configChanges="keyboard|keyboardHidden|navigation"
             android:description="@string/qianbailu_open_db_desp" >
         </activity>
+         <!-- webview看片留言-->
+        <activity
+            android:name="com.open.qianbailu.activity.QianBaiLuGuestBookWebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_webview_guest_book_desp"  
+			>
+        </activity>
+         <!-- 看片留言-->
+        <activity
+            android:name="com.open.qianbailu.activity.QianBaiLuGuestBookActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_guest_book_desp"  
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
