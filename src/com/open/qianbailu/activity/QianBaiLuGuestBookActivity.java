@@ -138,7 +138,7 @@ public class QianBaiLuGuestBookActivity extends CommonFragmentActivity {
 				// gb_content:单独
 				// sm1:提交留言
 				
-//				Map<String, String> headers = new HashMap<String, String>();
+				Map<String, String> headers = new HashMap<String, String>();
 //				headers.put("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
 //				headers.put("Accept-Encoding", "gzip, deflate");
 //				headers.put("Accept-Language", "zh-CN,zh;q=0.8");
@@ -173,21 +173,29 @@ public class QianBaiLuGuestBookActivity extends CommonFragmentActivity {
 				params.put("sm1",sm1);  
 				System.out.println(url+body);
 				
-				StringRequest jsonObjectRequest = new StringRequest(Request.Method.POST, url, 
+//				StringRequest jsonObjectRequest = new StringRequest(Request.Method.POST, url, 
+//						new Response.Listener<String>() {
+//					@Override
+//					public void onResponse(String response) {
+//						System.out.println(response);
+//						Toast.makeText(QianBaiLuGuestBookActivity.this, "留言成功，我们会尽快审核您的留言!", Toast.LENGTH_SHORT).show();
+//					}
+//				}, QianBaiLuGuestBookActivity.this )
+//				{
+//				    @Override
+//				    protected Map<String, String> getParams() {
+//				        //在这里设置需要post的参数
+//				          return params;
+//				    }
+//				};  
+				StringRequest jsonObjectRequest = new StringRequest(Request.Method.POST, url,headers ,params,
 						new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {
 						System.out.println(response);
 						Toast.makeText(QianBaiLuGuestBookActivity.this, "留言成功，我们会尽快审核您的留言!", Toast.LENGTH_SHORT).show();
 					}
-				}, QianBaiLuGuestBookActivity.this )
-				{
-				    @Override
-				    protected Map<String, String> getParams() {
-				        //在这里设置需要post的参数
-				          return params;
-				    }
-				};  
+				}, QianBaiLuGuestBookActivity.this);  
 				requestQueue.add(jsonObjectRequest);
 			}
 			break;
