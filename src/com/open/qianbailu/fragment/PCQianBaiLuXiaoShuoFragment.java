@@ -146,16 +146,18 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 		// TODO Auto-generated method stub
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullToRefreshScrollView.onRefreshComplete();
-		text_pretitle.setText(result.getPreTitle());
-		text_pretitle.setTag(result.getPreHref());
-		text_nexttitle.setText(result.getNextTitle());
-		text_nexttitle.setTag(result.getNextHref());
-
-		text_newstitle.setText(result.getNewsTitle() + result.getNeswTime());
+		
 		
 		if (mPullToRefreshScrollView.getCurrentMode() == Mode.PULL_FROM_START) {
 			text_detailText.setText("");
 			text_detailText.setText(Html.fromHtml(result.getDetailText()));
+			
+			text_pretitle.setText(result.getPreTitle());
+			text_pretitle.setTag(result.getPreHref());
+			text_nexttitle.setText(result.getNextTitle());
+			text_nexttitle.setTag(result.getNextHref());
+
+			text_newstitle.setText(result.getNewsTitle() + result.getNeswTime());
 		}else if (mPullToRefreshScrollView.getCurrentMode() == Mode.PULL_FROM_END) {
 			if(result.getDetailText()!=null && result.getDetailText().length()>0){
 				text_detailText.append(Html.fromHtml("<br/><font color='#FF0000'>第"+pagerno+"页</font><br/>"));
