@@ -11,10 +11,17 @@
  */
 package com.open.qianbailu.fragment.m;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -25,7 +32,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
-
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView.OnTagClickListener;
 
@@ -34,8 +40,6 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 import com.open.qianbailu.R;
-import com.open.qianbailu.activity.m.QianBaiLuMSearchActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMSearchResultActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
@@ -44,7 +48,6 @@ import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMXiaoShuoService;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.view.ZoomTextView;
-import com.open.qianbailu.view.ZoomView;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -110,6 +113,7 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		tagList.add("字体中");
 		tagList.add("字体小");
 		tagList.add("收藏");
+		tagList.add("保存");
 		tagcontainerLayout.setTags(tagList);
 	}
 
@@ -139,7 +143,6 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 		showPreNext();
 		
 		tagEvent();
-		
 	}
 	
 	public void tagEvent(){
@@ -174,6 +177,26 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 			        openbean.setTitle(text_newstitle.getText().toString());
 			        openbean.setTypename( text_detailText.getText().toString().substring(0, 200));
 			        QianBaiLuOpenDBService.insert(getActivity(), openbean);
+					break;
+				case 4:
+					//保存
+					 try {  
+				            String sdcard = Environment.getExternalStorageDirectory().toString();  
+				            File file = new File(sdcard + "/"+getActivity().getPackageName()+"/novel/");  
+				            if (!file.exists()) {  
+				                file.mkdirs();  
+				            }  
+				            File imageFile = new File(file.getAbsolutePath(),  text_newstitle.getText().toString()+".txt");  
+				            imageFile.deleteOnExit();
+				            imageFile.createNewFile();
+				            FileOutputStream outStream = null;  
+				            outStream = new FileOutputStream(imageFile);
+				            outStream.write(text_detailText.getText().toString().getBytes());
+				            outStream.flush();  
+				            outStream.close();  
+				        } catch (Exception e) {  
+				            e.printStackTrace();  
+				        }  
 					break;
 				default:
 					break;
