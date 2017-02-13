@@ -53,4 +53,5 @@
      <string name="qianbailu_open_db_desp">下载收藏</string>
      <string name="qianbailu_webview_guest_book_desp">webview看片留言</string>
      <string name="qianbailu_guest_book_desp">看片留言</string>
+     <string name="qianbailu_m_indicator_f_pc_pager_desp">pc pager电影</string>
 </resources>

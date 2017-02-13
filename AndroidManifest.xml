@@ -283,6 +283,14 @@
             android:description="@string/qianbailu_guest_book_desp"  
 			>
         </activity>
+         <!-- pc fragment电影 pc分页-->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuIndicatorPCPagerFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_indicator_f_pc_pager_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
