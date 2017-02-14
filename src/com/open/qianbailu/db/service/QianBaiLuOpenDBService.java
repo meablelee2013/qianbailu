@@ -12,10 +12,12 @@
 package com.open.qianbailu.db.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import android.content.Context;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -66,6 +68,7 @@ public class QianBaiLuOpenDBService {
 	}
 	
 	public static void insert(Context mContext,OpenDBBean openbean){
+		openbean.setTime(DateFormat.format("yyyy年MM月dd日 kk:mm",new Date())+"");
 		Object[] ojects = new Object[6];
 		ojects[0] = openbean.getType();
 		ojects[1] = openbean.getImgsrc();

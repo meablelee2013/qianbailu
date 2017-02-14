@@ -11,16 +11,20 @@
  */
 package com.open.qianbailu.activity;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Message;
 import android.text.format.DateUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
@@ -35,6 +39,7 @@ import com.open.qianbailu.adapter.db.OpenDBListAdapter;
 import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.json.db.OpenDBJson;
+import com.open.qianbailu.utils.ExcelUtils;
 import com.open.qianbailu.weak.WeakActivityReferenceHandler;
 
 /**
@@ -60,6 +65,12 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	// private Button deleteBtn;
 	// private TextView contentTv;
 	// private QianBaiLuDBHelper mQianBaiLuDBHelper;
+
+	Button btn_txt;
+	Button btn_excel;
+	
+	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址" , "图片地址"  };
+	ArrayList<ArrayList<String>>  excellist = new ArrayList<ArrayList<String>>();
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -89,6 +100,8 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		// deleteBtn = (Button) findViewById(R.id.btn_delete);
 		// contentTv = (TextView) findViewById(R.id.txt_content);
 
+		btn_txt = (Button) findViewById(R.id.btn_txt);
+		btn_excel = (Button) findViewById(R.id.btn_excel);
 	}
 
 	/*
@@ -100,6 +113,8 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	protected void bindEvent() {
 		// TODO Auto-generated method stub
 		super.bindEvent();
+		btn_txt.setOnClickListener(this);
+		btn_excel.setOnClickListener(this);
 		mPullRefreshListView.setOnItemClickListener(this);
 		// selectBtn.setOnClickListener(this);
 		// insertBtn.setOnClickListener(this);
@@ -118,7 +133,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				}
 			}
 		});
-		 
+
 	}
 
 	/*
@@ -138,7 +153,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		mPullRefreshListView.setAdapter(mOpenDBListAdapter);
 
 		weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
-		
+
 	}
 
 	@Override
@@ -162,7 +177,69 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		// mQianBaiLuDBHelper.delete("user", new String[] { "name" }, new
 		// String[] { "qiangyu" });
 		// break;
+		case R.id.btn_excel:
+			for (int i=0;i<list.size();i++) {
+				ArrayList<String> beanList=new ArrayList<String>();
+				OpenDBBean bean = list.get(i);
+				beanList.add(""+i);
+				beanList.add(""+bean.getTitle());
+				beanList.add(""+bean.getTypename());
+				beanList.add(""+bean.getTime());
+				beanList.add(""+bean.getType());
+				beanList.add(""+bean.getUrl());
+				beanList.add(""+bean.getImgsrc());
+				excellist.add(beanList);
+			}
+			File filee = new File(getSDPath() +"/"+getPackageName()+ "/excel");
+			makeDir(filee);
+			ExcelUtils.initExcel(filee.toString() + "/收藏.xls", title);
+			ExcelUtils.writeObjListToExcel(excellist, getSDPath() +"/"+getPackageName()+  "/excel/收藏.xls", this);
+			break;
+		case R.id.btn_txt:
+			// 保存
+			try {
+				StringBuilder collection = new StringBuilder();
+				collection.append("  序号   ").append("   标题   ").append("   类型名称   ").append("   时间   ").append("   类型   ").append("   地址   ").append("   图片地址   ").append("\n");
+				for (int i=0;i<list.size();i++) {
+					OpenDBBean bean = list.get(i);
+					collection.append("   "+i+"   ").append("   "+bean.getTitle()+"   ").append("   "+bean.getTypename()+"   ").append("   "+bean.getTime()+"   ").append("   "+bean.getType()+"   ").append("   "+bean.getUrl()+"   ").append("   "+bean.getImgsrc()+"   ").append("\n");
+				}
+				String sdcard = Environment.getExternalStorageDirectory().toString();
+				File file = new File(sdcard + "/" + getPackageName() + "/novel/");
+				if (!file.exists()) {
+					file.mkdirs();
+				}
+				File imageFile = new File(file.getAbsolutePath(), "收藏.txt");
+				imageFile.deleteOnExit();
+				imageFile.createNewFile();
+				FileOutputStream outStream = null;
+				outStream = new FileOutputStream(imageFile);
+				outStream.write(collection.toString().getBytes());
+				outStream.flush();
+				outStream.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			break;
 		}
+	}
+	
+	public static void makeDir(File dir) {
+		if (!dir.getParentFile().exists()) {
+			makeDir(dir.getParentFile());
+		}
+		dir.mkdir();
+	}
+	
+	public String getSDPath() {
+		File sdDir = null;
+		boolean sdCardExist = Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
+		if (sdCardExist) {
+			sdDir = Environment.getExternalStorageDirectory();
+		}
+		String dir = sdDir.toString();
+		return dir;
+
 	}
 
 	/*
@@ -193,7 +270,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		list.addAll(result.getList());
 		mOpenDBListAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
-	    mPullRefreshListView.onRefreshComplete();
+		mPullRefreshListView.onRefreshComplete();
 	}
 
 	/*

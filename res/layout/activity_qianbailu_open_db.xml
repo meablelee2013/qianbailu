@@ -2,13 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1f92d1"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:fitsSystemWindows="true"
-    android:background="#1f92d1"
-    >
+    android:fitsSystemWindows="true" >
 
-    <!--  
+    <!--
     <Button
         android:id="@+id/btn_insert"
         android:layout_width="match_parent"
@@ -45,17 +44,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/btn_delete"
-        />-->
-     <com.handmark.pulltorefresh.library.PullToRefreshListView
+        />
+    -->
+
+    <Button
+        android:id="@+id/btn_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:text="导出txt" />
+
+    <Button
+        android:id="@+id/btn_excel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btn_txt"
+        android:textColor="@android:color/black"
+        android:text="导出excel" />
+
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/pull_refresh_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:layout_below="@+id/btn_txt"
         android:cacheColorHint="#00000000"
         android:divider="#19000000"
         android:dividerHeight="4dp"
-        android:background="#FFFFFF"
         android:fadingEdge="none"
         android:fastScrollEnabled="false"
         android:footerDividersEnabled="false"
