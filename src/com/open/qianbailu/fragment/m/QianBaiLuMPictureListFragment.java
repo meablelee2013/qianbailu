@@ -20,9 +20,12 @@ import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -55,12 +58,21 @@ import com.open.qianbailu.utils.UrlUtils;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, QianBaiLuMPictureListFragment> {
+public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, QianBaiLuMPictureListFragment>implements OnClickListener {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_B_CLASSID;
 	public PullToRefreshListView mPullRefreshListView;
 	public QianBaiLuMPictureListAdapter mQianBaiLuMPictureListAdapter;
 	public List<MovieBean> list = new ArrayList<MovieBean>();
 	public int pageNo = 0;
+	public View footview;
+	public Button text_fisrt;
+	public Button text_pre;
+	public EditText edit_current;
+	public Button text_current;
+	public Button text_next;
+	public Button text_last;
+	public boolean isautomatic;
+	public int maxPageNo ;
 	
 	public static QianBaiLuMPictureListFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMPictureListFragment fragment = new QianBaiLuMPictureListFragment();
@@ -74,6 +86,13 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_qianbailu_m_movie_listview, container, false);
 		mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
+		footview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_pc_qianbailu_movie_pager_foot, null);
+		text_fisrt = (Button) footview.findViewById(R.id.text_fisrt);
+		text_pre = (Button) footview.findViewById(R.id.text_pre);
+		edit_current = (EditText) footview.findViewById(R.id.edit_current);
+		text_current = (Button) footview.findViewById(R.id.text_current);
+		text_next = (Button) footview.findViewById(R.id.text_next);
+		text_last = (Button) footview.findViewById(R.id.text_last);
 		return view;
 	}
 	
@@ -85,7 +104,7 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 	@Override
 	public void initValues() {
 		// TODO Auto-generated method stub
-		super.initValues();
+		mPullRefreshListView.getRefreshableView().addFooterView(footview);
 		mQianBaiLuMPictureListAdapter = new QianBaiLuMPictureListAdapter(getActivity(), list);
 		mPullRefreshListView.setAdapter(mQianBaiLuMPictureListAdapter);
 		mPullRefreshListView.setMode(Mode.BOTH);
@@ -124,6 +143,13 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 				QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
+		
+		text_fisrt.setOnClickListener(this);
+		text_pre.setOnClickListener(this);
+		text_current.setOnClickListener(this);
+		text_next.setOnClickListener(this);
+		text_last.setOnClickListener(this);
+		edit_current.setText(""+pageNo);
 	}
 	
 
@@ -135,9 +161,7 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 	@Override
 	public MovieJson call() throws Exception {
 		// TODO Auto-generated method stub
-		MovieJson mMovieJson = new MovieJson();
-		//http://m.100av.us/list.php?classid=12&style=0&bclassid=11
-		mMovieJson.setList(QianBaiLuMPictureService.parsePicture(url, pageNo));
+		MovieJson mMovieJson =  QianBaiLuMPictureService.parsePictureJson(url, pageNo);
 		return mMovieJson;
 	}
 
@@ -154,17 +178,26 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
-			list.clear();
-			list.addAll(result.getList());
-			pageNo = 0;
+			if(isautomatic){
+				if (result.getList() != null && result.getList().size() > 0) {
+					list.addAll(result.getList());
+				}
+			}else{
+				list.clear();
+				list.addAll(result.getList());
+				pageNo = 0;
+			}
 		} else {
 			if (result.getList() != null && result.getList().size() > 0) {
 				list.addAll(result.getList());
 			}
 		}
+		maxPageNo = result.getMaxpageno();
 		mQianBaiLuMPictureListAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullRefreshListView.onRefreshComplete();
+		edit_current.setText(""+pageNo);
+		isautomatic = false;
 	}
 
 	/*
@@ -215,6 +248,45 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 			}
 		}, QianBaiLuMPictureListFragment.this);
 		requestQueue.add(jsonObjectRequest);
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.view.View.OnClickListener#onClick(android.view.View)
+	 */
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.text_fisrt:
+			pageNo = 0;
+			break;
+		case R.id.text_last:
+			pageNo = maxPageNo;
+			break;
+		case R.id.text_pre:
+			if(pageNo<=1){
+				pageNo = 1;
+			}
+			pageNo = pageNo-1;
+			break;
+		case R.id.text_next:
+			pageNo = pageNo+1;
+			if(pageNo>=maxPageNo){
+				pageNo=maxPageNo;
+			}
+			break;
+		case R.id.text_current:
+			String pageNostr = edit_current.getText().toString();
+			if(pageNostr!=null){
+				pageNo = Integer.parseInt(pageNostr.replace(" ", ""));
+			}
+			break;
+		default:
+			break;
+		}
+		isautomatic = true;
+		weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
 	}
 	
 }

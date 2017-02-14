@@ -46,18 +46,9 @@ import com.open.qianbailu.utils.UrlUtils;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment implements OnClickListener{
+public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_B_CLASSID;
 	public QianBaiLuMSListAdapter mQianBaiLuMSListAdapter;
-	private View footview;
-	private Button text_fisrt;
-	private Button text_pre;
-	private EditText edit_current;
-	private Button text_current;
-	private Button text_next;
-	private Button text_last;
-	private boolean isautomatic;
-	private int maxPageNo ;
 	
 	public static QianBaiLuMSListFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMSListFragment fragment = new QianBaiLuMSListFragment();
@@ -66,20 +57,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment imple
 		fragment.url = url;
 		return fragment;
 	}
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.fragment_qianbailu_m_movie_listview, container, false);
-		mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
-		footview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_pc_qianbailu_movie_pager_foot, null);
-		text_fisrt = (Button) footview.findViewById(R.id.text_fisrt);
-		text_pre = (Button) footview.findViewById(R.id.text_pre);
-		edit_current = (EditText) footview.findViewById(R.id.edit_current);
-		text_current = (Button) footview.findViewById(R.id.text_current);
-		text_next = (Button) footview.findViewById(R.id.text_next);
-		text_last = (Button) footview.findViewById(R.id.text_last);
-		return view;
-	}
+ 
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -180,43 +158,5 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment imple
 		isautomatic = false;
 	}
 	
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see android.view.View.OnClickListener#onClick(android.view.View)
-	 */
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.text_fisrt:
-			pageNo = 0;
-			break;
-		case R.id.text_last:
-			pageNo = maxPageNo;
-			break;
-		case R.id.text_pre:
-			if(pageNo<=1){
-				pageNo = 1;
-			}
-			pageNo = pageNo-1;
-			break;
-		case R.id.text_next:
-			pageNo = pageNo+1;
-			if(pageNo>=maxPageNo){
-				pageNo=maxPageNo;
-			}
-			break;
-		case R.id.text_current:
-			String pageNostr = edit_current.getText().toString();
-			if(pageNostr!=null){
-				pageNo = Integer.parseInt(pageNostr.replace(" ", ""));
-			}
-			break;
-		default:
-			break;
-		}
-		isautomatic = true;
-		weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
-	}
 
 }

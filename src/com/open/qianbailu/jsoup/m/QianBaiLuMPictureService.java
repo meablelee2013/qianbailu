@@ -143,6 +143,13 @@ public class QianBaiLuMPictureService extends CommonService {
 										.replace("&classid=5&bclassid=1", "")
 										.replace("&classid=6&bclassid=1", "")
 										.replace("&classid=7&bclassid=1", "")
+										.replace("&classid=12&bclassid=1", "")
+										.replace("&classid=13&bclassid=1", "")
+										.replace("&classid=14&bclassid=1", "")
+										.replace("&classid=15&bclassid=1", "")
+										.replace("&classid=16&bclassid=1", "")
+										.replace("&classid=17&bclassid=1", "")
+										.replace("&classid=18&bclassid=1", "")
 										)
 										);
 							} catch (Exception e) {
