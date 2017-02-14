@@ -74,7 +74,6 @@ public class ExcelUtils {
 			sheet.addCell((WritableCell) new Label(0, 0, fileName, arial14format));
 			for (int col = 0; col < colName.length; col++) {
 				sheet.addCell(new Label(col, 0, colName[col], arial10format));
-				sheet.setRowView(0, 400, false); //设置行高
 			}
 			workbook.write();
 		}
@@ -115,9 +114,10 @@ public class ExcelUtils {
 					for (int i = 0; i < list.size(); i++) {
 						sheet.setColumnView(i, cellView);
 						sheet.addCell(new Label(i, j+1, list.get(i), arial12format));
-						 sheet.setRowView(i, 400, false); //设置行高
 					}
+					sheet.setRowView(j, 500, false); //设置行高
 				}
+				sheet.setRowView(objList.size(), 500, false); //设置行高
 				writebook.write();
 				Toast.makeText(c, "保存成功", Toast.LENGTH_SHORT).show();
 			}
