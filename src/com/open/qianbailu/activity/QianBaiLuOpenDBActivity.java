@@ -26,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
@@ -69,7 +70,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	Button btn_txt;
 	Button btn_excel;
 	
-	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址" , "图片地址"  };
+	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址" , "图片地址", "下载地址"  };
 	ArrayList<ArrayList<String>>  excellist = new ArrayList<ArrayList<String>>();
 	/*
 	 * (non-Javadoc)
@@ -188,6 +189,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				beanList.add(""+bean.getType());
 				beanList.add(""+bean.getUrl());
 				beanList.add(""+bean.getImgsrc());
+				beanList.add(""+bean.getDownloadurl());
 				excellist.add(beanList);
 			}
 			File filee = new File(getSDPath() +"/"+getPackageName()+ "/excel");
@@ -199,10 +201,10 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 			// 保存
 			try {
 				StringBuilder collection = new StringBuilder();
-				collection.append("  序号   ").append("   标题   ").append("   类型名称   ").append("   时间   ").append("   类型   ").append("   地址   ").append("   图片地址   ").append("\n");
+				collection.append("  序号   ").append("   标题   ").append("   类型名称   ").append("   时间   ").append("   类型   ").append("   地址   ").append("   图片地址   ").append("   下载地址   ").append("\n");
 				for (int i=0;i<list.size();i++) {
 					OpenDBBean bean = list.get(i);
-					collection.append("   "+i+"   ").append("   "+bean.getTitle()+"   ").append("   "+bean.getTypename()+"   ").append("   "+bean.getTime()+"   ").append("   "+bean.getType()+"   ").append("   "+bean.getUrl()+"   ").append("   "+bean.getImgsrc()+"   ").append("\n");
+					collection.append("   "+i+"   ").append("   "+bean.getTitle()+"   ").append("   "+bean.getTypename()+"   ").append("   "+bean.getTime()+"   ").append("   "+bean.getType()+"   ").append("   "+bean.getUrl()+"   ").append("   "+bean.getImgsrc()+"   ").append("   "+bean.getDownloadurl()+"   ").append("\n");
 				}
 				String sdcard = Environment.getExternalStorageDirectory().toString();
 				File file = new File(sdcard + "/" + getPackageName() + "/novel/");
@@ -217,6 +219,8 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				outStream.write(collection.toString().getBytes());
 				outStream.flush();
 				outStream.close();
+				
+				Toast.makeText(this, "导出成功", Toast.LENGTH_SHORT).show();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

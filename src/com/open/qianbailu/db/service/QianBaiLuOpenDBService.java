@@ -56,7 +56,7 @@ public class QianBaiLuOpenDBService {
 				openbean.setTime((String)maps.get(i).get(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[3]));
 				openbean.setTypename((String)maps.get(i).get(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[4]));
 				openbean.setUrl((String)maps.get(i).get(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[5]));
-				
+				openbean.setDownloadurl((String)maps.get(i).get(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[6]));
 				list.add(openbean);
 				
 				Log.i(TAG, "queryList  i==" +i+maps.get(i).toString());
@@ -69,13 +69,14 @@ public class QianBaiLuOpenDBService {
 	
 	public static void insert(Context mContext,OpenDBBean openbean){
 		openbean.setTime(DateFormat.format("yyyy年MM月dd日 kk:mm",new Date())+"");
-		Object[] ojects = new Object[6];
+		Object[] ojects = new Object[7];
 		ojects[0] = openbean.getType();
 		ojects[1] = openbean.getImgsrc();
 		ojects[2] = openbean.getTitle();
 		ojects[3] = openbean.getTime();
 		ojects[4] = openbean.getTypename();
 		ojects[5] = openbean.getUrl();
+		ojects[6] = openbean.getDownloadurl();
 		
 		Map map = QianBaiLuDBHelper.getInstance(mContext).queryItemMap(mContext.getResources().getStringArray(R.array.QUERY_ALL_TABLE_SQL_WHERE)[0], 
 				new String[]{openbean.getUrl()});
@@ -88,7 +89,7 @@ public class QianBaiLuOpenDBService {
 				mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD), 
 				ojects);
 		Toast.makeText(mContext, "收藏成功", Toast.LENGTH_SHORT).show();
-		Log.i(TAG, "insert=="+openbean.getTime()+openbean.getUrl()+openbean.getType());
+		Log.i(TAG, "insert=="+openbean.getTime()+openbean.getUrl()+openbean.getType()+openbean.getDownloadurl());
 	}
 	
 

@@ -183,6 +183,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 			        openbean.setTitle(text_moduleTitle.getText().toString());
 			        openbean.setTypename(text_movie_type.getText().toString());
 			        openbean.setTime(text_movie_time.getText().toString());
+			        openbean.setDownloadurl(listd.get(position).getHref());
 			        QianBaiLuOpenDBService.insert(getActivity(), openbean);
 				}catch(Exception e){
 					e.printStackTrace();

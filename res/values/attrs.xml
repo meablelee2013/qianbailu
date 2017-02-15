@@ -11,7 +11,7 @@
     </array>
 
     <array name="CREATE_TABLE_SQL">
-        <item>CREATE TABLE collection (id INTEGER PRIMARY KEY AUTOINCREMENT,type INTEGER,imgsrc TEXT,title TEXT,time TEXT,typename TEXT,url TEXT)</item>
+        <item>CREATE TABLE collection (id INTEGER PRIMARY KEY AUTOINCREMENT,type INTEGER,imgsrc TEXT,title TEXT,time TEXT,typename TEXT,url TEXT,downloadurl TEXT)</item>
     </array>
 
     <array name="CREATE_TABLE_NAME">
@@ -25,6 +25,7 @@
         <item>time</item>
         <item>typename</item>
         <item>url</item>
+        <item>downloadurl</item>
     </array>
     
       <array name="CREATE_TABLE_KEY">
