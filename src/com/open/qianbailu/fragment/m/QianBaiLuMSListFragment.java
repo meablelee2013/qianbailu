@@ -11,24 +11,21 @@
  */
 package com.open.qianbailu.fragment.m;
 
-import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.format.DateUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
+import android.view.View.OnTouchListener;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshListView;
-import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMSListAdapter;
 import com.open.qianbailu.json.m.MovieJson;
@@ -70,6 +67,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		mQianBaiLuMSListAdapter = new QianBaiLuMSListAdapter(getActivity(), list);
 		mPullRefreshListView.setAdapter(mQianBaiLuMSListAdapter);
 		mPullRefreshListView.setMode(Mode.BOTH);
+		edit_current.setText(""+pageNo);
 	}
 
 	/*
@@ -109,7 +107,8 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		text_current.setOnClickListener(this);
 		text_next.setOnClickListener(this);
 		text_last.setOnClickListener(this);
-		edit_current.setText(""+pageNo);
+		edit_current.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
+		
 	}
 	
 	/*
