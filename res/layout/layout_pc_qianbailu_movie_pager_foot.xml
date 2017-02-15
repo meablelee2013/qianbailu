@@ -27,6 +27,7 @@
         android:layout_alignBottom="@+id/text_fisrt"
         android:layout_alignTop="@+id/text_fisrt"
         android:padding="8dp"
+        android:numeric="integer"
         android:layout_centerInParent="true"
         android:text="1" />
 
