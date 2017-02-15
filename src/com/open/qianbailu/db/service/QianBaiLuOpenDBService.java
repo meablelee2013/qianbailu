@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -101,4 +102,22 @@ public class QianBaiLuOpenDBService {
 		Log.i(TAG, "delete=="+openbean.getUrl());
 	}
 
+	public static void insertBatch(Context mContext,List<OpenDBBean> list){
+		List<ContentValues> clist = new ArrayList<ContentValues>();
+		ContentValues mContentValues;
+		for(OpenDBBean bean:list){
+			mContentValues = new ContentValues();
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[0], bean.getType());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[1], bean.getImgsrc());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[2], bean.getTitle());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[3], bean.getTime());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[4], bean.getTypename());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[5], bean.getUrl());
+			mContentValues.put(mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[6], bean.getDownloadurl());
+			clist.add(mContentValues);
+		}
+		QianBaiLuDBHelper.getInstance(mContext).insertBatch(mContext.getResources().getStringArray(R.array.CREATE_TABLE_NAME)[0],
+				clist);
+		Toast.makeText(mContext, "导入成功", Toast.LENGTH_SHORT).show();
+	}
 }

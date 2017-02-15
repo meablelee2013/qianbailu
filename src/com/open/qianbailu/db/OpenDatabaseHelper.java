@@ -172,6 +172,19 @@ public abstract class OpenDatabaseHelper {
 		return rowId != -1;
 	}
 
+	public void insertBatch(String tableName,List<ContentValues> list) {
+		if (this.mDb == null || !this.mDb.isOpen()) {
+			this.open();
+		}
+		this.mDb.beginTransaction(); // 手动设置开始事务
+		for (ContentValues v : list) {
+			this.mDb.insert(tableName, null, v);
+		}
+		this.mDb.setTransactionSuccessful(); // 设置事务处理成功，不设置会自动回滚不提交
+		this.mDb.endTransaction(); // 处理完成
+		this.mDb.close();
+	}
+
 	/**
 	 * 根据map来进行insert
 	 * 

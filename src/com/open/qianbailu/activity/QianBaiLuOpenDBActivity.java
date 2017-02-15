@@ -12,10 +12,14 @@
 package com.open.qianbailu.activity;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import jxl.Sheet;
+import jxl.Workbook;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Message;
@@ -68,10 +72,11 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	// private QianBaiLuDBHelper mQianBaiLuDBHelper;
 
 	Button btn_txt;
-	Button btn_excel;
-	
-	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址" , "图片地址", "下载地址"  };
-	ArrayList<ArrayList<String>>  excellist = new ArrayList<ArrayList<String>>();
+	Button btn_excel, btn_importexcel;
+
+	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址", "图片地址", "下载地址" };
+	ArrayList<ArrayList<String>> excellist = new ArrayList<ArrayList<String>>();
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -103,6 +108,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 
 		btn_txt = (Button) findViewById(R.id.btn_txt);
 		btn_excel = (Button) findViewById(R.id.btn_excel);
+		btn_importexcel = (Button) findViewById(R.id.btn_importexcel);
 	}
 
 	/*
@@ -116,6 +122,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		super.bindEvent();
 		btn_txt.setOnClickListener(this);
 		btn_excel.setOnClickListener(this);
+		btn_importexcel.setOnClickListener(this);
 		mPullRefreshListView.setOnItemClickListener(this);
 		// selectBtn.setOnClickListener(this);
 		// insertBtn.setOnClickListener(this);
@@ -179,32 +186,34 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		// String[] { "qiangyu" });
 		// break;
 		case R.id.btn_excel:
-			for (int i=0;i<list.size();i++) {
-				ArrayList<String> beanList=new ArrayList<String>();
+			for (int i = 0; i < list.size(); i++) {
+				ArrayList<String> beanList = new ArrayList<String>();
 				OpenDBBean bean = list.get(i);
-				beanList.add(""+i);
-				beanList.add(""+bean.getTitle());
-				beanList.add(""+bean.getTypename());
-				beanList.add(""+bean.getTime());
-				beanList.add(""+bean.getType());
-				beanList.add(""+bean.getUrl());
-				beanList.add(""+bean.getImgsrc());
-				beanList.add(""+bean.getDownloadurl());
+				beanList.add("" + i);
+				beanList.add("" + bean.getTitle());
+				beanList.add("" + bean.getTypename());
+				beanList.add("" + bean.getTime());
+				beanList.add("" + bean.getType());
+				beanList.add("" + bean.getUrl());
+				beanList.add("" + bean.getImgsrc());
+				beanList.add("" + bean.getDownloadurl());
 				excellist.add(beanList);
 			}
-			File filee = new File(getSDPath() +"/"+getPackageName()+ "/excel");
+			File filee = new File(getSDPath() + "/" + getPackageName() + "/excel");
 			makeDir(filee);
 			ExcelUtils.initExcel(filee.toString() + "/收藏.xls", title);
-			ExcelUtils.writeObjListToExcel(excellist, getSDPath() +"/"+getPackageName()+  "/excel/收藏.xls", this);
+			ExcelUtils.writeObjListToExcel(excellist, getSDPath() + "/" + getPackageName() + "/excel/收藏.xls", this);
 			break;
 		case R.id.btn_txt:
 			// 保存
 			try {
 				StringBuilder collection = new StringBuilder();
 				collection.append("  序号   ").append("   标题   ").append("   类型名称   ").append("   时间   ").append("   类型   ").append("   地址   ").append("   图片地址   ").append("   下载地址   ").append("\n");
-				for (int i=0;i<list.size();i++) {
+				for (int i = 0; i < list.size(); i++) {
 					OpenDBBean bean = list.get(i);
-					collection.append("   "+i+"   ").append("   "+bean.getTitle()+"   ").append("   "+bean.getTypename()+"   ").append("   "+bean.getTime()+"   ").append("   "+bean.getType()+"   ").append("   "+bean.getUrl()+"   ").append("   "+bean.getImgsrc()+"   ").append("   "+bean.getDownloadurl()+"   ").append("\n");
+					collection.append("   " + i + "   ").append("   " + bean.getTitle() + "   ").append("   " + bean.getTypename() + "   ").append("   " + bean.getTime() + "   ")
+							.append("   " + bean.getType() + "   ").append("   " + bean.getUrl() + "   ").append("   " + bean.getImgsrc() + "   ").append("   " + bean.getDownloadurl() + "   ")
+							.append("\n");
 				}
 				String sdcard = Environment.getExternalStorageDirectory().toString();
 				File file = new File(sdcard + "/" + getPackageName() + "/novel/");
@@ -219,22 +228,89 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				outStream.write(collection.toString().getBytes());
 				outStream.flush();
 				outStream.close();
-				
+
 				Toast.makeText(this, "导出成功", Toast.LENGTH_SHORT).show();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			break;
+		case R.id.btn_importexcel:
+			// 导入
+			try {
+				Workbook book = Workbook.getWorkbook(new File(getSDPath() + "/" + getPackageName() + "/excel/收藏.xls"));
+				int num = book.getNumberOfSheets();
+				System.out.println("the num of sheets is " + num + "\n");
+				Sheet sheet = book.getSheet(0);
+				int Rows = sheet.getRows();
+				int Cols = sheet.getColumns();
+				System.out.println("the name of sheet is " + sheet.getName() + "\n");
+				System.out.println("total rows is " + Rows + "\n");
+				System.out.println("total cols is " + Cols + "\n");
+				List<OpenDBBean> importlist = new ArrayList<OpenDBBean>();
+				OpenDBBean obean;
+				for (int j = 1; j < Rows; ++j) {
+					obean = new OpenDBBean();
+					for (int i = 0; i < Cols; ++i) {
+						// getCell(Col,Row)获得单元格的值
+						String contents =  sheet.getCell(i, j).getContents();
+						System.out.print(contents);
+						switch (i) {
+						case 0:
+							break;
+						case 1:
+							obean.setTitle(contents);
+							break;
+						case 2:
+							obean.setTypename(contents);
+							break;
+						case 3:
+							obean.setTime(contents);
+							break;
+						case 4:
+							try {
+								obean.setType(Integer.parseInt(contents));
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							break;
+						case 5:
+							obean.setUrl(contents);
+							break;
+						case 6:
+							obean.setImgsrc(contents);
+							break;
+						case 7:
+							obean.setDownloadurl(contents);
+							break;
+						default:
+							break;
+						}
+					}
+					System.out.println();
+					importlist.add(obean);
+				}
+				book.close();
+				
+				QianBaiLuOpenDBService.insertBatch(this, importlist);
+				list.clear();
+				list.addAll(importlist);
+				mOpenDBListAdapter.notifyDataSetChanged();
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			
+			
+			break;
 		}
 	}
-	
+
 	public static void makeDir(File dir) {
 		if (!dir.getParentFile().exists()) {
 			makeDir(dir.getParentFile());
 		}
 		dir.mkdir();
 	}
-	
+
 	public String getSDPath() {
 		File sdDir = null;
 		boolean sdCardExist = Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
