@@ -50,11 +50,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_time"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/imageview"
         android:padding="10dp"
         android:focusable="false"
         android:text="详情" />
+    
+    <Button
+        android:id="@+id/btn_uncollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_time"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/btn_detail"
+        android:textSize="14sp"
+        android:focusable="false"
+        android:text="取消收藏" />
 
 </RelativeLayout>

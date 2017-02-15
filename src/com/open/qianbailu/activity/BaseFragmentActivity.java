@@ -82,6 +82,8 @@ Response.Listener<JSONObject>, Response.ErrorListener {
 	public static final int MESSAGE_JS_ANDROID_CALLBACK = 8000;
 	/** 在适配器里 调用onitemclick事件*/
 	public static final int MESSAGE_ADAPTER_CALL_ONITEM = 9000;
+	
+	public static final int MESSAGE_ADAPTER_UN_COLLECTION = 9002;
 	/*
 	 * (non-Javadoc)
 	 * 

@@ -43,5 +43,4 @@
       <array name="QUERY_ALL_TABLE_SQL_WHERE">
         <item>select * from collection where url=?</item>
     </array>
-
 </resources>

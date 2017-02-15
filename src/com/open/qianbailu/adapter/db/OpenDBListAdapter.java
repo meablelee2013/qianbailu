@@ -59,7 +59,7 @@ public class OpenDBListAdapter extends CommonAdapter<OpenDBBean> {
 			viewHolder.text_type = (TextView) convertView.findViewById(R.id.text_type);
 			viewHolder.text_time = (TextView) convertView.findViewById(R.id.text_time);
 			viewHolder.btn_detail = (Button) convertView.findViewById(R.id.btn_detail);
-
+			viewHolder.btn_uncollection = (Button) convertView.findViewById(R.id.btn_uncollection);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -90,6 +90,15 @@ public class OpenDBListAdapter extends CommonAdapter<OpenDBBean> {
 				    weakReferenceHandler.sendMessage(msg);
 				}
 			});
+			viewHolder.btn_uncollection.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Message msg = weakReferenceHandler.obtainMessage();
+					msg.what = 9002;
+					msg.arg1 = position;
+				    weakReferenceHandler.sendMessage(msg);
+				}
+			});
 		}
 		return convertView;
 	}
@@ -98,7 +107,7 @@ public class OpenDBListAdapter extends CommonAdapter<OpenDBBean> {
 		TextView text_movieTitle;
 		TextView text_type;
 		TextView text_time;
-		Button btn_detail;
+		Button btn_detail,btn_uncollection;
 		ImageView imageview;
 	}
 

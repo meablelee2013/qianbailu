@@ -295,6 +295,11 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		case MESSAGE_HANDLER:
 			doAsync(this, this, this);
 			break;
+		case MESSAGE_ADAPTER_UN_COLLECTION:
+			QianBaiLuOpenDBService.delete(this, list.get(msg.arg1));
+			list.remove(msg.arg1);
+			mOpenDBListAdapter.notifyDataSetChanged();
+			break;
 		default:
 			break;
 		}

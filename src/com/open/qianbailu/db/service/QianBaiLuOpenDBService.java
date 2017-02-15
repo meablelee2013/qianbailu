@@ -92,5 +92,13 @@ public class QianBaiLuOpenDBService {
 		Log.i(TAG, "insert=="+openbean.getTime()+openbean.getUrl()+openbean.getType()+openbean.getDownloadurl());
 	}
 	
+	
+	public static void delete(Context mContext,OpenDBBean openbean){
+		QianBaiLuDBHelper.getInstance(mContext).delete(mContext.getResources().getStringArray(R.array.CREATE_TABLE_NAME)[0], 
+				new String[]{mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD)[5]},
+				new String[]{openbean.getUrl()});
+		Toast.makeText(mContext, "取消收藏成功", Toast.LENGTH_SHORT).show();
+		Log.i(TAG, "delete=="+openbean.getUrl());
+	}
 
 }
