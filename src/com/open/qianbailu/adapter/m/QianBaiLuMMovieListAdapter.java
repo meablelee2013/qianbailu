@@ -26,7 +26,9 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.CommonAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.MovieBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.weak.WeakReferenceHandler;
 
 /**
@@ -58,7 +60,7 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 			viewHolder.text_type = (TextView) convertView.findViewById(R.id.text_type);
 			viewHolder.text_time = (TextView) convertView.findViewById(R.id.text_time);
 			viewHolder.btn_detail = (Button) convertView.findViewById(R.id.btn_detail);
-
+			viewHolder.btn_collection = (Button) convertView.findViewById(R.id.btn_collection);
 			convertView.setTag(viewHolder);
 		} else {
 			viewHolder = (ViewHolder) convertView.getTag();
@@ -84,6 +86,15 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 					weakReferenceHandler.sendMessage(msg);
 				}
 			});
+			viewHolder.btn_collection.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Message msg =  weakReferenceHandler.obtainMessage();
+					msg.what = 9001;
+					msg.arg1 = position;
+					weakReferenceHandler.sendMessage(msg);
+				}
+			});
 		}
 		return convertView;
 	}
@@ -92,7 +103,7 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 		TextView text_movieTitle;
 		TextView text_type;
 		TextView text_time;
-		Button btn_detail;
+		Button btn_detail,btn_collection;
 		ImageView imageview;
 	}
 

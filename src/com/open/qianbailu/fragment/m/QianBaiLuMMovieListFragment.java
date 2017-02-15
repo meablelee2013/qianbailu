@@ -38,7 +38,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMMovieListAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.MovieBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMMovieService;
@@ -186,6 +188,17 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 			break;
 		case MESSAGE_ADAPTER_CALL_ONITEM:
 			QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(getActivity(), list.get(msg.arg1).getLinkurl());
+			break;
+		case MESSAGE_ADAPTER_COLLECTION:
+			MovieBean bean = list.get(msg.arg1);
+			OpenDBBean openbean = new OpenDBBean();
+			openbean.setUrl(bean.getLinkurl());
+			openbean.setType(3);
+			openbean.setImgsrc(bean.getThumb());
+			openbean.setTitle(bean.getTitle());
+			openbean.setTypename(bean.getVmtype());
+			openbean.setTime("");
+			QianBaiLuOpenDBService.insert(getActivity(), openbean);
 			break;
 		default:
 			break;

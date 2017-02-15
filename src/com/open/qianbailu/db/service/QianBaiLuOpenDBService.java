@@ -87,6 +87,7 @@ public class QianBaiLuOpenDBService {
 		QianBaiLuDBHelper.getInstance(mContext).insert(mContext.getResources().getStringArray(R.array.CREATE_TABLE_NAME)[0],
 				mContext.getResources().getStringArray(R.array.CREATE_TABLE_FIELD), 
 				ojects);
+		Toast.makeText(mContext, "收藏成功", Toast.LENGTH_SHORT).show();
 		Log.i(TAG, "insert=="+openbean.getTime()+openbean.getUrl()+openbean.getType());
 	}
 	
