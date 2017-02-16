@@ -10,7 +10,7 @@ public class NavMBean extends CommonBean {
 	private String href;
 	private List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
 	private List<NavMChildBean> list = new ArrayList<NavMChildBean>();
-
+    private int type;
 	
 	
 	public String getTitle() {
@@ -43,6 +43,14 @@ public class NavMBean extends CommonBean {
 
 	public void setList(List<NavMChildBean> list) {
 		this.list = list;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}
 
 }

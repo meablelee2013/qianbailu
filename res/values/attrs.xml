@@ -43,4 +43,8 @@
       <array name="QUERY_ALL_TABLE_SQL_WHERE">
         <item>select * from collection where url=?</item>
     </array>
+    
+       <array name="QUERY_ALL_TABLE_SQL_WHERE_TYPE">
+        <item>select * from collection where type=?</item>
+    </array>
 </resources>

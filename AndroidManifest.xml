@@ -291,6 +291,14 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+         <!-- 根据type取收藏-->
+        <activity
+            android:name="com.open.qianbailu.activity.QianBaiLuOpenDBTypeIndicatorActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_indicator_f_open_db_type_desp" 
+            android:theme="@style/Theme.PageIndicatorDefaults" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
