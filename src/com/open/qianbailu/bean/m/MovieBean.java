@@ -61,6 +61,8 @@ public class MovieBean extends CommonBean {
 	private String thumb;// //mi3.1100lu.xyz/m/vod/2016-12-31/5866970c26fcc.jpg",
 	private String vmtype;// 亚洲",
 	private String produceyear;// 12-31"
+	private int state;//状态0 未看过；1看过
+	
 
 	public String getId() {
 		return id;
@@ -108,6 +110,14 @@ public class MovieBean extends CommonBean {
 
 	public void setProduceyear(String produceyear) {
 		this.produceyear = produceyear;
+	}
+
+	public int getState() {
+		return state;
+	}
+
+	public void setState(int state) {
+		this.state = state;
 	}
 
 }

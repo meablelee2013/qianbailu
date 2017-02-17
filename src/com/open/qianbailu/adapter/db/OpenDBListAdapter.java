@@ -69,7 +69,15 @@ public class OpenDBListAdapter extends CommonAdapter<OpenDBBean> {
 			viewHolder.text_movieTitle.setText(bean.getTitle());
 			viewHolder.text_type.setText(bean.getTypename());
 			viewHolder.text_time.setText(bean.getTime());
-
+			if(bean.getState()==1){
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+				viewHolder.text_type.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+				viewHolder.text_time.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+			}else{
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.black));
+				viewHolder.text_type.setTextColor(mContext.getResources().getColor(android.R.color.black));
+				viewHolder.text_time.setTextColor(mContext.getResources().getColor(android.R.color.black));
+			}
 			if(bean.getType()==1 || bean.getType()==4){
 				viewHolder.imageview.setVisibility(View.GONE);
 			}else{

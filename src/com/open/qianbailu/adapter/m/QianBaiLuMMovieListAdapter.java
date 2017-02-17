@@ -71,6 +71,15 @@ public class QianBaiLuMMovieListAdapter extends CommonAdapter<MovieBean> {
 			viewHolder.text_type.setText(bean.getVmtype());
 			viewHolder.text_time.setText(bean.getProduceyear());
 
+			if(bean.getState()==1){
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+				viewHolder.text_type.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+				viewHolder.text_time.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+			}else{
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.black));
+				viewHolder.text_type.setTextColor(mContext.getResources().getColor(android.R.color.black));
+				viewHolder.text_time.setTextColor(mContext.getResources().getColor(android.R.color.black));
+			}
 			if (bean.getThumb() != null && bean.getThumb().length() > 0) {
 				DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
 						.cacheInMemory().cacheOnDisc().build();

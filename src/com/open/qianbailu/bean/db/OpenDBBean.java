@@ -33,6 +33,7 @@ public class OpenDBBean extends CommonBean{
 	private String typename;
 	private String url;
 	private String downloadurl;
+	private int state;
 	
 	public int getId() {
 		return id;
@@ -81,6 +82,12 @@ public class OpenDBBean extends CommonBean{
 	}
 	public void setDownloadurl(String downloadurl) {
 		this.downloadurl = downloadurl;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
 	}
 	
 }

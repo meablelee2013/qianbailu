@@ -56,7 +56,11 @@ public class QianBaiLuMSListAdapter extends CommonAdapter<MovieBean> {
 		final MovieBean bean = (MovieBean) getItem(position);
 		if (bean != null) {
 			viewHolder.text_movieTitle.setText(bean.getTitle());
-
+			if(bean.getState()==1){
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
+			}else{
+				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.black));
+			}
 		}
 		return convertView;
 	}

@@ -119,7 +119,6 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 		mPullRefreshListView.setMode(Mode.BOTH);
 
 		edit_current.setText("" + pageNo);
-		
 
 	}
 
@@ -153,6 +152,8 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				list.get((int) id).setState(1);
+				mQianBaiLuMPictureListAdapter.notifyDataSetChanged();
 				QianBaiLuMShowListFragmentActivity.startQianBaiLuMShowListFragmentActivity(getActivity(), list.get((int) id).getLinkurl());
 			}
 		});

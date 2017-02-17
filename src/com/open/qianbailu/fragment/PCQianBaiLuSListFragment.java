@@ -79,6 +79,8 @@ public class PCQianBaiLuSListFragment extends QianBaiLuMSListFragment{
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				list.get((int) id).setState(1);
+				mQianBaiLuMSListAdapter.notifyDataSetChanged();
 				PCQianBaiLuXiaoShuoFragmentActivity.startPCQianBaiLuXiaoShuoFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});

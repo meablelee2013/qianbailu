@@ -35,6 +35,7 @@ import com.open.qianbailu.utils.UrlUtils;
 /**
  ***************************************************************************************************************************************************************************** 
  * 小说列表
+ * 
  * @author :fengguangjing
  * @createTime:2017-1-3上午11:00:44
  * @version:4.2.4
@@ -43,10 +44,10 @@ import com.open.qianbailu.utils.UrlUtils;
  * @description:
  ***************************************************************************************************************************************************************************** 
  */
-public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
+public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 	public String url = UrlUtils.QIAN_BAI_LU_M_VLIST_B_CLASSID;
 	public QianBaiLuMSListAdapter mQianBaiLuMSListAdapter;
-	
+
 	public static QianBaiLuMSListFragment newInstance(String url, boolean isVisibleToUser) {
 		QianBaiLuMSListFragment fragment = new QianBaiLuMSListFragment();
 		fragment.setFragment(fragment);
@@ -54,7 +55,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		fragment.url = url;
 		return fragment;
 	}
- 
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -67,7 +68,7 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		mQianBaiLuMSListAdapter = new QianBaiLuMSListAdapter(getActivity(), list);
 		mPullRefreshListView.setAdapter(mQianBaiLuMSListAdapter);
 		mPullRefreshListView.setMode(Mode.BOTH);
-		edit_current.setText(""+pageNo);
+		edit_current.setText("" + pageNo);
 	}
 
 	/*
@@ -99,7 +100,9 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
+				list.get((int) id).setState(1);
+				mQianBaiLuMSListAdapter.notifyDataSetChanged();
+				QianBaiLuMXiaoShuoFragmentActivity.startQianBaiLuMXiaoShuoFragmentActivity(getActivity(), list.get((int) id).getLinkurl());
 			}
 		});
 		text_fisrt.setOnClickListener(this);
@@ -108,9 +111,9 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		text_next.setOnClickListener(this);
 		text_last.setOnClickListener(this);
 		edit_current.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
-		
+
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -135,11 +138,11 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		// TODO Auto-generated method stub
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
-			if(isautomatic){
+			if (isautomatic) {
 				if (result.getList() != null && result.getList().size() > 0) {
 					list.addAll(result.getList());
 				}
-			}else{
+			} else {
 				list.clear();
 				list.addAll(result.getList());
 				pageNo = 0;
@@ -153,9 +156,8 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment  {
 		mQianBaiLuMSListAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullRefreshListView.onRefreshComplete();
-		edit_current.setText(""+pageNo);
+		edit_current.setText("" + pageNo);
 		isautomatic = false;
 	}
-	
 
 }

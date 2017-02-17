@@ -179,6 +179,8 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO Auto-generated method stub
 		if ((id) != -1 && list != null && list.size() > 0) {
+			list.get((int) id).setState(1);
+			mOpenDBListAdapter.notifyDataSetChanged();
 			OpenDBBean bean = list.get((int) id);
 			switch (bean.getType()) {
 			case 1:

@@ -123,6 +123,8 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				list.get((int)id).setState(1);
+				mQianBaiLuMMovieListAdapter.notifyDataSetChanged();
 				QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});

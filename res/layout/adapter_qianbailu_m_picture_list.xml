@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+    android:layout_height="wrap_content"
+     >
 
     <TextView
         android:id="@+id/text_movieTitle"
@@ -14,6 +15,7 @@
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
         android:text="最新pacopacomama 122816_232 露"
+        android:textColor="@android:color/black"
         android:textSize="14sp" />
 
 </RelativeLayout>

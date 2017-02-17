@@ -82,6 +82,8 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				list.get((int) id).setState(1);
+				mQianBaiLuMPictureListAdapter.notifyDataSetChanged();
 				PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
