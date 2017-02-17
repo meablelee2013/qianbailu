@@ -14,6 +14,7 @@ package com.open.qianbailu.fragment;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -87,6 +88,12 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 				PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(getActivity(), list.get((int)id).getLinkurl());
 			}
 		});
+		text_fisrt.setOnClickListener(this);
+		text_pre.setOnClickListener(this);
+		text_current.setOnClickListener(this);
+		text_next.setOnClickListener(this);
+		text_last.setOnClickListener(this);
+		edit_current.setInputType(EditorInfo.TYPE_CLASS_NUMBER);
 	}
 	
 
@@ -103,6 +110,7 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 		//http://www.1111av.co/html/tupian/toupai/ 
 		//http://www.1111av.co/html/tupian/toupai/index.html
 		mMovieJson.setList(PCQianBaiLuPictureService.parsePicture(url, pageNo));
+		mMovieJson.setMaxpageno(PCQianBaiLuPictureService.maxpageno);
 		return mMovieJson;
 	}
 
@@ -126,9 +134,12 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 				list.addAll(result.getList());
 			}
 		}
+		maxPageNo = result.getMaxpageno();
 		mQianBaiLuMPictureListAdapter.notifyDataSetChanged();
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullRefreshListView.onRefreshComplete();
+		edit_current.setText("" + pageNo);
+		isautomatic = false;
 	}
 
 }
