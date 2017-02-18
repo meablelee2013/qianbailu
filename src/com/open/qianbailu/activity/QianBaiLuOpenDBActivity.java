@@ -63,6 +63,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	private PullToRefreshListView mPullRefreshListView;
 	private OpenDBListAdapter mOpenDBListAdapter;
 	private List<OpenDBBean> list = new ArrayList<OpenDBBean>();
+	private boolean isdateDesc;
 
 	// private Button selectBtn;
 	// private Button insertBtn;
@@ -72,7 +73,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	// private QianBaiLuDBHelper mQianBaiLuDBHelper;
 
 	Button btn_txt;
-	Button btn_excel, btn_importexcel;
+	Button btn_excel, btn_importexcel,btn_date;
 
 	private String[] title = { "序号", "标题", "类型名称", "时间", "类型", "地址", "图片地址", "下载地址" };
 	ArrayList<ArrayList<String>> excellist = new ArrayList<ArrayList<String>>();
@@ -109,6 +110,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		btn_txt = (Button) findViewById(R.id.btn_txt);
 		btn_excel = (Button) findViewById(R.id.btn_excel);
 		btn_importexcel = (Button) findViewById(R.id.btn_importexcel);
+		btn_date = (Button) findViewById(R.id.btn_date);
 	}
 
 	/*
@@ -123,6 +125,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 		btn_txt.setOnClickListener(this);
 		btn_excel.setOnClickListener(this);
 		btn_importexcel.setOnClickListener(this);
+		btn_date.setOnClickListener(this);
 		mPullRefreshListView.setOnItemClickListener(this);
 		// selectBtn.setOnClickListener(this);
 		// insertBtn.setOnClickListener(this);
@@ -301,6 +304,14 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 			
 			
 			break;
+		case R.id.btn_date:
+			if(isdateDesc){
+				isdateDesc =false;
+			}else{
+				isdateDesc = true;
+			}
+			weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+			break;
 		}
 	}
 
@@ -331,7 +342,11 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 	public OpenDBJson call() throws Exception {
 		// TODO Auto-generated method stub
 		OpenDBJson mOpenDBJson = new OpenDBJson();
-		mOpenDBJson.setList(QianBaiLuOpenDBService.queryList(getApplicationContext()));
+		if(isdateDesc){
+			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListDescDate(getApplicationContext()));
+		}else{
+			mOpenDBJson.setList(QianBaiLuOpenDBService.queryList(getApplicationContext()));
+		}
 		return mOpenDBJson;
 	}
 
