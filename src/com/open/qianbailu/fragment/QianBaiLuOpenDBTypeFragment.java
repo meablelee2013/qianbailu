@@ -14,25 +14,27 @@ package com.open.qianbailu.fragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.R.bool;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.ListView;
 
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.PCQianBaiLuMoveDetailFragmentActivity;
 import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
 import com.open.qianbailu.activity.PCQianBaiLuXiaoShuoFragmentActivity;
-import com.open.qianbailu.activity.QianBaiLuOpenDBActivity;
 import com.open.qianbailu.activity.QianBaiLuWebViewActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
@@ -59,6 +61,9 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	private PullToRefreshListView mPullRefreshListView;
 	private OpenDBListTypeAdapter mOpenDBListAdapter;
 	private List<OpenDBBean> list = new ArrayList<OpenDBBean>();
+	private View headview;
+	private Button btn_date;
+	private boolean isDateDesc;
 	
 	public static QianBaiLuOpenDBTypeFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		QianBaiLuOpenDBTypeFragment fragment = new QianBaiLuOpenDBTypeFragment();
@@ -73,6 +78,9 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_qianbailu_m_movie_listview, container, false);
 		mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
+		
+		headview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_open_db_type_head, null);
+		btn_date  = (Button) headview.findViewById(R.id.btn_date);
 		return view;
 	}
 	
@@ -82,7 +90,7 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	@Override
 	public void initValues() {
 		// TODO Auto-generated method stub
-		super.initValues();
+		mPullRefreshListView.getRefreshableView().addHeaderView(headview);
 		mOpenDBListAdapter = new OpenDBListTypeAdapter(getActivity(), weakReferenceHandler,list);
 		mPullRefreshListView.setAdapter(mOpenDBListAdapter);
 		mPullRefreshListView.setMode(Mode.PULL_FROM_START);
@@ -108,6 +116,19 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 				}
 			}
 		});
+		btn_date.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				if(isDateDesc){
+					isDateDesc  = false;
+				}else{
+					isDateDesc = true;
+				}
+				weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+			}
+		});
 	}
 	/*
 	 * (non-Javadoc)
@@ -118,7 +139,11 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	public OpenDBJson call() throws Exception {
 		// TODO Auto-generated method stub
 		OpenDBJson mOpenDBJson = new OpenDBJson();
-		mOpenDBJson.setList(QianBaiLuOpenDBService.queryListType(getActivity(),type));
+		if(isDateDesc){
+			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListTypeByDateDesc(getActivity(),type));
+		}else{
+			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListType(getActivity(),type));
+		}
 		return mOpenDBJson;
 	}
 

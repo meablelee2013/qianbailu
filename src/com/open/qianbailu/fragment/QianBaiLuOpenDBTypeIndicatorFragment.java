@@ -48,20 +48,12 @@ public class QianBaiLuOpenDBTypeIndicatorFragment extends QianBaiLuMIndicatorFra
 		NavMJson mNavMJson = new NavMJson();
 		List<NavMBean> listm = new ArrayList<NavMBean>();
 		NavMBean navBean = new NavMBean();
-		navBean.setTitle("m电影");
-		navBean.setType(3);
-		listm.add(navBean);
-
-		navBean = new NavMBean();
-		navBean.setTitle("m图库");
-		navBean.setType(2);
-		listm.add(navBean);
-
+		
 		navBean = new NavMBean();
 		navBean.setTitle("m小说");
 		navBean.setType(1);
 		listm.add(navBean);
-
+		
 		navBean = new NavMBean();
 		navBean.setTitle("pc电影");
 		navBean.setType(6);
@@ -71,6 +63,17 @@ public class QianBaiLuOpenDBTypeIndicatorFragment extends QianBaiLuMIndicatorFra
 		navBean.setTitle("pc图库");
 		navBean.setType(5);
 		listm.add(navBean);
+		
+		navBean = new NavMBean();
+		navBean.setTitle("m电影");
+		navBean.setType(3);
+		listm.add(navBean);
+
+		navBean = new NavMBean();
+		navBean.setTitle("m图库");
+		navBean.setType(2);
+		listm.add(navBean);
+
 
 		navBean = new NavMBean();
 		navBean.setTitle("pc小说");
@@ -91,7 +94,7 @@ public class QianBaiLuOpenDBTypeIndicatorFragment extends QianBaiLuMIndicatorFra
 		Fragment fragment = CommonV4Fragment.newInstance(url, false);
 		for (NavMBean bean : result.getList()) {
 			titleList.add(bean.getTitle());
-			if (bean.getType() == 3) {
+			if (bean.getType() == 1) {
 				fragment = QianBaiLuOpenDBTypeFragment.newInstance(url, bean.getType(), true);
 			} else {
 				fragment = QianBaiLuOpenDBTypeFragment.newInstance(url, bean.getType(), false);
