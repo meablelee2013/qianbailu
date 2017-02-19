@@ -400,4 +400,101 @@ public class QianBaiLuMNavService extends CommonService {
 		}
 		return list;
 	}
+	
+	public static List<NavMBean> parseVodyingFoot(String href) {
+		List<NavMBean> list = new ArrayList<NavMBean>();
+		try {
+			href = makeURL(href, new HashMap<String, Object>() {
+				{
+				}
+			});
+			Log.i(TAG, "url = " + href);
+			Document doc = Jsoup.connect(href)
+			// .userAgent(UrlUtils.qianbailuAgent)
+					.timeout(10000).get();
+//			Log.i(TAG, doc.toString());
+//			System.out.println(doc.toString());
+			try {
+				Elements moduleElements = doc.select("div.ulike");
+				if (moduleElements != null && moduleElements.size() > 0) {
+					for (int i = 0; i < moduleElements.size(); i++) {
+						NavMBean navbean = new NavMBean();
+						try {
+							Element titleLeftElement = moduleElements.get(i).select("div.title")
+								.first();
+							if (titleLeftElement != null) {
+								String titlea = titleLeftElement.text();
+								Log.i(TAG, "i==" + i    
+										+ ";titlea==" + titlea);
+								navbean.setTitle(titlea);
+							}
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+						
+						//picKuFilm
+						Elements picKuFilmElements = moduleElements.get(i).select("li");
+						if(picKuFilmElements!=null && picKuFilmElements.size()>0){
+							List<PicKuFilmBean> picKuL = new ArrayList<PicKuFilmBean>();
+							PicKuFilmBean filmbean;
+							for(int y=0;y<picKuFilmElements.size();y++){
+								filmbean = new PicKuFilmBean();
+								filmbean.setType(1);
+								try {
+									/**
+								<li><a class="play-img" href="/vod/11341.html"
+								 title="最新一本道 021017_480 闷絶美女鬼~[星川ういか]" target="_blank">
+								 <img src="//i3.1100lu.xyz/vod/2017-02-12/589f3c2a04a00.jpg"
+								  alt="最新一本道 021017_480 闷絶美女鬼~[星川ういか]"/></a>
+									<h5><a href="/vod/11341.html" 
+									title="最新一本道 021017_480 闷絶美女鬼~[星川ういか]" target="_blank">最新一本道 </a></h5>
+									</li>
+									 */
+									Element imgElement = picKuFilmElements.get(y).select("img").first();
+									String src = imgElement.attr("src");
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP+src);
+									Log.i(TAG, "i=="+i+";y=="+y+";src=="+src);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								
+								try {
+									Element aElement = picKuFilmElements.get(y).select("img").first();
+									String picTitle = aElement.attr("alt");
+									filmbean.setTitle(picTitle);
+									Log.i(TAG, "i=="+i+";y=="+y+";picTitle==" );
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								
+								try {
+									Element aElement = picKuFilmElements.get(y).select("a").first();
+									String ahref = aElement.attr("href");
+									filmbean.setHref(UrlUtils.QIAN_BAI_LU+ahref);
+									Log.i(TAG, "i=="+i+";y=="+y+ ";ahref=="+ahref);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+								picKuL.add(filmbean);
+							}
+							navbean.setPicKuL(picKuL);
+						}
+						
+						if(navbean.getTitle().equals("猜你喜欢")){
+							list.add(navbean);
+						}
+						
+					}
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 }

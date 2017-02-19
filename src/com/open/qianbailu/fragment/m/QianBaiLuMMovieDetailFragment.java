@@ -68,7 +68,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 	public PullToRefreshListView mPullRefreshListView;
 	public QianBaiLuMShowAdapter mQianBaiLuMShowAdapter;
 	public List<ShowBean> list = new ArrayList<ShowBean>();
-	private View footview,headview;
+	public View footview,headview;
 	private TextView text_pretitle;
 	private List<NavMChildBean> listd = new ArrayList<NavMChildBean>();
 	//head

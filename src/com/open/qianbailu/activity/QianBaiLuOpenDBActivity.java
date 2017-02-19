@@ -428,7 +428,7 @@ public class QianBaiLuOpenDBActivity extends CommonFragmentActivity<OpenDBJson> 
 				PCQianBaiLuShowListFragmentActivity.startPCQianBaiLuShowListFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
 				break;
 			case 6:
-				PCQianBaiLuMoveDetailFragmentActivity.startPCQianBaiLuMoveDetailFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
+				PCQianBaiLuVodDetailFragmentActivity.startPCQianBaiLuVodDetailFragmentActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());
 				break;
 			default:
 				QianBaiLuWebViewActivity.startUmeiWebViewActivity(QianBaiLuOpenDBActivity.this, bean.getUrl());

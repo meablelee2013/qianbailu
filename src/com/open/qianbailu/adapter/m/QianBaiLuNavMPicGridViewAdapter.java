@@ -23,11 +23,10 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.open.qianbailu.R;
-import com.open.qianbailu.activity.PCQianBaiLuMoveDetailFragmentActivity;
+import com.open.qianbailu.activity.PCQianBaiLuVodDetailFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMMoveDetailFragmentActivity;
 import com.open.qianbailu.adapter.CommonAdapter;
 import com.open.qianbailu.bean.m.PicKuFilmBean;
-import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -72,7 +71,7 @@ public class QianBaiLuNavMPicGridViewAdapter extends CommonAdapter<PicKuFilmBean
 			public void onClick(View v) {
 				switch (bean.getType()) {
 				case 1:
-					PCQianBaiLuMoveDetailFragmentActivity.startPCQianBaiLuMoveDetailFragmentActivity(mContext, bean.getHref());
+					PCQianBaiLuVodDetailFragmentActivity.startPCQianBaiLuVodDetailFragmentActivity(mContext, bean.getHref());
 					break;
 				default:
 					QianBaiLuMMoveDetailFragmentActivity.startQianBaiLuMMoveDetailFragmentActivity(mContext, bean.getHref());

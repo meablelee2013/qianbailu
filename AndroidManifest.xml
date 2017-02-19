@@ -299,6 +299,13 @@
             android:theme="@style/Theme.PageIndicatorDefaults" 
 			>
         </activity>
+         <!-- pc 电影详细vod -->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuVodDetailFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_m_vod_detail_pc_desp" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

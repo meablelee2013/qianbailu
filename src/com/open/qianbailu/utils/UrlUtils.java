@@ -67,6 +67,8 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="http://2222av.co/list/1.html";
 	/***电影详细**/
 	public static final String PC_QIAN_BAI_LU_MOVIE = "http://2222av.co/vod/11193.html";
+	/***电影详细vod**/
+	public static final String PC_QIAN_BAI_LU_VOD = "http://2222av.co/vod/11400.html#pl";
 	/***图库**/
 	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "http://2222av.co/html/tupian/index.html";
 	/***图库详细**/
