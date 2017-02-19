@@ -15,12 +15,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.fragment.m.QianBaiLuMShowListFragment;
 import com.open.qianbailu.json.m.ShowJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuShowImageService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMShowImageService;
-import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 

@@ -324,6 +324,13 @@
         <activity android:name="com.open.qianbailu.activity.HtmlImgPreviewActivity"
             android:description="@string/qianbailu_html_spanner_viewpager_html_desp"
             />
+         <!-- pc 最近更新-->
+        <activity
+            android:name="com.open.qianbailu.activity.PCQianBaiLuNewFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_new_list_desp" 
+			>
+        </activity>
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"

@@ -23,11 +23,9 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
-import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.fragment.m.QianBaiLuMPictureListFragment;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuPictureService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMPictureService;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**

@@ -14,6 +14,7 @@ package com.open.qianbailu.adapter.m;
 import java.util.List;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -55,7 +56,7 @@ public class QianBaiLuMSListAdapter extends CommonAdapter<MovieBean> {
 		}
 		final MovieBean bean = (MovieBean) getItem(position);
 		if (bean != null) {
-			viewHolder.text_movieTitle.setText(bean.getTitle());
+			viewHolder.text_movieTitle.setText(Html.fromHtml(bean.getTitle()));
 			if(bean.getState()==1){
 				viewHolder.text_movieTitle.setTextColor(mContext.getResources().getColor(android.R.color.darker_gray));
 			}else{

@@ -11,20 +11,15 @@
  */
 package com.open.qianbailu.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.widget.ListView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.m.QianBaiLuMShowAdapter;
-import com.open.qianbailu.fragment.m.QianBaiLuMDianYingFootListFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieDetailFragment;
 import com.open.qianbailu.json.m.MovieDetailJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieDetailService;
-import com.open.qianbailu.utils.UrlUtils;
 
 /**
  *****************************************************************************************************************************************************************************

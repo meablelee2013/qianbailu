@@ -11,13 +11,9 @@
  */
 package com.open.qianbailu.fragment;
 
-import android.os.Message;
-
 import com.open.qianbailu.fragment.m.QianBaiLuNavMExpandableListFragment;
-import com.open.qianbailu.fragment.m.QianBaiLuNavMIndicatorExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuIndicatorService;
-import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**

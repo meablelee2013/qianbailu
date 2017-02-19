@@ -15,8 +15,6 @@ import android.support.v4.app.Fragment;
 
 import com.open.qianbailu.bean.m.NavMBean;
 import com.open.qianbailu.fragment.m.QianBaiLuMIndicatorFragment;
-import com.open.qianbailu.fragment.m.QianBaiLuMMovieListFragment;
-import com.open.qianbailu.fragment.m.QianBaiLuNavMIndicatorExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuIndicatorService;
 import com.open.qianbailu.utils.UrlUtils;

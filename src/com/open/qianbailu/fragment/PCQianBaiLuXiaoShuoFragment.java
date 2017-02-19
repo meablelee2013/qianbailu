@@ -27,7 +27,6 @@ import com.open.qianbailu.fragment.m.QianBaiLuMShowFootListFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMXiaoShuoFragment;
 import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuXiaoShuoService;
-import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.view.ZoomTextView;
 
 /**

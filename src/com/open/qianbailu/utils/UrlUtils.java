@@ -93,6 +93,8 @@ public class UrlUtils {
 	public static final String PC_QIAN_BAI_LU_HOT = "http://2222av.co/detail/hot.html";
 	/***看片留言**/
 	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "http://2222av.co/detail/guestbook.html";
+	/***最近更新**/
+	public static final String PC_QIAN_BAI_LU_NEW = "http://2222av.co/detail/new.html";
 	
 	public static String getCookie(){
 		return COOKIE;

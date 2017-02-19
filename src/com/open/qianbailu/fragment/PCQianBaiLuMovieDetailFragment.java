@@ -11,14 +11,9 @@
  */
 package com.open.qianbailu.fragment;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
-
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieDetailFragment;
 import com.open.qianbailu.json.m.MovieDetailJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieDetailService;
-import com.open.qianbailu.utils.UrlUtils;
 
 /**
  *****************************************************************************************************************************************************************************

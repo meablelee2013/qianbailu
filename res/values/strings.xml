@@ -60,4 +60,5 @@
      <string name="qianbailu_html_spanner_main_desp">主测试页面图片预览</string>
      <string name="qianbailu_html_spanner_viewpager_desp">图片预览</string>
      <string name="qianbailu_html_spanner_viewpager_html_desp">html图片预览</string>
+     <string name="qianbailu_new_list_desp">pc 最近更新</string>
 </resources>
