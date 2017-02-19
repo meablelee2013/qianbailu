@@ -306,6 +306,24 @@
             android:description="@string/qianbailu_m_vod_detail_pc_desp" 
 			>
         </activity>
+         <!-- 详细scroll-->
+        <activity
+            android:name="com.open.qianbailu.activity.ContboxScrollFragmentActivity"
+            android:configChanges="keyboard|keyboardHidden|navigation"
+            android:description="@string/qianbailu_contbox_scroll_desp" >
+        </activity>
+         <!-- 主测试页面图片预览-->
+        <activity android:name="net.nightwhistler.htmlspanner.MainActivity"
+            android:description="@string/qianbailu_html_spanner_main_desp"
+            />
+         <!-- 图片预览-->
+        <activity android:name="net.nightwhistler.htmlspanner.ImgPreviewActivity"
+            android:description="@string/qianbailu_html_spanner_viewpager_desp"
+            />
+         <!-- html图片预览-->
+        <activity android:name="com.open.qianbailu.activity.HtmlImgPreviewActivity"
+            android:description="@string/qianbailu_html_spanner_viewpager_html_desp"
+            />
         <!-- 所有类列表 -->
         <activity
             android:name="com.open.qianbailu.activity.QianBaiLuALLActivity"
