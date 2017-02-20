@@ -17,9 +17,11 @@ import java.util.List;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.m.QianBaiLuShowPagerAdapter;
@@ -48,6 +50,7 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 	private String url = UrlUtils.QIAN_BAI_LU_MOVIE;
 	private WeakActivityReferenceHandler weakActivityReferenceHandler;
 	private int position;
+	private TextView text_page_foot;
 	
 	public static QianBaiLuShowPagerAdapterFragment newInstance(String url, boolean isVisibleToUser,WeakActivityReferenceHandler weakActivityReferenceHandler) {
 		QianBaiLuShowPagerAdapterFragment fragment = new QianBaiLuShowPagerAdapterFragment();
@@ -73,6 +76,7 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_qianbailu_m_show_viewpager, container, false);
 		viewpager = (ViewPager) view.findViewById(R.id.viewpager);
+		text_page_foot = (TextView) view.findViewById(R.id.text_page_foot);
 		return view;
 	}
 	
@@ -88,10 +92,38 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 		if(list!=null && list.size()>0){
 			mQianBaiLuShowPagerAdapter.notifyDataSetChanged();
 			viewpager.setCurrentItem(position);
+			text_page_foot.setText((position+1)+" / "+list.size());
 		}else{
 			doAsync(this, this, this);
 		}
-		
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.open.qianbailu.fragment.BaseV4Fragment#bindEvent()
+	 */
+	@Override
+	public void bindEvent() {
+		// TODO Auto-generated method stub
+		super.bindEvent();
+		viewpager.setOnPageChangeListener(new OnPageChangeListener() {
+
+			@Override
+			public void onPageSelected(int position) {
+				text_page_foot.setText((position+1)+" / "+list.size());
+			}
+
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				// TODO Auto-generated method stub
+
+			}
+
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				// TODO Auto-generated method stub
+
+			}
+		});
 	}
 	
 	/*
@@ -120,5 +152,6 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 		list.clear();
 		list.addAll(result.getList());
 		mQianBaiLuShowPagerAdapter.notifyDataSetChanged();
+		text_page_foot.setText((position+1)+" / "+list.size());
 	}
 }

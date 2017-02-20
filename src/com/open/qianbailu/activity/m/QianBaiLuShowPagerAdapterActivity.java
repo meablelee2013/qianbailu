@@ -21,6 +21,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.widget.TextView;
 
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.CommonFragmentActivity;
@@ -48,6 +49,7 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 	private List<ShowBean> list = new ArrayList<ShowBean>();
 	private String url = UrlUtils.QIAN_BAI_LU_MOVIE;
 	private int position;
+	private TextView text_page_foot;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,7 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 		weakReferenceHandler = new WeakActivityReferenceHandler(this);
 		// 初始化viewpager.
 		viewpager = (ViewPager) findViewById(R.id.viewpager);
+		text_page_foot = (TextView) findViewById(R.id.text_page_foot);
 		mQianBaiLuShowPagerAdapter = new QianBaiLuShowPagerAdapter(this, list,weakReferenceHandler);
 		viewpager.setAdapter(mQianBaiLuShowPagerAdapter);
 	}
@@ -82,7 +85,7 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 			if(position>=0 && position<list.size()){
 				weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 10);
 			}
-			
+			text_page_foot.setText((position+1)+" / "+list.size());
 		}else{
 			doAsync(this, this, this);
 		}
@@ -96,6 +99,7 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 
 			@Override
 			public void onPageSelected(int position) {
+				text_page_foot.setText((position+1)+" / "+list.size());
 			}
 
 			@Override
@@ -177,6 +181,8 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 		list.clear();
 		list.addAll(result.getList());
 		mQianBaiLuShowPagerAdapter.notifyDataSetChanged();
+		text_page_foot.setText((position+1)+" / "+list.size());
+		
 	}
 	public static void startQianBaiLuShowPagerAdapterActivity(Context context, ShowJson mShowJson) {
 		Intent intent = new Intent();
