@@ -40,6 +40,10 @@
         <item>select * from collection</item>
     </array>
     
+     <array name="QUERY_ALL_TABLE_SQL_ORDER_ID">
+        <item>select * from collection order by id desc</item>
+    </array>
+    
      <array name="QUERY_ALL_TABLE_SQL_DESC">
         <item>select * from collection order by time desc</item>
     </array>
@@ -50,6 +54,10 @@
     
        <array name="QUERY_ALL_TABLE_SQL_WHERE_TYPE">
         <item>select * from collection where type=?</item>
+    </array>
+    
+       <array name="QUERY_ALL_TABLE_SQL_WHERE_TYPE_BY_ID">
+        <item>select * from collection where type=? order by id desc</item>
     </array>
     
         <array name="QUERY_ALL_TABLE_SQL_WHERE_TYPE_BY_DATE">

@@ -6,9 +6,19 @@
 
     <Button
         android:id="@+id/btn_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:padding="10dp"
         android:text="按日期排序" />
+
+    <Button
+        android:id="@+id/btn_seq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:padding="10dp"
+        android:text="按正倒序" />
 
 </RelativeLayout>

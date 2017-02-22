@@ -61,8 +61,8 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 	private OpenDBListTypeAdapter mOpenDBListAdapter;
 	private List<OpenDBBean> list = new ArrayList<OpenDBBean>();
 	private View headview;
-	private Button btn_date;
-	private boolean isDateDesc;
+	private Button btn_date,btn_seq;
+	private boolean isDateDesc,isseqDesc;
 	
 	public static QianBaiLuOpenDBTypeFragment newInstance(String url,int type, boolean isVisibleToUser) {
 		QianBaiLuOpenDBTypeFragment fragment = new QianBaiLuOpenDBTypeFragment();
@@ -80,6 +80,7 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 		
 		headview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_open_db_type_head, null);
 		btn_date  = (Button) headview.findViewById(R.id.btn_date);
+		btn_seq  = (Button) headview.findViewById(R.id.btn_seq);
 		return view;
 	}
 	
@@ -128,6 +129,19 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 				weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
 			}
 		});
+		btn_seq.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				if(isseqDesc){
+					isseqDesc  = false;
+				}else{
+					isseqDesc = true;
+				}
+				weakReferenceHandler.sendEmptyMessage(MESSAGE_HANDLER);
+			}
+		});
 	}
 	/*
 	 * (non-Javadoc)
@@ -141,7 +155,7 @@ public class QianBaiLuOpenDBTypeFragment extends BaseV4Fragment<OpenDBJson, Qian
 		if(isDateDesc){
 			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListTypeByDateDesc(getActivity(),type));
 		}else{
-			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListType(getActivity(),type));
+			mOpenDBJson.setList(QianBaiLuOpenDBService.queryListType(getActivity(),type,isseqDesc));
 		}
 		return mOpenDBJson;
 	}
