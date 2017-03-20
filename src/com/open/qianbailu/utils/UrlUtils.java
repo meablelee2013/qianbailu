@@ -58,43 +58,43 @@ public class UrlUtils {
 	
 	//网页
 	/***HOST地址**/
-	public static final String QIAN_BAI_LU_HOST = "2222av.co";
+	public static final String QIAN_BAI_LU_HOST = "www.2222av.co";
 	/***pc地址**/
-	public static final String QIAN_BAI_LU = "http://2222av.co";
+	public static final String QIAN_BAI_LU = "http://www.2222av.co";
 	/***电影首页**/
-	public static final String PC_QIAN_BAI_LU_VLIST = "http://2222av.co/vod/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST = "http://www.2222av.co/vod/index.html";
 	/***电影1**/
-	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="http://2222av.co/list/1.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="http://www.2222av.co/list/1.html";
 	/***电影详细**/
-	public static final String PC_QIAN_BAI_LU_MOVIE = "http://2222av.co/vod/11193.html";
+	public static final String PC_QIAN_BAI_LU_MOVIE = "http://www.2222av.co/vod/11193.html";
 	/***电影详细vod**/
-	public static final String PC_QIAN_BAI_LU_VOD = "http://2222av.co/vod/11400.html#pl";
+	public static final String PC_QIAN_BAI_LU_VOD = "http://www.2222av.co/vod/11400.html#pl";
 	/***图库**/
-	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "http://2222av.co/html/tupian/index.html";
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "http://www.2222av.co/html/tupian/index.html";
 	/***图库详细**/
-	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://2222av.co/html/tupian/toupai/";
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://www.2222av.co/html/tupian/toupai/";
 	/***看图图库详细**/
-	public static final String PC_QIAN_BAI_LU_SHOW = "http://2222av.co/html/tupian/yazhou/2016/0923/388511.html";
+	public static final String PC_QIAN_BAI_LU_SHOW = "http://www.2222av.co/html/tupian/yazhou/2016/0923/388511.html";
 	/***小说**/
-	public static final String PC_QIAN_BAI_LU_VLIST_S = "http://2222av.co/html/article/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_S = "http://www.2222av.co/html/article/index.html";
 	/***小说列表**/
-	public static final String PC_QIAN_BAI_LU_VLIST_J = "http://2222av.co/html/article/jiqing/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_J = "http://www.2222av.co/html/article/jiqing/index.html";
 	/***小说详细**/
-	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "http://2222av.co/html/article/jiqing/2017/0107/393310.html";
+	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "http://www.2222av.co/html/article/jiqing/2017/0107/393310.html";
 	/***电影在线**/
-	public static final String PC_QIAN_BAI_LU_ONLINE ="http://2222av.co/list/14.html";
+	public static final String PC_QIAN_BAI_LU_ONLINE ="http://www.2222av.co/list/14.html";
 	/***pc搜索地址**/
 	public static final String PC_QIAN_BAI_LU_SEARCH = "https://1100.so/";
 	/***pc搜索例子**/
 	public static final String PC_QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/?q=%E4%B8%9C%E4%BA%AC%E7%83%AD";
 	/***网站公告**/
-	public static final String PC_QIAN_BAI_LU_NOTICE = "http://2222av.co/detail/gg.html";
+	public static final String PC_QIAN_BAI_LU_NOTICE = "http://www.2222av.co/detail/gg.html";
 	/***热搜排行**/
-	public static final String PC_QIAN_BAI_LU_HOT = "http://2222av.co/detail/hot.html";
+	public static final String PC_QIAN_BAI_LU_HOT = "http://www.2222av.co/detail/hot.html";
 	/***看片留言**/
-	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "http://2222av.co/detail/guestbook.html";
+	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "http://www.2222av.co/detail/guestbook.html";
 	/***最近更新**/
-	public static final String PC_QIAN_BAI_LU_NEW = "http://2222av.co/detail/new.html";
+	public static final String PC_QIAN_BAI_LU_NEW = "http://www.2222av.co/detail/new.html";
 	
 	public static String getCookie(){
 		return COOKIE;
