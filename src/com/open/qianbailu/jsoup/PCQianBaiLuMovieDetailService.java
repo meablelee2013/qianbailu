@@ -165,13 +165,16 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 								if (aElement != null) {
 									try {
 										String src =   aElement.attr("src");
+										if(src==null || src.length()==0){
+											 src =  aElement.attr("data-cfsrc");
+										}
 										if (src.contains(UrlUtils.QIAN_BAI_LU_HTTP) || src.contains(UrlUtils.QIAN_BAI_LU_HTTPS)) {
 										} else {
 											src = UrlUtils.QIAN_BAI_LU_HTTP + src;
 										}
 										// http://i1.1100lu.xyz/month_1508/1508132048bc4c73dcb045d61e.jpg
 										// http://i2.1100lu.xyz/month_1508/1508132048bc4c73dcb045d61e.jpg
-										src = src.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m").replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m");
+										src = src.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m").replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m").replace("http://i3.1100lu.xyz", "http://mi3.100av.org/m");
 										movieBean.setSrc(src);
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);
@@ -226,6 +229,9 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 								if (aElement != null) {
 									try {
 										String src = aElement.attr("src");
+										if(src==null || src.length()==0){
+											 src =  aElement.attr("data-cfsrc");
+										}
 										movieBean.setSrc(src);
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);

@@ -77,6 +77,9 @@ public class PCQianBaiLuMovieService extends CommonService {
 
 						try {
 							String src = divElements.get(i).select("img").first().attr("src");
+							if(src==null || src.length()==0){
+								 src = divElements.get(i).select("img").first().attr("data-cfsrc");
+							}
 							Log.i(TAG, "i==" + i + ";src==" + src);
 							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src);
 						} catch (Exception e) {
@@ -231,6 +234,9 @@ public class PCQianBaiLuMovieService extends CommonService {
 
 						try {
 							String src = divElements.get(i).select("img").first().attr("src");
+							if(src==null || src.length()==0){
+								 src = divElements.get(i).select("img").first().attr("data-cfsrc");
+							}
 							Log.i(TAG, "i==" + i + ";src==" + src);
 							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src);
 						} catch (Exception e) {

@@ -164,6 +164,9 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 									 */
 									Element imgElement = picKuFilmElements.get(y).select("img").first();
 									String src = imgElement.attr("src");
+									if(src==null || src.length()==0){
+										 src =  imgElement.attr("data-cfsrc");
+									}
 									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src);
 									Log.i(TAG, "i==" + i + ";y==" + y + ";src==" + src);
 								} catch (Exception e) {
