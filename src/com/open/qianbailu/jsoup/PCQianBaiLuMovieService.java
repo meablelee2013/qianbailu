@@ -81,7 +81,7 @@ public class PCQianBaiLuMovieService extends CommonService {
 								 src = divElements.get(i).select("img").first().attr("data-cfsrc");
 							}
 							Log.i(TAG, "i==" + i + ";src==" + src);
-							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src);
+							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -237,8 +237,11 @@ public class PCQianBaiLuMovieService extends CommonService {
 							if(src==null || src.length()==0){
 								 src = divElements.get(i).select("img").first().attr("data-cfsrc");
 							}
+							//http://i3.1100lu.xyz/vod/2017-03-29/58da9935ce722.jpg
+							//http://mi3.1100lu.xyz/vod/2017-03-29/58da9935ce722.jpg
+							//http://mi3.1100lu.xyz/m/vod/2017-03-29/58da9935ce722.jpg
 							Log.i(TAG, "i==" + i + ";src==" + src);
-							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src);
+							movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

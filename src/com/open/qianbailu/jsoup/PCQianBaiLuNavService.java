@@ -168,7 +168,10 @@ public class PCQianBaiLuNavService extends CommonService {
 								String src = imgElement.attr("src");
 								String picTitle = imgElement.attr("alt");
 								filmbean.setTitle(picTitle);
-								filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src);
+								if(src==null || src.length()==0){
+									src = imgElement.attr("data-cfsrc");
+								}
+								filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 								Log.i(TAG,  ";y==" + y + ";src==" + src);
 							} catch (Exception e) {
 								e.printStackTrace();
@@ -255,7 +258,10 @@ public class PCQianBaiLuNavService extends CommonService {
 									String src = imgElement.attr("src");
 									String picTitle = imgElement.attr("alt");
 									filmbean.setTitle(picTitle);
-									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src);
+									if(src==null || src.length()==0){
+										src = imgElement.attr("data-cfsrc");
+									}
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 									Log.i(TAG, "i==" + i + ";y==" + y + ";src==" + src);
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -462,7 +468,10 @@ public class PCQianBaiLuNavService extends CommonService {
 									 */
 									Element imgElement = picKuFilmElements.get(y).select("img").first();
 									String src = imgElement.attr("src");
-									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src);
+									if(src==null || src.length()==0){
+										src = imgElement.attr("data-cfsrc");
+									}
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("//i3.1100lu.xyz", "//mi3.1100lu.xyz"));
 									Log.i(TAG, "i==" + i + ";y==" + y + ";src==" + src);
 								} catch (Exception e) {
 									e.printStackTrace();

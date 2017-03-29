@@ -167,7 +167,7 @@ public class PCQianBaiLuIndicatorService extends CommonService {
 									if(src==null || src.length()==0){
 										 src =  imgElement.attr("data-cfsrc");
 									}
-									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src);
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 									Log.i(TAG, "i==" + i + ";y==" + y + ";src==" + src);
 								} catch (Exception e) {
 									e.printStackTrace();

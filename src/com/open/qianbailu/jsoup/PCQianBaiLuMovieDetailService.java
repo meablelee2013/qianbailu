@@ -40,12 +40,15 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 				Element divElement = doc.select("div.pic").first();
 				if (divElement != null) {
 					String imgrsc = divElement.select("img").first().attr("src");
+					if(imgrsc==null || imgrsc.length()==0){
+						imgrsc = divElement.select("img").first().attr("data-cfsrc");
+					}
 					if (imgrsc.contains(UrlUtils.QIAN_BAI_LU_HTTP) || imgrsc.contains(UrlUtils.QIAN_BAI_LU_HTTPS)) {
 
 					} else {
 						imgrsc = UrlUtils.QIAN_BAI_LU_HTTP + imgrsc;
 					}
-					mMovieDetailJson.setMovieDetaiImg(imgrsc);
+					mMovieDetailJson.setMovieDetaiImg(imgrsc.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 					mMovieDetailJson.setSec_info_intro(divElement.select("img").first().attr("alt"));
 
 					/**
@@ -232,7 +235,7 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 										if(src==null || src.length()==0){
 											 src =  aElement.attr("data-cfsrc");
 										}
-										movieBean.setSrc(src);
+										movieBean.setSrc(src.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);
 										movieBean.setAlt(title);
