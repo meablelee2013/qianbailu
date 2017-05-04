@@ -177,7 +177,11 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 										}
 										// http://i1.1100lu.xyz/month_1508/1508132048bc4c73dcb045d61e.jpg
 										// http://i2.1100lu.xyz/month_1508/1508132048bc4c73dcb045d61e.jpg
-										src = src.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m").replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m").replace("http://i3.1100lu.xyz", "http://mi3.100av.org/m");
+//										src = src
+//												.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m")
+//												.replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m")
+//												.replace("http://i3.1100lu.xyz", "http://mi3.100av.org/m")
+//												.replace("http://mi1.100av.org/m", "http://mi3.1100lu.xyz/m");
 										movieBean.setSrc(src);
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);

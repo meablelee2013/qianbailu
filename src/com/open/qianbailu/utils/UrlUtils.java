@@ -24,7 +24,7 @@ public class UrlUtils {
 	public static final String tencentAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.75 Safari/537.36 QQBrowser/4.1.4132.400";
 	public static final String qianbailuAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
 	
-	/***m地址**/
+	/***m地址**/ 
 	public static final String QIAN_BAI_LU_M = "http://m.222lu.co/";
 	/***电影首页**/
 	public static final String QIAN_BAI_LU_M_VLIST = "http://m.222lu.co/vlist.php";

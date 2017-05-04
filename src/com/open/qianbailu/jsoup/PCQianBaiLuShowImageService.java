@@ -90,7 +90,12 @@ public class PCQianBaiLuShowImageService extends CommonService {
 								if (aElement != null) {
 									try {
 										String src = UrlUtils.QIAN_BAI_LU_HTTP+aElement.attr("src");
-										src = src.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m").replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m");
+//										src = src
+//												.replace("http://i1.1100lu.xyz", "http://mi1.100av.org/m")
+//												.replace("http://i2.1100lu.xyz", "http://mi2.100av.org/m")
+//												.replace("http://i3.1100lu.xyz", "http://mi3.100av.org/m")
+//												.replace("http://mi1.100av.org/m", "http://mi3.1100lu.xyz/m");
+//												;
 										movieBean.setSrc(src);
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);
