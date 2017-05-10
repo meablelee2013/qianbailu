@@ -48,6 +48,9 @@ public class PCQianBaiLuMovieDetailService extends CommonService {
 					} else {
 						imgrsc = UrlUtils.QIAN_BAI_LU_HTTP + imgrsc;
 					}
+					//http://mi1.103av.org/m/1100/vod/201705/06/vod/pr501ufy2p4.jpg"
+					////i3.107av.net/vod/2017-05-07/590dfd988579f.jpg
+					////i3.107av.net/vod/2017-05-07/590dfda74dc3f.jpg
 					mMovieDetailJson.setMovieDetaiImg(imgrsc.replace("i3.1100lu.xyz", "mi3.1100lu.xyz"));
 					mMovieDetailJson.setSec_info_intro(divElement.select("img").first().attr("alt"));
 

@@ -75,6 +75,9 @@ public class PCQianBaiLuMovieService extends CommonService {
 							e.printStackTrace();
 						}
 
+						//http://i3.107av.net/m/1100/vod/201705/06/vod/pr501ufy2p4.jpg
+						////i3.107av.net/vod/2017-05-07/590dfd988579f.jpg
+						////i3.107av.net/vod/2017-05-07/590dfda74dc3f.jpg
 						try {
 							String src = divElements.get(i).select("img").first().attr("src");
 							if(src==null || src.length()==0){
