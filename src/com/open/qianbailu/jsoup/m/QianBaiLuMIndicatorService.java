@@ -135,7 +135,9 @@ public class QianBaiLuMIndicatorService extends CommonService {
 									 */
 									Element imgElement = picKuFilmElements.get(y).select("img").first();
 									String src = imgElement.attr("src");
-									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP+src);
+//									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP+src);
+									filmbean.setSrc(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("mi3.1100lu.xyz/m", "mi3.1100lu.xyz"));
+									
 									Log.i(TAG, "i=="+i+";y=="+y+";src=="+src);
 								} catch (Exception e) {
 									e.printStackTrace();

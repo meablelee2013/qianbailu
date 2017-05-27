@@ -48,7 +48,8 @@ public class QianBaiLuMMovieDetailService extends CommonService {
 			try {
 				Element divElement = doc.select("div.movieDetaiImg").first();
 				if(divElement!=null){
-					mMovieDetailJson.setMovieDetaiImg(UrlUtils.QIAN_BAI_LU_HTTP+divElement.select("img").first().attr("src"));
+					String src = divElement.select("img").first().attr("src");
+					mMovieDetailJson.setMovieDetaiImg(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("mi3.1100lu.xyz/m", "mi3.1100lu.xyz"));
 					/**
 					 * <div class="movieInfo float">
                     <div class="movieInfos">

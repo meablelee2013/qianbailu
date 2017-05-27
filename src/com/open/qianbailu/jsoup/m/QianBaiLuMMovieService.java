@@ -85,7 +85,10 @@ public class QianBaiLuMMovieService extends CommonService {
 								try {
 									String src = movieElement.select("img").first().attr("src");
 									Log.i(TAG, "i==" + i + ";src==" + src);
-									movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP+src);
+//									movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP+src);
+									//http://mi3.1100lu.xyz/m/vod/2017-05-27/59286ac5e65ab.jpg
+									////mi3.1100lu.xyz/m/vod/2017-05-27/59286ac5e65ab.jpg
+									movieBean.setThumb(UrlUtils.QIAN_BAI_LU_HTTP + src.replace("mi3.1100lu.xyz/m", "mi3.1100lu.xyz"));
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
