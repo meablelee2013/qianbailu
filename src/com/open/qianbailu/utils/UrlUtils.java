@@ -96,6 +96,9 @@ public class UrlUtils {
 	/***最近更新**/
 	public static final String PC_QIAN_BAI_LU_NEW = "http://www.5555av.co/detail/new.html";
 	
+	/***二维码**/
+	public static final String PC_QIAN_BAI_LU_CODE = "pan.baidu.com/share/qrcode";
+	
 	public static String getCookie(){
 		return COOKIE;
 	}

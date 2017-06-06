@@ -14,21 +14,25 @@ package com.open.qianbailu.adapter.m;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.open.qianbailu.R;
-import com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterActivity;
 import com.open.qianbailu.activity.m.QianBaiLuShowPagerAdapterFragmentActivity;
 import com.open.qianbailu.adapter.CommonAdapter;
 import com.open.qianbailu.bean.m.ShowBean;
 import com.open.qianbailu.json.m.ShowJson;
+import com.open.qianbailu.utils.QRCodeUtils;
+import com.open.qianbailu.utils.UrlUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -94,9 +98,20 @@ public class QianBaiLuMShowAdapter extends CommonAdapter<ShowBean> {
 		if (bean != null) {
 			text_alt.setText(bean.getAlt());
 			if (bean.getSrc() != null && bean.getSrc().length() > 0) {
-				DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
-						.cacheInMemory().cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY_STRETCHED).build();
-				ImageLoader.getInstance().displayImage(bean.getSrc(), imageview, options, getImageLoadingListener());
+				if(bean.getSrc().contains(UrlUtils.PC_QIAN_BAI_LU_CODE)){
+					//http://pan.baidu.com/share/qrcode?w=800&h=248&url=https://m.lu.sex/show-13-388511.html
+					String src = bean.getSrc().split("&url=")[1];
+					Bitmap qrBitmap = QRCodeUtils.generateBitmap(src,600, 600);  
+				    Bitmap logoBitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_launcher);  
+				    Bitmap bitmap = QRCodeUtils.addLogo(qrBitmap, logoBitmap);  
+				    imageview.setImageBitmap(bitmap); 
+				    imageview.setScaleType(ScaleType.CENTER_INSIDE);
+				}else{
+					imageview.setScaleType(ScaleType.FIT_XY);
+					DisplayImageOptions options = new DisplayImageOptions.Builder().showStubImage(R.drawable.common_v4).showImageForEmptyUri(R.drawable.common_v4).showImageOnFail(R.drawable.common_v4)
+							.cacheInMemory().cacheOnDisc().imageScaleType(ImageScaleType.EXACTLY_STRETCHED).build();
+					ImageLoader.getInstance().displayImage(bean.getSrc(), imageview, options, getImageLoadingListener());
+				}
 			}
 		}
 		view.setOnClickListener(new OnClickListener() {

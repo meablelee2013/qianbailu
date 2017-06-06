@@ -89,5 +89,6 @@ public class CommonAdapter<T> extends BaseAdapter {
 			}
 		}
 	}
-
+	
+    
 }
