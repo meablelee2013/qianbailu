@@ -100,6 +100,9 @@ public class QianBaiLuMShowImageService extends CommonService {
 								if (aElement != null) {
 									try {
 										String src = aElement.attr("src");
+										if(!src.contains("http")){
+											src = UrlUtils.QIAN_BAI_LU_HTTP+src;
+										}
 										movieBean.setSrc(src);
 										String title = aElement.attr("alt");
 										Log.i(TAG, "j==" + j + ";src==" + src + ";title==" + title);
