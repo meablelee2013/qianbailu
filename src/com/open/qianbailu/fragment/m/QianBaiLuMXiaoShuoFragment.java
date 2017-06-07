@@ -13,19 +13,19 @@ package com.open.qianbailu.fragment.m;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.format.DateUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.style.URLSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,6 +48,8 @@ import com.open.qianbailu.json.m.XiaoShuoJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMXiaoShuoService;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.view.ZoomTextView;
+import com.open.qianbailu.widget.LinkClickableSpan;
+import com.open.qianbailu.widget.SpanURLImageGetter;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -257,12 +259,26 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 
 		text_newstitle.setText(result.getNewsTitle() + result.getNeswTime());
 		
-		text_detailText.setText(Html.fromHtml(result.getDetailText()));
-		
+		SpanURLImageGetter imgGetter = new SpanURLImageGetter(getContext(), text_detailText);// 实例化URLImageGetter类
+		text_detailText.setText(Html.fromHtml(result.getDetailText(),imgGetter,null));
+		text_detailText.setMovementMethod(LinkMovementMethod.getInstance());  
+		    CharSequence text = text_detailText.getText();   
+	        if(text instanceof Spannable){   
+	            int end = text.length();   
+	            Spannable sp = (Spannable)text_detailText.getText();   
+	            URLSpan[] urls=sp.getSpans(0, end, URLSpan.class);    
+	            SpannableStringBuilder style=new SpannableStringBuilder(text);   
+//	            style.clearSpans();//should clear old spans   
+	            for(URLSpan url : urls){   
+	            	LinkClickableSpan clickableSpan = new LinkClickableSpan(getContext(),url.getURL());   
+	                style.setSpan(clickableSpan,sp.getSpanStart(url),sp.getSpanEnd(url),Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);   
+	            }   
+	            text_detailText.setText(style);   
+	        }
 		weakReferenceHandler.sendEmptyMessageDelayed(MESSAGE_DEFAULT_POSITION, 2000);
 		
-		float zoomScale = 1f;// 缩放比例 
-		new ZoomTextView(text_detailText, zoomScale); 
+//		float zoomScale = 1f;// 缩放比例 
+//		new ZoomTextView(text_detailText, zoomScale); 
 	}
 
 	/*

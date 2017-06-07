@@ -141,7 +141,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 		        openbean.setUrl(url);
 		        openbean.setType(type);
 		        openbean.setTitle(text_newstitle.getText().toString());
-		        openbean.setImgsrc(list.get(0).getSrc());
+		        openbean.setImgsrc(list.get(1).getSrc());
 		        QianBaiLuOpenDBService.insert(getActivity(), openbean);
 			}
 		});
