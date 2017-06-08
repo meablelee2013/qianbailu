@@ -93,10 +93,11 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_qianbailu_m_movie_detail, container, false);
 		mPullRefreshListView = (PullToRefreshListView) view.findViewById(R.id.pull_refresh_list);
-		footview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_m_show_image_foot, null);
-		text_pretitle = (TextView) footview.findViewById(R.id.text_pretitle);
-		
+//		footview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_m_show_image_foot, null);
 		headview = LayoutInflater.from(getActivity()).inflate(R.layout.layout_qianbailu_m_dianying_head, null);
+		text_pretitle = (TextView) headview.findViewById(R.id.text_pretitle);
+		
+		
 		text_moduleTitle= (TextView) headview.findViewById(R.id.text_moduleTitle);
 		text_movie_name = (TextView) headview.findViewById(R.id.text_movie_name);
 		text_movie_type = (TextView) headview.findViewById(R.id.text_movie_type);
@@ -117,7 +118,7 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 		super.initValues();
 		ListView listview = mPullRefreshListView.getRefreshableView();
 		listview.addHeaderView(headview);
-		listview.addFooterView(footview);
+//		listview.addFooterView(footview);
 		
 		Fragment fragment = QianBaiLuMDianYingFootListFragment.newInstance(url, true);
 		getChildFragmentManager().beginTransaction().replace(R.id.layout_foot, fragment).commit();
