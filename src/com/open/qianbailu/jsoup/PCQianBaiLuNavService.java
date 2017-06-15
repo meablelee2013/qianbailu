@@ -73,18 +73,18 @@ public class PCQianBaiLuNavService extends CommonService {
 			// e.printStackTrace();
 			// }
 			Document doc = Jsoup.connect(href)
-					.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
-					.header("Accept-Encoding", "gzip, deflate, sdch")
-					.header("Accept-Language", "zh-CN,zh;q=0.8")
-					.header("Cache-Control", "max-age=0")
-					.header("Connection", "keep-alive")
-					.header("Cookie", UrlUtils.COOKIE).
-					header("Host", UrlUtils.QIAN_BAI_LU_HOST)
-					.header("If-Modified-Since", new Date().toGMTString()).header("Upgrade-Insecure-Requests", "1")
-					// .userAgent(UrlUtils.qianbailuAgent)
+//					.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+//					.header("Accept-Encoding", "gzip, deflate, sdch")
+//					.header("Accept-Language", "zh-CN,zh;q=0.8")
+//					.header("Cache-Control", "max-age=0")
+//					.header("Connection", "keep-alive")
+//					.header("Cookie", UrlUtils.COOKIE).
+//					header("Host", UrlUtils.QIAN_BAI_LU_HOST)
+//					.header("If-Modified-Since", new Date().toGMTString()).header("Upgrade-Insecure-Requests", "1")
+//					// .userAgent(UrlUtils.qianbailuAgent)
 					.header("User-Agent", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36")
-					.header("Referer", UrlUtils.QIAN_BAI_LU_HOST)
-					.followRedirects(false)
+//					.header("Referer", UrlUtils.QIAN_BAI_LU_HOST)
+//					.followRedirects(false)
 					.timeout(10000).get();
 			// Log.i(TAG, doc.toString());
 			try {
