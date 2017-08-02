@@ -181,7 +181,9 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 	public void onCallback(SearchJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
-
+		if(result==null){
+			return;
+		}
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
 			list.clear();

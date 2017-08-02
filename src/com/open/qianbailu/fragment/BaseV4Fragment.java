@@ -213,7 +213,6 @@ public class BaseV4Fragment<T,F extends BaseV4Fragment> extends Fragment impleme
 	@Override
 	public void onCallback(T result) {
 		// TODO Auto-generated method stub
-
 	}
 
 	/*

@@ -76,6 +76,9 @@ public class PCQianBaiLuSIndicatorFragment  extends QianBaiLuMIndicatorFragment 
 	@Override
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		titleList.clear();

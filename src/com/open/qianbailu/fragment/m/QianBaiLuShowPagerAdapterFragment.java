@@ -173,6 +173,9 @@ public class QianBaiLuShowPagerAdapterFragment extends BaseV4Fragment<ShowJson, 
 	public void onCallback(ShowJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		mQianBaiLuShowPagerAdapter.notifyDataSetChanged();

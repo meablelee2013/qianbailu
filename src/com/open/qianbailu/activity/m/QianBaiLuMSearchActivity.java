@@ -130,6 +130,9 @@ public class QianBaiLuMSearchActivity extends CommonFragmentActivity<SearchJson>
 	public void onCallback(SearchJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		List<String> hList = new ArrayList<String>();
 		for (SearchBean bean : result.getHotlist()) {
 			hList.add(bean.getTitle());

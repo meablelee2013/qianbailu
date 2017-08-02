@@ -181,7 +181,9 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 		// TODO Auto-generated method stub
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullToRefreshScrollView.onRefreshComplete();
-		
+		if(result==null){
+			return;
+		}
 		
 		if (mPullToRefreshScrollView.getCurrentMode() == Mode.PULL_FROM_START) {
 			text_detailText.setText("");

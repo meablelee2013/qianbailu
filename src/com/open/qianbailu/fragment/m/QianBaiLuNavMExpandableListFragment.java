@@ -179,6 +179,9 @@ public class QianBaiLuNavMExpandableListFragment extends
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		mQianBaiLuNavMExpandableListAdapter.notifyDataSetChanged();

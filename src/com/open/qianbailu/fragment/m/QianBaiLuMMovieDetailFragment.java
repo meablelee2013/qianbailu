@@ -248,7 +248,9 @@ public class QianBaiLuMMovieDetailFragment extends BaseV4Fragment<MovieDetailJso
 	public void onCallback(MovieDetailJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
-
+		if(result==null){
+			return;
+		}
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		list.clear();
 		list.addAll(result.getList());

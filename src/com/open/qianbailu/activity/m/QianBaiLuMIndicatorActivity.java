@@ -103,6 +103,9 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		titleList.clear();

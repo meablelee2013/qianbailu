@@ -201,6 +201,9 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 	public void onCallback(ShowJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		mQianBaiLuShowPagerAdapter.notifyDataSetChanged();

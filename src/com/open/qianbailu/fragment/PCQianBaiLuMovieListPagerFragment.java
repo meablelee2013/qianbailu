@@ -185,6 +185,9 @@ public class PCQianBaiLuMovieListPagerFragment extends QianBaiLuMMovieListFragme
 	@Override
 	public void onCallback(MovieJson result) {
 		// TODO Auto-generated method stub
+		if(result==null){
+			return;
+		}
 		maxPageNo = result.getMaxpageno();
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {

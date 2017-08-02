@@ -115,6 +115,9 @@ public class PCMainTabActivity extends CommonTabActivity<NavMJson>     {
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		for(int i=0;i<result.getList().size();i++){
 			NavMBean mbean = result.getList().get(i);
 			TabSpec tab_main = mTabHost.newTabSpec(mbean.getTitle());

@@ -272,6 +272,9 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 	public void onCallback(XiaoShuoJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		// Call onRefreshComplete when the list has been refreshed.
 		mPullToRefreshScrollView.onRefreshComplete();
 

@@ -218,7 +218,9 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 	public void onCallback(ShowJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
-
+		if(result==null){
+			return;
+		}
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		list.clear();
 		list.addAll(result.getList());

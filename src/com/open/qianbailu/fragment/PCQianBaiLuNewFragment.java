@@ -141,6 +141,9 @@ public class PCQianBaiLuNewFragment extends QianBaiLuMPictureListFragment {
 	@Override
 	public void onCallback(MovieJson result) {
 		// TODO Auto-generated method stub
+		if(result==null){
+			return;
+		}
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
 			if (isautomatic) {

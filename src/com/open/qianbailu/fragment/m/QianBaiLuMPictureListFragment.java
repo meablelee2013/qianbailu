@@ -213,7 +213,9 @@ public class QianBaiLuMPictureListFragment extends BaseV4Fragment<MovieJson, Qia
 	public void onCallback(MovieJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
-
+		if(result==null){
+			return;
+		}
 		Log.i(TAG, "getMode ===" + mPullRefreshListView.getCurrentMode());
 		if (mPullRefreshListView.getCurrentMode() == Mode.PULL_FROM_START) {
 			if (isautomatic) {

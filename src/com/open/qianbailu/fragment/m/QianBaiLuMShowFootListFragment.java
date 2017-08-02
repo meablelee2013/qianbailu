@@ -124,6 +124,9 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		if(result.getList()!=null && result.getList().size()>0){
 			list.addAll(result.getList().get(0).getList());

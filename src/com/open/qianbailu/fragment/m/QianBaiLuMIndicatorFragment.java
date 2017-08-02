@@ -114,6 +114,9 @@ public class QianBaiLuMIndicatorFragment extends BaseV4Fragment<NavMJson, QianBa
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		list.clear();
 		list.addAll(result.getList());
 		titleList.clear();

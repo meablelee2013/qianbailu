@@ -140,6 +140,9 @@ public class QianBaiLuMDianYingFootListFragment extends BaseV4Fragment<NavMJson,
 	public void onCallback(NavMJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		picKuL.clear();
 		if(result.getList()!=null && result.getList().size()>0){
 			picKuL.addAll(result.getList().get(0).getPicKuL());

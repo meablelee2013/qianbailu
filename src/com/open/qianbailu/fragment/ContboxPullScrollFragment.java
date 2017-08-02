@@ -177,6 +177,9 @@ public class ContboxPullScrollFragment extends BaseV4Fragment<ContboxJson, Contb
 	public void onCallback(ContboxJson result) {
 		// TODO Auto-generated method stub
 		super.onCallback(result);
+		if(result==null){
+			return;
+		}
 		final ContboxBean  contbox = result.getContbox();
 		if(contbox!=null){
 			new Thread(new Runnable() {
