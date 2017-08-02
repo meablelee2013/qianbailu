@@ -11,6 +11,8 @@
  */
 package com.open.qianbailu.fragment.m;
 
+import java.util.List;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.format.DateUtils;
@@ -23,13 +25,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMSListAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.json.m.MovieJson;
+import com.open.qianbailu.json.m.NavMJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMPictureService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -122,8 +130,27 @@ public class QianBaiLuMSListFragment extends QianBaiLuMPictureListFragment {
 	@Override
 	public MovieJson call() throws Exception {
 		// TODO Auto-generated method stub
-		MovieJson mMovieJson = QianBaiLuMPictureService.parsePictureJson(url, pageNo);
+		MovieJson mMovieJson;
 		// http://m.100av.us/list.php?classid=12&style=0&bclassid=11
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mMovieJson = QianBaiLuMPictureService.parsePictureJson(url, pageNo);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMPictureService-parsePictureJson-"+pageNo);
+			    openbean.setTitle(gson.toJson(mMovieJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMPictureService-parsePictureJson-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mMovieJson = gson.fromJson(result, MovieJson.class);
+		}
 		return mMovieJson;
 	}
 

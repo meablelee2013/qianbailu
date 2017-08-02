@@ -11,6 +11,8 @@
  */
 package com.open.qianbailu.fragment;
 
+import java.util.List;
+
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,13 +21,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.open.qianbailu.activity.PCQianBaiLuShowListFragmentActivity;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.m.QianBaiLuMPictureListFragment;
 import com.open.qianbailu.json.m.MovieJson;
+import com.open.qianbailu.json.m.NavMJson;
+import com.open.qianbailu.jsoup.PCQianBaiLuNavService;
 import com.open.qianbailu.jsoup.PCQianBaiLuPictureService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -107,8 +115,26 @@ public class PCQianBaiLuPictureListFragment extends QianBaiLuMPictureListFragmen
 		//http://www.1111av.co/html/tupian/toupai/index_2.html
 		//http://www.1111av.co/html/tupian/toupai/ 
 		//http://www.1111av.co/html/tupian/toupai/index.html
-		mMovieJson.setList(PCQianBaiLuPictureService.parsePicture(url, pageNo));
-		mMovieJson.setMaxpageno(PCQianBaiLuPictureService.maxpageno);
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mMovieJson.setList(PCQianBaiLuPictureService.parsePicture(url, pageNo));
+			mMovieJson.setMaxpageno(PCQianBaiLuPictureService.maxpageno);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("PCQianBaiLuPictureService-parsePicture-"+pageNo);
+			    openbean.setTitle(gson.toJson(mMovieJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"PCQianBaiLuPictureService-parsePicture-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mMovieJson = gson.fromJson(result, MovieJson.class);
+		}
 		return mMovieJson;
 	}
 

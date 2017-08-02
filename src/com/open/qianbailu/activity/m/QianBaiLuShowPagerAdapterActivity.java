@@ -23,12 +23,17 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.CommonFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuShowPagerAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.ShowBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.ShowJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMMovieDetailService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.weak.WeakActivityReferenceHandler;
 
@@ -124,7 +129,25 @@ public class QianBaiLuShowPagerAdapterActivity extends CommonFragmentActivity<Sh
 	public ShowJson call() throws Exception {
 		// TODO Auto-generated method stub
 		ShowJson mShowJson = new ShowJson();
-		mShowJson.setList(QianBaiLuMMovieDetailService.parseShow(url));
+		if(NetWorkUtils.isNetworkAvailable(this)){
+			mShowJson.setList(QianBaiLuMMovieDetailService.parseShow(url));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMMovieDetailService-parseShow");
+			    openbean.setTitle(gson.toJson(mShowJson));
+			    QianBaiLuOpenDBService.insert(this, openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(this, url,"QianBaiLuMMovieDetailService-parseShow");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mShowJson = gson.fromJson(result, ShowJson.class);
+		}
 		return mShowJson;
 	}
 	/*

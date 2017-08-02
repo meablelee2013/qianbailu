@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
+import com.google.gson.Gson;
 import com.open.indicator.TabPageIndicator;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.CommonFragmentActivity;
 import com.open.qianbailu.adapter.CommonFragmentPagerAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.NavMBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.CommonV4Fragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMBIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMIndicatorFragment;
@@ -19,6 +22,7 @@ import com.open.qianbailu.fragment.m.QianBaiLuMSIndicatorFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuNavMExpandableListFragment;
 import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -73,7 +77,25 @@ public class QianBaiLuMIndicatorActivity extends CommonFragmentActivity<NavMJson
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuMNavService.parseMNav(url));
+		if(NetWorkUtils.isNetworkAvailable(this)){
+			mNavMJson.setList(QianBaiLuMNavService.parseMNav(url));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMNavService-parseMNav");
+			    openbean.setTitle(gson.toJson(mNavMJson));
+			    QianBaiLuOpenDBService.insert(this, openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(this, url,"QianBaiLuMNavService-parseMNav");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mNavMJson = gson.fromJson(result, NavMJson.class);
+		}
 		return mNavMJson;
 	}
 

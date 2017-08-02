@@ -35,6 +35,7 @@ import android.widget.TextView;
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView.OnTagClickListener;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -44,8 +45,11 @@ import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.XiaoShuoJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMXiaoShuoService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.view.ZoomTextView;
 import com.open.qianbailu.widget.LinkClickableSpan;
@@ -235,7 +239,26 @@ public class QianBaiLuMXiaoShuoFragment extends BaseV4Fragment<XiaoShuoJson, Qia
 	@Override
 	public XiaoShuoJson call() throws Exception {
 		// TODO Auto-generated method stub
-		XiaoShuoJson mXiaoShuoJson = QianBaiLuMXiaoShuoService.parseXiaoSHuo(url);
+		XiaoShuoJson mXiaoShuoJson;
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mXiaoShuoJson = QianBaiLuMXiaoShuoService.parseXiaoSHuo(url);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMXiaoShuoService-parseXiaoSHuo");
+			    openbean.setTitle(gson.toJson(mXiaoShuoJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMXiaoShuoService-parseXiaoSHuo");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mXiaoShuoJson = gson.fromJson(result, XiaoShuoJson.class);
+		}
 		return mXiaoShuoJson;
 	}
 

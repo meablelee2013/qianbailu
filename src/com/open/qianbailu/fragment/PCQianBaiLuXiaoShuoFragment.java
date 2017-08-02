@@ -11,6 +11,8 @@
  */
 package com.open.qianbailu.fragment;
 
+import java.util.List;
+
 import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.Spannable;
@@ -24,15 +26,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ScrollView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.PCQianBaiLuXiaoShuoFragmentActivity;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.m.QianBaiLuMShowFootListFragment;
 import com.open.qianbailu.fragment.m.QianBaiLuMXiaoShuoFragment;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.XiaoShuoJson;
+import com.open.qianbailu.jsoup.PCQianBaiLuNavService;
 import com.open.qianbailu.jsoup.PCQianBaiLuXiaoShuoService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.widget.LinkClickableSpan;
 import com.open.qianbailu.widget.SpanTagHandler;
@@ -139,7 +147,26 @@ public class PCQianBaiLuXiaoShuoFragment extends QianBaiLuMXiaoShuoFragment{
 	@Override
 	public XiaoShuoJson call() throws Exception {
 		// TODO Auto-generated method stub
-		XiaoShuoJson mXiaoShuoJson = PCQianBaiLuXiaoShuoService.parseXiaoSHuo(url,pagerno);
+		XiaoShuoJson mXiaoShuoJson;
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			 mXiaoShuoJson = PCQianBaiLuXiaoShuoService.parseXiaoSHuo(url,pagerno);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("PCQianBaiLuXiaoShuoService-parseXiaoSHuo-"+pagerno);
+			    openbean.setTitle(gson.toJson(mXiaoShuoJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"PCQianBaiLuXiaoShuoService-parseXiaoSHuo-"+pagerno);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mXiaoShuoJson = gson.fromJson(result, XiaoShuoJson.class);
+		}
 		return mXiaoShuoJson;
 	}
 	

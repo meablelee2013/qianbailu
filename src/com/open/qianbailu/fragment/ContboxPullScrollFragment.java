@@ -12,6 +12,7 @@
 package com.open.qianbailu.fragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import net.nightwhistler.htmlspanner.HtmlSpanner;
 import net.nightwhistler.htmlspanner.LinkMovementMethodExt;
@@ -32,6 +33,7 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -39,8 +41,12 @@ import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.HtmlImgPreviewActivity;
 import com.open.qianbailu.bean.ContboxBean;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.json.ContboxJson;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.jsoup.ContBoxScrollService;
+import com.open.qianbailu.utils.NetWorkUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -142,7 +148,25 @@ public class ContboxPullScrollFragment extends BaseV4Fragment<ContboxJson, Contb
 	public ContboxJson call() throws Exception {
 		// TODO Auto-generated method stub
 		ContboxJson mContboxJson = new ContboxJson();
-		mContboxJson.setContbox(ContBoxScrollService.parseContbox(url));
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mContboxJson.setContbox(ContBoxScrollService.parseContbox(url));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("ContBoxScrollService-parseContbox");
+			    openbean.setTitle(gson.toJson(mContboxJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"ContBoxScrollService-parseContbox");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mContboxJson = gson.fromJson(result, ContboxJson.class);
+		}
 		return mContboxJson;
 	}
 

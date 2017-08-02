@@ -25,6 +25,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -35,9 +36,14 @@ import com.open.qianbailu.activity.m.QianBaiLuMShowListFragmentActivity;
 import com.open.qianbailu.activity.m.QianBaiLuMXiaoShuoFragmentActivity;
 import com.open.qianbailu.adapter.m.QianBaiLuMSearchResultAdapter;
 import com.open.qianbailu.bean.SearchBean;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.SearchJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMSearchService;
+import com.open.qianbailu.utils.NetWorkUtils;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -143,7 +149,25 @@ public class QianBaiLuMSearchResultListFragment extends BaseV4Fragment<SearchJso
 	@Override
 	public SearchJson call() throws Exception {
 		SearchJson mSearchJson = new SearchJson();
-		mSearchJson.setResultlist(QianBaiLuMSearchService.parseSearchResult(url,pageNo));
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mSearchJson.setResultlist(QianBaiLuMSearchService.parseSearchResult(url,pageNo));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMSearchService-parseSearchResult-"+pageNo);
+			    openbean.setTitle(gson.toJson(mSearchJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMSearchService-parseSearchResult-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mSearchJson = gson.fromJson(result, SearchJson.class);
+		}
 		return mSearchJson;
 	}
 

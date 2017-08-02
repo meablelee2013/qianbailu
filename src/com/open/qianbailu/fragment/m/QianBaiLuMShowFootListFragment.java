@@ -21,12 +21,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.m.QianBaiLuMListAdapter;
+import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.NavMChildBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.NavMJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMNavService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 import com.open.qianbailu.view.ExpendListView;
 
@@ -88,7 +93,25 @@ public class QianBaiLuMShowFootListFragment extends BaseV4Fragment<NavMJson, Qia
 	public NavMJson call() throws Exception {
 		// TODO Auto-generated method stub
 		NavMJson mNavMJson = new NavMJson();
-		mNavMJson.setList(QianBaiLuMNavService.parseMShowFoot(url,type));
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mNavMJson.setList(QianBaiLuMNavService.parseMShowFoot(url,type));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMNavService-parseMShowFoot-"+type);
+			    openbean.setTitle(gson.toJson(mNavMJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMNavService-parseMShowFoot-"+type);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mNavMJson = gson.fromJson(result, NavMJson.class);
+		}
 		return mNavMJson;
 	}
 

@@ -31,6 +31,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -43,7 +44,10 @@ import com.open.qianbailu.bean.m.MovieBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
 import com.open.qianbailu.json.m.MovieJson;
+import com.open.qianbailu.json.m.NavMJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMMovieService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -142,8 +146,26 @@ public class QianBaiLuMMovieListFragment extends BaseV4Fragment<MovieJson, QianB
 		MovieJson mMovieJson = new MovieJson();
 		//http://m.100av.us/vlist.php?classid=1&page=1
 		//http://m.100av.us/jsonvlist.php?classid=1&page=1
-		mMovieJson.setList(QianBaiLuMMovieService.parseMovie(url, pageNo));
 //		volleyJson("http://m.100av.us/jsonvlist.php?classid=1&page=1");
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mMovieJson.setList(QianBaiLuMMovieService.parseMovie(url, pageNo));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMMovieService-parseMovie-"+pageNo);
+			    openbean.setTitle(gson.toJson(mMovieJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMMovieService-parseMovie-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mMovieJson = gson.fromJson(result, MovieJson.class);
+		}
 		return mMovieJson;
 	}
 

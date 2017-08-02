@@ -11,6 +11,8 @@
  */
 package com.open.qianbailu.fragment;
 
+import java.util.List;
+
 import android.os.Bundle;
 import android.os.Message;
 import android.text.format.DateUtils;
@@ -25,6 +27,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -38,6 +41,7 @@ import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieListFragment;
 import com.open.qianbailu.json.m.MovieJson;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -107,7 +111,26 @@ public class PCQianBaiLuMovieListPagerFragment extends QianBaiLuMMovieListFragme
 	@Override
 	public MovieJson call() throws Exception {
 		// TODO Auto-generated method stub
-		MovieJson mMovieJson  = PCQianBaiLuMovieService.parseMovieJson(url, pageNo);
+		MovieJson mMovieJson;
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mMovieJson  = PCQianBaiLuMovieService.parseMovieJson(url, pageNo);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("PCQianBaiLuMovieService-parseMovieJson-"+pageNo);
+			    openbean.setTitle(gson.toJson(mMovieJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"PCQianBaiLuMovieService-parseMovieJson-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mMovieJson = gson.fromJson(result, MovieJson.class);
+		}
 		return mMovieJson;
 	}
 

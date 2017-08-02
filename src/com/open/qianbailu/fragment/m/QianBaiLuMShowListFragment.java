@@ -28,6 +28,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -39,8 +40,11 @@ import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.ShowBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.BaseV4Fragment;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.ShowJson;
+import com.open.qianbailu.jsoup.m.QianBaiLuMIndicatorService;
 import com.open.qianbailu.jsoup.m.QianBaiLuMShowImageService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -140,6 +144,7 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 			    OpenDBBean openbean = new OpenDBBean();
 		        openbean.setUrl(url);
 		        openbean.setType(type);
+		        openbean.setTypename(type+"");
 		        openbean.setTitle(text_newstitle.getText().toString());
 		        openbean.setImgsrc(list.get(1).getSrc());
 		        QianBaiLuOpenDBService.insert(getActivity(), openbean);
@@ -180,7 +185,26 @@ public class QianBaiLuMShowListFragment extends BaseV4Fragment<ShowJson, QianBai
 	@Override
 	public ShowJson call() throws Exception {
 		// TODO Auto-generated method stub
-		ShowJson mShowJson = QianBaiLuMShowImageService.parsePicture(url);
+		ShowJson mShowJson;
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mShowJson = QianBaiLuMShowImageService.parsePicture(url);
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMShowImageService-parsePicture");
+			    openbean.setTitle(gson.toJson(mShowJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"QianBaiLuMShowImageService-parsePicture");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mShowJson = gson.fromJson(result, ShowJson.class);
+		}
 		return mShowJson;
 	}
 

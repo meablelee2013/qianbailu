@@ -17,7 +17,9 @@
     <array name="CREATE_TABLE_NAME">
         <item>collection</item>
     </array>
-    
+     <array name="QUERY_ALL_TABLE_SQL_WHERE_URL_TYPENAME">
+        <item>select * from collection where url=? and typename=?</item>
+    </array>
       <array name="CREATE_TABLE_FIELD">
         <item>type</item>
         <item>imgsrc</item>

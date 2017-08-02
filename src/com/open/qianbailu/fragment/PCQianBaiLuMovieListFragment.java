@@ -11,6 +11,8 @@
  */
 package com.open.qianbailu.fragment;
 
+import java.util.List;
+
 import android.os.Message;
 import android.text.format.DateUtils;
 import android.util.Log;
@@ -19,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
@@ -27,8 +30,11 @@ import com.open.qianbailu.bean.db.OpenDBBean;
 import com.open.qianbailu.bean.m.MovieBean;
 import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
 import com.open.qianbailu.fragment.m.QianBaiLuMMovieListFragment;
+import com.open.qianbailu.json.m.MovieDetailJson;
 import com.open.qianbailu.json.m.MovieJson;
+import com.open.qianbailu.jsoup.PCQianBaiLuMovieDetailService;
 import com.open.qianbailu.jsoup.PCQianBaiLuMovieService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -62,7 +68,25 @@ public class PCQianBaiLuMovieListFragment extends QianBaiLuMMovieListFragment {
 	public MovieJson call() throws Exception {
 		// TODO Auto-generated method stub
 		MovieJson mMovieJson = new MovieJson();
-		mMovieJson.setList(PCQianBaiLuMovieService.parseMovie(url, pageNo));
+		if(NetWorkUtils.isNetworkAvailable(getActivity())){
+			mMovieJson.setList(PCQianBaiLuMovieService.parseMovie(url, pageNo));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("PCQianBaiLuMovieService-parseMovie-"+pageNo);
+			    openbean.setTitle(gson.toJson(mMovieJson));
+			    QianBaiLuOpenDBService.insert(getActivity(), openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(getActivity(), url,"PCQianBaiLuMovieService-parseMovie-"+pageNo);
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mMovieJson = gson.fromJson(result, MovieJson.class);
+		}
 		return mMovieJson;
 	}
 

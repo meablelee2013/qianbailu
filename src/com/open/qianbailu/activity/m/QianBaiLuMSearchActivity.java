@@ -26,11 +26,16 @@ import android.widget.EditText;
 import co.lujun.androidtagview.TagContainerLayout;
 import co.lujun.androidtagview.TagView.OnTagClickListener;
 
+import com.google.gson.Gson;
 import com.open.qianbailu.R;
 import com.open.qianbailu.activity.CommonFragmentActivity;
 import com.open.qianbailu.bean.SearchBean;
+import com.open.qianbailu.bean.db.OpenDBBean;
+import com.open.qianbailu.db.service.QianBaiLuOpenDBService;
+import com.open.qianbailu.json.m.NavMJson;
 import com.open.qianbailu.json.m.SearchJson;
 import com.open.qianbailu.jsoup.m.QianBaiLuMSearchService;
+import com.open.qianbailu.utils.NetWorkUtils;
 import com.open.qianbailu.utils.UrlUtils;
 
 /**
@@ -98,7 +103,26 @@ public class QianBaiLuMSearchActivity extends CommonFragmentActivity<SearchJson>
 	public SearchJson call() throws Exception {
 		// TODO Auto-generated method stub
 		SearchJson mSearchJson = new SearchJson();
-		mSearchJson.setHotlist(QianBaiLuMSearchService.parseSearchHot(url));
+		if(NetWorkUtils.isNetworkAvailable(this)){
+			mSearchJson.setHotlist(QianBaiLuMSearchService.parseSearchHot(url));
+			try {
+				//数据存储
+				Gson gson = new Gson();
+				OpenDBBean  openbean = new OpenDBBean();
+	    	    openbean.setUrl(url);
+	    	    openbean.setTypename("QianBaiLuMSearchService-parseSearchHot");
+			    openbean.setTitle(gson.toJson(mSearchJson));
+			    QianBaiLuOpenDBService.insert(this, openbean);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}else{
+			List<OpenDBBean> beanlist =  QianBaiLuOpenDBService.queryListType(this, url,"QianBaiLuMSearchService-parseSearchHot");
+			String result = beanlist.get(0).getTitle();
+			Gson gson = new Gson();
+			mSearchJson = gson.fromJson(result, SearchJson.class);
+		}
+		
 		return mSearchJson;
 	}
 
