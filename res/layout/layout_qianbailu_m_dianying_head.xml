@@ -84,10 +84,10 @@
         android:padding="10dp"
         android:text="影片介绍" />
     
-    <include layout="@layout/layout_qianbailu_m_show_image_foot"
+    <!-- <include layout="@layout/layout_qianbailu_m_show_image_foot"
         android:layout_below="@+id/text_sec_info_more"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        /> -->
 
 </RelativeLayout>
