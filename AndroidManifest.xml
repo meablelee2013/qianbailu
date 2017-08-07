@@ -30,6 +30,16 @@
         android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.taobao.android.hotfix.IDSECRET"
+            android:value="24572655-1" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.APPSECRET"
+            android:value="2de2aca9f0b07b98cce089620b25785a" />
+        <meta-data
+            android:name="com.taobao.android.hotfix.RSASECRET"
+            android:value="MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDLG7QLKVX6wVAt2eV+CxXZTk7aH8nPAxWftAuhmp6HS9KmkI8xxnLB+9mCDS/NsUarVuSsuNLdBr+Gd2DGUwtuqXbER89fjlTgw+KSfGtHD1Ikj6GiQbtKP1++FAHxvHdXhzVdaFV9hfkHcTqDMmTmRvxIZnuRxxzZW4GYyCNpNqVKazxQGUL0fanxgZqjzHZOmSMW60rypoUXWU8xr2wK+sj8H5oQWBzIECoD4N8LLkZ9vW7lWRazSZrTaZOoba0RCxuLsF6Ek68wDPq8/yKNLj8O9Dy8Q5YuIVdDPO8HrdzvGxCC981btp8H/CFKJpBJ/StZ+bYZfdJflrk76OMBAgMBAAECggEASo5Ty9kTl6WIghw/MsJs9cTaCxWqJdRTBrm3n027rZx2qe/csH/RNkX1tNiUWKQfddvCu2ho9vt4KKr/mi13v9pzH1/gzonXvF4LeIw1cPM9yu/yfDY2wu16frKneA4fnMCkJTKcVyRrooC84tYH1cPu7cC40W1OuLbvXp7w6Lie/6O5Ia9IiOVsfcimV76VA/qaZ7g03ZVbC8+hMfCY/8aHlo5kmpM8oC5BqxoqF00mabJa4rwl/H8QbCjfUCsxmKZiB5yiXkPC10xr4Znf9k0/hgIIlv0Wdm7LwCMyzQZAv56HBGfCS6i7zkEAILPZ4yeaY5f1JCqOeVdH2O0LNQKBgQD/UdgfdrEbHSgvPsHyUHKgwW2i3jI++hxA68ugqu4afv+PhinX1+Zv7nfxcFnq+y2rc1ekFeLFrfVvBTXewoNv4uVhbNfuT1IQoRqbLQaUuSPJB1QWyQQvOAxvanLXRgfyoe1dlyxvMgrEEscwym+7hUQq5YIS1H656zsPe58n0wKBgQDLpj7Cw/h+P1JxPxi0DxDeY3L24VxzJDMK8F6VNxBfxTc88InU+0omouNyVX1XliUsKK99Ap1v7V0khj3iqpK8wD5HtwVd0h6mj2FZuFNfUBiSym5/8bf/DZtmeC/5Yi8ABZy5dKJsRNEznz9oEZjmuG03+BDVhwpIkLsKNpF5WwKBgF8HzoJ/ghIOeyuCl1uil9e/xxfszhTksOl1GliV5oPUKzj3fdGJ2Ypl3xztbXppvSjoiIFZaAud4RFOhiuAiL13XVsy0Pgxa+EmpamGS8HFW01yvdixPy54FSDPJSl9Nm4X2SqRnwdQP/OU7bD6WDYatzGkNRLfJr/6jwQHRkjjAoGAD2Z3AIuJUyK+vUmkOJmbEPY8T2cjcqGeKoma3XXYiyWC09zsz2phZSKUSKUmYWU9UmWRP8be2QP+MzDjpSx5BEUVcJ7qjPnCz52wIvTJeT+5XABq8sn4vBTvV4RnPFisbTf/bhbf4YgiueClDt2lzmzL9ZuQylT39hzbyB3wSlkCgYEAssdI0oMsHjrs4qVtAWhFXRZ1Jj3uRIAPPHXDKs5iZNMgAXy4STK0JMurOHHjeSbmQLFNtfL2zwC+YBxzmTgVyhAIiqkvn8pMJOE8lpuupn9+e//Nt2BPQYxNSEft1o+5liq0Apug/CQKgYoE3OcCYdKgEAnP1eDi+BnDmlsQ+UU=" />
+        
        <!-- 主tab页面 -->
         <activity
             android:name="com.open.qianbailu.activity.m.MainTabActivity"

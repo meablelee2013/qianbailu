@@ -14,6 +14,8 @@ package com.open.qianbailu.activity;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -26,9 +28,13 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.open.qianbailu.R;
 import com.open.qianbailu.adapter.AllClassAdapter;
+import com.open.qianbailu.application.QianBaiLuApplication;
 import com.open.qianbailu.bean.AllBean;
+import com.open.qianbailu.bean.PatchBean;
+import com.taobao.sophix.SophixManager;
 
 /**
  ***************************************************************************************************************************************************************************** 
@@ -46,7 +52,7 @@ public class QianBaiLuALLActivity extends CommonFragmentActivity implements OnIt
 	private ListView listview;
 	private AllClassAdapter mAllClassAdapter;
 	private List<AllBean> list = new ArrayList<AllBean>();
-
+	private static final int REQUEST_EXTERNAL_STORAGE_PERMISSION = 0;
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -99,8 +105,72 @@ public class QianBaiLuALLActivity extends CommonFragmentActivity implements OnIt
 
 		mAllClassAdapter = new AllClassAdapter(this, list);
 		listview.setAdapter(mAllClassAdapter);
+		SophixManager.getInstance().queryAndLoadNewPatch();
+		QianBaiLuApplication.msgDisplayListener = new QianBaiLuApplication.MsgDisplayListener() {
+            @Override
+            public void handle(final String msg) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        updateConsole(msg);
+                    }
+                });
+            }
+        };
 	}
+	/**
+     * 更新监控台的输出信息
+     *
+     * @param content 更新内容
+     */
+    private void updateConsole(String content) {
+        try {
+        	Gson gson = new Gson();
+            PatchBean bean = gson.fromJson(content, PatchBean.class);
+            if(bean!=null){
+            	if(bean.getHandlePatchVersion()>0){
+            		alertNewPatch(content);
+            	}
+            }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+    }
+    
+    private void alertNewPatch(String content){
+    	AlertDialog.Builder builder = new AlertDialog.Builder(this);  
+        builder.setItems(new String[]{content+"检测到热更新包，重启生效"}, new DialogInterface.OnClickListener() {  
+            @Override  
+            public void onClick(DialogInterface dialog, int which) {  
+            	android.os.Process.killProcess(android.os.Process.myPid());
+            }  
+        });  
+        builder.show();  
+    }
+	/**
+     * 如果本地补丁放在了外部存储卡中, 6.0以上需要申请读外部存储卡权限才能够使用. 应用内部存储则不受影响
+     */
 
+//    private void requestExternalStoragePermission() {
+//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+//                    REQUEST_EXTERNAL_STORAGE_PERMISSION);
+//        }
+//    }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+//        switch (requestCode) {
+//            case REQUEST_EXTERNAL_STORAGE_PERMISSION:
+//                if (grantResults.length <= 0 || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
+//                    updateConsole("local external storage patch is invalid as not read external storage permission");
+//                }
+//                break;
+//            default:
+//        }
+//    }
 	/*
 	 * (non-Javadoc)
 	 * 
