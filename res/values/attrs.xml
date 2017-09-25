@@ -39,15 +39,15 @@
     </array>
     
      <array name="QUERY_ALL_TABLE_SQL">
-        <item>select * from collection</item>
+        <item>select * from collection where type>0</item>
     </array>
     
      <array name="QUERY_ALL_TABLE_SQL_ORDER_ID">
-        <item>select * from collection order by id desc</item>
+        <item>select * from collection where type>0 order by id desc</item>
     </array>
     
      <array name="QUERY_ALL_TABLE_SQL_DESC">
-        <item>select * from collection order by time desc</item>
+        <item>select * from collection order by time desc where type>0</item>
     </array>
     
       <array name="QUERY_ALL_TABLE_SQL_WHERE">
