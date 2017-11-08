@@ -25,32 +25,32 @@ public class UrlUtils {
 	public static final String qianbailuAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36";
 	
 	/***m地址**/ 
-	public static final String QIAN_BAI_LU_M = "http://m.999lu.co/";
+	public static final String QIAN_BAI_LU_M = "https://m.111lu.vip/";
 	/***电影首页**/
-	public static final String QIAN_BAI_LU_M_VLIST = "http://m.999lu.co/vlist.php";
+	public static final String QIAN_BAI_LU_M_VLIST = "https://m.111lu.vip/vlist.php";
 	/***电影分页**/
-	public static final String QIAN_BAI_LU_M_VLIST_CLASSID = "http://m.999lu.co/vlist.php?classid=1";
+	public static final String QIAN_BAI_LU_M_VLIST_CLASSID = "https://m.111lu.vip/vlist.php?classid=1";
 	/***图库**/
-	public static final String QIAN_BAI_LU_M_VLIST_B = "http://m.999lu.co/blist.php?bclassid=11";
+	public static final String QIAN_BAI_LU_M_VLIST_B = "https://m.111lu.vip/blist.php?bclassid=11";
 	/***小说**/
-	public static final String QIAN_BAI_LU_M_VLIST_S = "http://m.999lu.co/blist.php?bclassid=1";
+	public static final String QIAN_BAI_LU_M_VLIST_S = "https://m.111lu.vip/blist.php?bclassid=1";
 	/***图库详细**/
-	public static final String QIAN_BAI_LU_M_VLIST_B_CLASSID   = "http://m.999lu.co/list.php?page=2&classid=2&bclassid=1";
+	public static final String QIAN_BAI_LU_M_VLIST_B_CLASSID   = "https://m.111lu.vip/list.php?page=2&classid=2&bclassid=1";
 	/***图片地址**/
 	public static final String QIAN_BAI_LU_HTTP = "http:";
 	public static final String QIAN_BAI_LU_HTTPS = "https:";
 	/***图库详细**/
-	public static final String QIAN_BAI_LU_SHOW = "http://m.999lu.co/show.php?id=388511&classid=13";
+	public static final String QIAN_BAI_LU_SHOW = "https://m.111lu.vip/show.php?id=388511&classid=13";
 	/***小说详细**/
-	public static final String QIAN_BAI_LU_XIAO_SHUO = "http://m.999lu.co/show.php?id=393114&classid=2";
+	public static final String QIAN_BAI_LU_XIAO_SHUO = "https://m.111lu.vip/show.php?id=393114&classid=2";
 	/***电影详细**/
-	public static final String QIAN_BAI_LU_MOVIE = "http://m.999lu.co/vshow.php?id=11174";
+	public static final String QIAN_BAI_LU_MOVIE = "https://m.111lu.vip/vshow.php?id=11174";
 	
 	public static final String COOKIE = "__cfduid=df0a47eed3d6f56b0ce2b54928ced11051483189834; CNZZDATA1000003418=380336421-1483185838-%7C1483852222";
 	/***地址转换器**/
 	public static final String QIAN_BAI_LU_DOWNLOAD = "http://search.cplusplus.me/downconvert.html";
 	/***搜索地址**/
-	public static final String QIAN_BAI_LU_SEARCH = "http://m.999lu.co/search.php";
+	public static final String QIAN_BAI_LU_SEARCH = "https://m.111lu.vip/search.php";
 	/***搜索例子**/
 	public static final String QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/wap.php?q=东京热";
 	/***搜索url拼装**/
@@ -58,43 +58,43 @@ public class UrlUtils {
 	
 	//网页
 	/***HOST地址**/
-	public static final String QIAN_BAI_LU_HOST = "www.0000av.co";
+	public static final String QIAN_BAI_LU_HOST = "111av.vip";
 	/***pc地址**/
-	public static final String QIAN_BAI_LU = "https://www.0000av.co";
+	public static final String QIAN_BAI_LU = "https://111av.vip";
 	/***电影首页**/
-	public static final String PC_QIAN_BAI_LU_VLIST = "https://www.0000av.co/vod/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST = "https://111av.vip/vod/index.html";
 	/***电影1**/
-	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="https://www.0000av.co/list/1.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_CLASSID ="https://111av.vip/list/1.html";
 	/***电影详细**/
-	public static final String PC_QIAN_BAI_LU_MOVIE = "https://www.0000av.co/vod/11193.html";
+	public static final String PC_QIAN_BAI_LU_MOVIE = "https://111av.vip/vod/11193.html";
 	/***电影详细vod**/
-	public static final String PC_QIAN_BAI_LU_VOD = "https://www.0000av.co/vod/11400.html#pl";
+	public static final String PC_QIAN_BAI_LU_VOD = "https://111av.vip/vod/11400.html#pl";
 	/***图库**/
-	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "https://www.0000av.co/html/tupian/index.html";
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B = "https://111av.vip/html/tupian/index.html";
 	/***图库详细**/
-	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "https://www.0000av.co/html/tupian/toupai/";
+	public static final String PC_QIAN_BAI_LU_M_VLIST_B_CLASSID   = "https://111av.vip/html/tupian/toupai/";
 	/***看图图库详细**/
-	public static final String PC_QIAN_BAI_LU_SHOW = "https://www.0000av.co/html/tupian/yazhou/2016/0923/388511.html";
+	public static final String PC_QIAN_BAI_LU_SHOW = "https://111av.vip/html/tupian/yazhou/2016/0923/388511.html";
 	/***小说**/
-	public static final String PC_QIAN_BAI_LU_VLIST_S = "https://www.0000av.co/html/article/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_S = "https://111av.vip/html/article/index.html";
 	/***小说列表**/
-	public static final String PC_QIAN_BAI_LU_VLIST_J = "https://www.0000av.co/html/article/jiqing/index.html";
+	public static final String PC_QIAN_BAI_LU_VLIST_J = "https://111av.vip/html/article/jiqing/index.html";
 	/***小说详细**/
-	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "https://www.0000av.co/html/article/jiqing/2017/0107/393310.html";
+	public static final String PC_QIAN_BAI_LU_XIAO_SHUO = "https://111av.vip/html/article/jiqing/2017/0107/393310.html";
 	/***电影在线**/
-	public static final String PC_QIAN_BAI_LU_ONLINE ="https://www.0000av.co/list/14.html";
+	public static final String PC_QIAN_BAI_LU_ONLINE ="https://111av.vip/list/14.html";
 	/***pc搜索地址**/
 	public static final String PC_QIAN_BAI_LU_SEARCH = "https://1100.so/";
 	/***pc搜索例子**/
 	public static final String PC_QIAN_BAI_LU_SEARCH_RESULT ="https://1100.so/?q=%E4%B8%9C%E4%BA%AC%E7%83%AD";
 	/***网站公告**/
-	public static final String PC_QIAN_BAI_LU_NOTICE = "https://www.0000av.co/detail/gg.html";
+	public static final String PC_QIAN_BAI_LU_NOTICE = "https://111av.vip/detail/gg.html";
 	/***热搜排行**/
-	public static final String PC_QIAN_BAI_LU_HOT = "https://www.0000av.co/detail/hot.html";
+	public static final String PC_QIAN_BAI_LU_HOT = "https://111av.vip/detail/hot.html";
 	/***看片留言**/
-	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "https://www.0000av.co/detail/guestbook.html";
+	public static final String PC_QIAN_BAI_LU_GUEST_BOOK = "https://111av.vip/detail/guestbook.html";
 	/***最近更新**/
-	public static final String PC_QIAN_BAI_LU_NEW = "https://www.0000av.co/detail/new.html";
+	public static final String PC_QIAN_BAI_LU_NEW = "https://111av.vip/detail/new.html";
 	
 	/***二维码**/
 	public static final String PC_QIAN_BAI_LU_CODE = "pan.baidu.com/share/qrcode";
